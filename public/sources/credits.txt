@@ -1,0 +1,16 @@
+================================
+  CREDITS
+================================
+
+jQuery - https://jquery.com/
+Popper.js - https://popper.js.org/
+Bootstrap - https://getbootstrap.com/
+jQuery Cookie - https://github.com/carhartl/jquery-cookie
+Waypoints - https://github.com/imakewebthings/waypoints
+jQuery CounterUp https://github.com/ciromattia/jquery.counterup
+Owl carousel - https://github.com/OwlCarousel2/OwlCarousel2
+Owl Carousel Thumbs - https://github.com/gijsroge/OwlCarousel2-Thumbs
+jQuery Parallax - http://www.ianlunn.co.uk/plugins/jquery-parallax/
+Bootstrap-select - http://silviomoreto.github.io/bootstrap-select
+jQuery.scrollTo - http://flesler.blogspot.com/2007/10/jqueryscrollto.html
+Images from http://imcreator.com/free
