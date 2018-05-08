@@ -35,6 +35,11 @@ Route::get('phim-sap-chieu',[
     'uses'=>'PageController@phimSapChieu'
 ]);
 
+Route::get('he-thong-rap',[
+    'as'=>'he-thong-rap',
+    'uses'=>'PageController@heThongRap'
+]);
+
 Route::get('index',[
     'as'=>'trang-chu',
     'uses'=>'PageController@getIndex'

@@ -30,4 +30,10 @@ class PageController extends Controller
     {
         return view('page.phimsapchieu');
     }
+
+    public function heThongRap()
+    {
+        return view('page.hethongrap');
+    }
+
 }

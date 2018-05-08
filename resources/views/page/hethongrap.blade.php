@@ -1,25 +1,18 @@
 @extends('master') 
 @section('content')
 
-<!-- PHIM DANG CHIEU -->
+<!-- RAP CHIEU -->
 <div id="heading-breadcrumbs">
     <div class="container">
         <div class="row d-flex align-items-center flex-wrap">
             <div class="col-md-7">
-                <h1 class="h2">LỊCH CHIẾU THEO PHIM</h1>
+                <h1 class="h2">HỆ THỐNG RẠP</h1>
             </div>
-            <div class="col-md-5">
-                <ul class="breadcrumb d-flex justify-content-end">
-                    <li class="breadcrumb-item">
-                        <a href="phim-sap-chieu">PHIM SẮP CHIẾU</a>
-                    </li>
-                    <li class="breadcrumb-item active">PHIM ĐANG CHIẾU</li>
-                </ul>
-            </div>
+            
         </div>
     </div>
 </div>
-<!-- END PHIM DANG CHIEU -->
+<!-- END RAP CHIEU -->
 
 <div id="content">
     <div class="container">
@@ -38,7 +31,7 @@
                                 </div>
                                 <div class="text">
                                     <h3 class="h5">
-                                        <a href="shop-detail.html">PHIM NÀY ĐANG CHIẾU</a>
+                                        <a href="shop-detail.html">RẠP THỨ NHẤT</a>
                                     </h3>
                                     <p class="price">$143.00</p>
                                 </div>
