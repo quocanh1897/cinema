@@ -27,10 +27,10 @@
                     <h5>XEM THEO PHIM</h5>
                     <ul class="list-unstyled mb-3">
                       <li class="nav-item">
-                        <a href="404" class="nav-link">Phim đang chiếu</a>
+                        <a href="phim-dang-chieu" class="nav-link">Phim đang chiếu</a>
                       </li>
                       <li class="nav-item">
-                        <a href="404" class="nav-link">Phim sắp chiếu</a>
+                        <a href="phim-sap-chieu" class="nav-link">Phim sắp chiếu</a>
                       </li>
                       
                     </ul>
@@ -335,21 +335,11 @@
           </li>-->
           <!-- ========== FULL WIDTH MEGAMENU END ==================-->
           <!-- ========== Contact dropdown ==================-->
-          <li class="nav-item dropdown">
-            <a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">Contact
+          <li class="nav-item ">
+            <a href="about" >Giới thiệu
               <b class="caret"></b>
             </a>
-            <ul class="dropdown-menu">
-              <li class="dropdown-item">
-                <a href="sources/contact.html" class="nav-link">Contact option 1</a>
-              </li>
-              <li class="dropdown-item">
-                <a href="sources/contact2.html" class="nav-link">Contact option 2</a>
-              </li>
-              <li class="dropdown-item">
-                <a href="sources/contact3.html" class="nav-link">Contact option 3</a>
-              </li>
-            </ul>
+             
           </li>
           <!-- ========== Contact dropdown end ==================-->
         </ul>

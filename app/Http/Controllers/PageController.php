@@ -15,4 +15,19 @@ class PageController extends Controller
     {
         return view('page.404');
     }
+
+    public function getAbout()
+    {
+        return view('page.about');
+    }
+
+    public function phimDangChieu()
+    {
+        return view('page.phimdangchieu');
+    }
+
+    public function phimSapChieu()
+    {
+        return view('page.phimsapchieu');
+    }
 }

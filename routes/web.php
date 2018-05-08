@@ -20,6 +20,21 @@ Route::get('404',[
     'uses'=>'PageController@get404'
 ]);
 
+Route::get('about',[
+    'as'=>'about',
+    'uses'=>'PageController@getAbout'
+]);
+
+Route::get('phim-dang-chieu',[
+    'as'=>'phim-dang-chieu',
+    'uses'=>'PageController@phimDangChieu'
+]);
+
+Route::get('phim-sap-chieu',[
+    'as'=>'phim-sap-chieu',
+    'uses'=>'PageController@phimSapChieu'
+]);
+
 Route::get('index',[
     'as'=>'trang-chu',
     'uses'=>'PageController@getIndex'
