@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('404',[
+    'as'=>'404',
+    'uses'=>'PageController@get404'
+]);
+
 Route::get('index',[
     'as'=>'trang-chu',
     'uses'=>'PageController@getIndex'

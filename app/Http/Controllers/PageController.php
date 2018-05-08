@@ -10,4 +10,9 @@ class PageController extends Controller
     {
         return view('page.trangchu');
     }
+
+    public function get404()
+    {
+        return view('page.404');
+    }
 }

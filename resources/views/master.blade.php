@@ -44,20 +44,20 @@
         <div class="container">
           <div class="row d-flex align-items-center">
             <div class="col-md-6 d-md-block d-none">
-              <p>Contact us on +420 777 555 333 or hello@universal.com.</p>
+              <p></p>
             </div>
             <div class="col-md-6">
               <div class="d-flex justify-content-md-end justify-content-between">
                 <ul class="list-inline contact-info d-block d-md-none">
-                  <li class="list-inline-item"><a href="#"><i class="fa fa-phone"></i></a></li>
-                  <li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>
+                  <li class="list-inline-item"><a href="404"><i class="fa fa-phone"></i></a></li>
+                  <li class="list-inline-item"><a href="404"><i class="fa fa-envelope"></i></a></li>
                 </ul>
-                <div class="login"><a href="#" data-toggle="modal" data-target="#login-modal" class="login-btn"><i class="fa fa-sign-in"></i><span class="d-none d-md-inline-block">Sign In</span></a><a href="customer-register.html" class="signup-btn"><i class="fa fa-user"></i><span class="d-none d-md-inline-block">Sign Up</span></a></div>
+                <div class="login"><a href="404" data-toggle="modal" data-target="404login-modal" class="login-btn"><i class="fa fa-sign-in"></i><span class="d-none d-md-inline-block">Sign In</span></a><a href="sources/customer-register.html" class="signup-btn"><i class="fa fa-user"></i><span class="d-none d-md-inline-block">Sign Up</span></a></div>
                 <ul class="social-custom list-inline">
-                  <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                  <li class="list-inline-item"><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                  <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                  <li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>
+                  <li class="list-inline-item"><a href="404"><i class="fa fa-facebook"></i></a></li>
+                  <li class="list-inline-item"><a href="404"><i class="fa fa-google-plus"></i></a></li>
+                  <li class="list-inline-item"><a href="404"><i class="fa fa-twitter"></i></a></li>
+                  <li class="list-inline-item"><a href="404"><i class="fa fa-envelope"></i></a></li>
                 </ul>
               </div>
             </div>
@@ -98,7 +98,7 @@
 
       <!-- Navbar End-->
 	  
-		@yield('content')
+		  @yield('content')
 
 
       <!-- GET IT-->
@@ -108,25 +108,26 @@
             <div class="col-lg-8 text-center p-3">
               <h3>Do you want cool website like this one?</h3>
             </div>
-            <div class="col-lg-4 text-center p-3">   <a href="#" class="btn btn-template-outlined-white">Buy this template now</a></div>
+            <div class="col-lg-4 text-center p-3">   <a href="404" class="btn btn-template-outlined-white">Buy this template now</a></div>
           </div>
         </div>
       </div>
       <!-- FOOTER -->
-		@include('footer')
+      
+		  @include('footer')
     </div>
     <!-- Javascript files-->
-    <script src="sources/vendor/popper.js/umd/popper.min.js"> </script>
-    <script src="sources/vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="sources/vendor/jquery/jquery.min.js"></script>
     <script src="sources/vendor/jquery.cookie/jquery.cookie.js"> </script>
-    <script src="sources/vendor/waypoints/lib/jquery.waypoints.min.js"> </script>
     <script src="sources/vendor/jquery.counterup/jquery.counterup.min.js"> </script>
+    <script src="sources/vendor/jquery.scrollto/jquery.scrollTo.min.js"></script>
+    <script src="sources/js/jquery.parallax-1.1.3.js"></script>
+    <script src="sources/vendor/popper.js/umd/popper.min.js"> </script>
+    <script src="sources/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="sources/vendor/waypoints/lib/jquery.waypoints.min.js"> </script>
     <script src="sources/vendor/owl.carousel/owl.carousel.min.js"></script>
     <script src="sources/vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js"></script>
-    <script src="sources/js/jquery.parallax-1.1.3.js"></script>
     <script src="sources/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
-    <script src="sources/vendor/jquery.scrollto/jquery.scrollTo.min.js"></script>
     <script src="sources/js/front.js"></script>
   </body>
 </html>
