@@ -40,6 +40,11 @@ Route::get('he-thong-rap',[
     'uses'=>'PageController@heThongRap'
 ]);
 
+Route::get('dang-ky',[
+    'as'=>'dang-ky',
+    'uses'=>'PageController@getDangKy'
+]);
+
 Route::get('index',[
     'as'=>'trang-chu',
     'uses'=>'PageController@getIndex'

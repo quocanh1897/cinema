@@ -24,7 +24,7 @@
                             <i class="fa fa-sign-in"></i>
                             <span class="d-none d-md-inline-block">Đăng nhập</span>
                         </a>
-                        <a href="sources/customer-register.html" class="signup-btn">
+                        <a href="dang-ky" class="signup-btn">
                             <i class="fa fa-user"></i>
                             <span class="d-none d-md-inline-block">Đăng ký</span>
                         </a>
@@ -82,9 +82,9 @@
                 </form>
                 <p class="text-center text-muted">Chưa có tài khoản?</p>
                 <p class="text-center text-muted">
-                    <a href="sources/customer-register.html">
-                        <strong>Đăng ký ngay</strong>
-                    </a>! Trở thành thành viên để nhận được ưu đãi!</p>
+                    <a href="dang-ky">
+                        <strong>Đăng ký ngay!</strong>
+                    </a>Trở thành thành viên để nhận được ưu đãi hấp dẫn!</p>
             </div>
         </div>
     </div>

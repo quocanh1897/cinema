@@ -31,9 +31,9 @@ class PageController extends Controller
         return view('page.phimsapchieu');
     }
 
-    public function heThongRap()
+    public function getDangKy()
     {
-        return view('page.hethongrap');
+        return view('page.dangky');
     }
 
 }
