@@ -74,17 +74,16 @@
   </div>
 </section>
 
-
-<section class="bar bg-gray no-mb text-md-center">
+<div class="col-md-12"><section class="bar bg-gray no-mb text-md-center">
   <div class="container">
     <ul id="pills-tab" role="tablist" class="nav nav-pills nav-justified">
       <li class="nav-item">
         <a id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"
-          class="nav-link">PHIM ĐANG CHIẾU</a>
+          class="nav-link active">PHIM ĐANG CHIẾU</a>
       </li>
       <li class="nav-item">
         <a id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false"
-          class="nav-link active">PHIM SẮP CHIẾU</a>
+          class="nav-link ">PHIM SẮP CHIẾU</a>
       </li>
       
     </ul>
@@ -98,7 +97,8 @@
       
     </div>
   </div>
-</section>
+</section></div>
+
 
 
 <section style="background: url('sources/img/fixed-background-2.jpg') center top no-repeat; background-size: cover;" class="bar no-mb color-white text-center bg-fixed relative-positioned">

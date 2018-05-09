@@ -45,6 +45,16 @@ Route::get('dang-ky',[
     'uses'=>'PageController@getDangKy'
 ]);
 
+Route::get('faq',[
+    'as'=>'faq',
+    'uses'=>'PageController@getFAQ'
+]);
+
+Route::get('contact',[
+    'as'=>'contact',
+    'uses'=>'PageController@contact'
+]);
+
 Route::get('index',[
     'as'=>'trang-chu',
     'uses'=>'PageController@getIndex'

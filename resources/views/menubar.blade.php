@@ -102,11 +102,11 @@
           <!-- END KHUYEN MAI -->
 
           
-          <!-- GIOI THIEU -->
+          <!-- GIOI THIEU 
           <li class="nav-item ">
             <a href="about">Giới thiệu</a>
           </li>
-          <!-- END GIOI THIEU -->
+           END GIOI THIEU -->
         </ul>
       </div>
       <div id="search" class="collapse clearfix">
