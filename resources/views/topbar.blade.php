@@ -19,6 +19,24 @@
                             </a>
                         </li>
                     </ul>
+
+                    @if(Auth::check())
+                    <div class="col-md-6">Xin chào {{Auth::user()->name}}</div>
+                    <div class="login">
+                        <a href="profile" class="profile-btn">
+                            <i class="fa fa-user"></i>
+                            <span class="d-none d-md-inline-block">Tài khoản</span>
+                        </a>
+                        <a href="thoat" class="signout-btn">
+                            <i class="fa fa-sign-out"></i>
+                            <span class="d-none d-md-inline-block">Đăng xuất</span>
+                        </a>
+                    </div>
+
+
+
+                    @elseif(Session)
+                     
                     <div class="login">
                         <a href="404" data-toggle="modal" data-target="#login-modal" class="login-btn">
                             <i class="fa fa-sign-in"></i>
@@ -29,6 +47,8 @@
                             <span class="d-none d-md-inline-block">Đăng ký</span>
                         </a>
                     </div>
+
+                    @endif
                     <ul class="social-custom list-inline">
                         <li class="list-inline-item">
                             <a href="404">
@@ -68,21 +88,23 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="customer-orders.html" method="get">
+                <form action="{{route('dang-nhap')}}" method="post">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    
                     <div class="form-group">
-                        <input id="email_modal" type="text" placeholder="email" class="form-control">
+                        <input name="email" id="email_modal" type="text" placeholder="email" class="form-control">
                     </div>
                     <div class="form-group">
-                        <input id="password_modal" type="password" placeholder="password" class="form-control">
+                        <input name="password" id="password_modal" type="password" placeholder="password" class="form-control">
                     </div>
                     <p class="text-center">
-                        <button class="btn btn-template-outlined">
+                        <button type="submit" class="btn btn-template-outlined">
                             <i class="fa fa-sign-in"></i>Đăng nhập</button>
                     </p>
                 </form>
                 <p class="text-center text-muted">Chưa có tài khoản?</p>
                 <p class="text-center text-muted">
-                    <a href="dang-ky">
+                    <a href="{{route('dang-ky')}}">
                         <strong>Đăng ký ngay!</strong>
                     </a>Trở thành thành viên để nhận được ưu đãi hấp dẫn!</p>
             </div>

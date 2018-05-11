@@ -45,6 +45,16 @@ Route::get('dang-ky',[
     'uses'=>'PageController@getDangKy'
 ]);
 
+Route::post('dang-ky',[
+    'as'=>'dang-ky',
+    'uses'=>'PageController@postSignup'
+]);
+
+Route::post('dang-nhap',[
+    'as'=>'dang-nhap',
+    'uses'=>'PageController@postSignin'
+]);
+
 Route::get('faq',[
     'as'=>'faq',
     'uses'=>'PageController@getFAQ'
@@ -59,3 +69,5 @@ Route::get('index',[
     'as'=>'trang-chu',
     'uses'=>'PageController@getIndex'
 ]);
+
+
