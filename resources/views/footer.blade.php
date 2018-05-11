@@ -6,7 +6,8 @@
         <h4 class="h6">Về chúng tôi</h4>
         <p>Thiết kế trang web này để hoàn thành assignment trong lớp về DBS, một phần lớn hơn là để thỏa mãn ý thích của mình.</p>
         
-        <a href="about" class="btn btn-template-main">Chi tiết hơn</a>        
+        <a href="about" class="btn btn-template-main">Chi tiết hơn</a>  
+        <a href="contact" class="btn btn-template-main">Liên hệ</a>      
         
       </div>
 
