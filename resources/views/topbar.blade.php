@@ -24,8 +24,6 @@
                         </a>
                     </div>
 
-
-
                     @else
 
                     <div class="login">

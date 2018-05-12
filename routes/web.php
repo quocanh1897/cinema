@@ -20,9 +20,29 @@ Route::get('404',[
     'uses'=>'PageController@get404'
 ]);
 
+Route::get('profile',[
+    'as'=>'profile',
+    'uses'=>'PageController@getProfile'
+]);
+
 Route::get('about',[
     'as'=>'about',
     'uses'=>'PageController@getAbout'
+]);
+
+Route::get('lich-su',[
+    'as'=>'lich-su',
+    'uses'=>'PageController@getLichSu'
+]);
+
+Route::get('chi-tiet-lich-su',[
+    'as'=>'chi-tiet-lich-su',
+    'uses'=>'PageController@getChiTietLichSu'
+]);
+
+Route::get('phim-da-xem',[
+    'as'=>'phim-da-xem',
+    'uses'=>'PageController@getPhimDaXem'
 ]);
 
 Route::get('phim-dang-chieu',[

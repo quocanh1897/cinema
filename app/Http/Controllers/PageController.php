@@ -18,9 +18,29 @@ class PageController extends Controller
         return view('page.404');
     }
 
+    public function getProfile()
+    {
+        return view('page.profile');
+    }
+
     public function getAbout()
     {
         return view('page.about');
+    }
+
+    public function getLichSu()
+    {
+        return view('page.lichsu');
+    }
+
+    public function getChiTietLichSu()
+    {
+        return view('page.chitietlichsu');
+    }
+
+    public function getPhimDaXem()
+    {
+        return view('page.phimdaxem');
     }
 
     public function phimDangChieu()
