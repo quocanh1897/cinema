@@ -10,7 +10,6 @@ class PageController extends Controller
 {
     public function getIndex()//lay trang chu
     {
-        
         return view('page.trangchu');
     }
 
@@ -54,6 +53,11 @@ class PageController extends Controller
         return view('page.faq');
     }
 
+    public function getChitiet()
+    {
+        return view('page.chitiet');
+    }
+
     public function postSignin(Request $req)
     {
         $this->validate($req, 
@@ -68,12 +72,14 @@ class PageController extends Controller
             'password.min'=>'Sai mật khẩu! '
 
         ]);
+        //$credentials = $req->only('email', 'password');
         $credentials = array('email'=>$req->email,'password'=>$req->password);
-        if(Auth::attempt($credentials)){
-            
-            return redirect()->back()->with(['flag'=>'success','done'=>'Đăng nhập thành công']);
+        if (Auth::attempt($credentials)) {
+            $data = $req->session()->all();
+            //return redirect()->route('dang-ky')->with(['flag'=>'success','mes'=>'Đăng nhập thành công']);
+            return redirect()->back()->with(['flag'=>'success','mes'=>'Đăng nhập thành công']);
         }else{
-            return redirect()->back()->with(['flag'=>'danger','fail'=>'Đăng nhập thất bại']);
+            return redirect()->back()->with(['flag'=>'danger','mes'=>'Đăng nhập thất bại']);
         }
         
 
@@ -107,6 +113,12 @@ class PageController extends Controller
         $user->save();
         return redirect()->back()->with('thanhcong','Tạo tài khoản thành công, hãy đăng nhập lại');
 
+    }
+    
+    public function getDangxuat()
+    {
+        Auth::logout();
+        return redirect()->route('trang-chu');
     }
 
 }

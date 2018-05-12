@@ -32,13 +32,13 @@
                         <div class="col-lg-3 col-md-4">
                             <div class="product">
                                 <div class="image">
-                                    <a href="shop-detail.html">
+                                    <a href="{{route('chi-tiet')}}">
                                         <img src="sources/img/product1.jpg" alt="" class="img-fluid image1">
                                     </a>
                                 </div>
                                 <div class="text">
                                     <h3 class="h5">
-                                        <a href="shop-detail.html">PHIM NÀY SẮP CHIẾU</a>
+                                        <a href="{{route('chi-tiet')}}">PHIM NÀY SẮP CHIẾU</a>
                                     </h3>
                                     <p class="price">$143.00</p>
                                 </div>
@@ -47,13 +47,13 @@
                         <div class="col-lg-3 col-md-4">
                             <div class="product">
                                 <div class="image">
-                                    <a href="shop-detail.html">
+                                    <a href="{{route('chi-tiet')}}">
                                         <img src="sources/img/product2.jpg" alt="" class="img-fluid image1">
                                     </a>
                                 </div>
                                 <div class="text">
                                     <h3 class="h5">
-                                        <a href="shop-detail.html">White Blouse Armani</a>
+                                        <a href="{{route('chi-tiet')}}">White Blouse Armani</a>
                                     </h3>
                                     <p class="price">
                                         <del>$280</del> $143.00
@@ -68,13 +68,13 @@
                         <div class="col-lg-3 col-md-4">
                             <div class="product">
                                 <div class="image">
-                                    <a href="shop-detail.html">
+                                    <a href="{{route('chi-tiet')}}">
                                         <img src="sources/img/product3.jpg" alt="" class="img-fluid image1">
                                     </a>
                                 </div>
                                 <div class="text">
                                     <h3 class="h5">
-                                        <a href="shop-detail.html">Black Blouse Versace</a>
+                                        <a href="{{route('chi-tiet')}}">Black Blouse Versace</a>
                                     </h3>
                                     <p class="price">$143.00</p>
                                 </div>
@@ -83,13 +83,13 @@
                         <div class="col-lg-3 col-md-4">
                             <div class="product">
                                 <div class="image">
-                                    <a href="shop-detail.html">
+                                    <a href="{{route('chi-tiet')}}">
                                         <img src="sources/img/product4.jpg" alt="" class="img-fluid image1">
                                     </a>
                                 </div>
                                 <div class="text">
                                     <h3 class="h5">
-                                        <a href="shop-detail.html">Black Blouse Versace</a>
+                                        <a href="{{route('chi-tiet')}}">Black Blouse Versace</a>
                                     </h3>
                                     <p class="price">$143.00</p>
                                 </div>
@@ -98,13 +98,13 @@
                         <div class="col-lg-3 col-md-4">
                             <div class="product">
                                 <div class="image">
-                                    <a href="shop-detail.html">
+                                    <a href="{{route('chi-tiet')}}">
                                         <img src="sources/img/product3.jpg" alt="" class="img-fluid image1">
                                     </a>
                                 </div>
                                 <div class="text">
                                     <h3 class="h5">
-                                        <a href="shop-detail.html">White Blouse Armani</a>
+                                        <a href="{{route('chi-tiet')}}">White Blouse Armani</a>
                                     </h3>
                                     <p class="price">
                                         <del>$280</del> $143.00
@@ -119,13 +119,13 @@
                         <div class="col-lg-3 col-md-4">
                             <div class="product">
                                 <div class="image">
-                                    <a href="shop-detail.html">
+                                    <a href="{{route('chi-tiet')}}">
                                         <img src="sources/img/product4.jpg" alt="" class="img-fluid image1">
                                     </a>
                                 </div>
                                 <div class="text">
                                     <h3 class="h5">
-                                        <a href="shop-detail.html">White Blouse Versace</a>
+                                        <a href="{{route('chi-tiet')}}">White Blouse Versace</a>
                                     </h3>
                                     <p class="price">$143.00</p>
                                 </div>
@@ -137,13 +137,13 @@
                         <div class="col-lg-3 col-md-4">
                             <div class="product">
                                 <div class="image">
-                                    <a href="shop-detail.html">
+                                    <a href="{{route('chi-tiet')}}">
                                         <img src="sources/img/product2.jpg" alt="" class="img-fluid image1">
                                     </a>
                                 </div>
                                 <div class="text">
                                     <h3 class="h5">
-                                        <a href="shop-detail.html">White Blouse Versace</a>
+                                        <a href="{{route('chi-tiet')}}">White Blouse Versace</a>
                                     </h3>
                                     <p class="price">$143.00</p>
                                 </div>
@@ -155,13 +155,13 @@
                         <div class="col-lg-3 col-md-4">
                             <div class="product">
                                 <div class="image">
-                                    <a href="shop-detail.html">
+                                    <a href="{{route('chi-tiet')}}">
                                         <img src="sources/img/product1.jpg" alt="" class="img-fluid image1">
                                     </a>
                                 </div>
                                 <div class="text">
                                     <h3 class="h5">
-                                        <a href="shop-detail.html">Fur coat</a>
+                                        <a href="{{route('chi-tiet')}}">Fur coat</a>
                                     </h3>
                                     <p class="price">$143.00</p>
                                 </div>

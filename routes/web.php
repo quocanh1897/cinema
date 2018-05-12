@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('trangchu');
 });
 
 Route::get('404',[
@@ -60,6 +60,11 @@ Route::get('faq',[
     'uses'=>'PageController@getFAQ'
 ]);
 
+Route::get('chi-tiet',[
+    'as'=>'chi-tiet',
+    'uses'=>'PageController@getChitiet'
+]);
+
 Route::get('contact',[
     'as'=>'contact',
     'uses'=>'PageController@contact'
@@ -69,5 +74,12 @@ Route::get('index',[
     'as'=>'trang-chu',
     'uses'=>'PageController@getIndex'
 ]);
+ 
+Route::get('dang-xuat',[
+    'as'=>'dang-xuat',
+    'uses'=>'PageController@getDangxuat'
+]);
 
+Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');
