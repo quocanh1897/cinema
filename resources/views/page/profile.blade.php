@@ -16,14 +16,14 @@
     <div class="container">
         <div class="row bar">
             <div id="customer-account" class="col-lg-9 clearfix">
-
+                <!-- THONG TIN CA NHAN -->
                 <div class="card card-primary">
                     <div id="headingTwo" role="tab" class="heading">
 
                         <a data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
 
 
-                            <h3 class="text-uppercase">Personal details</h3>
+                            <h3 class="text-uppercase">Thông tin cá nhân</h3>
 
 
                         </a>
@@ -33,32 +33,34 @@
                         <div class="card-body">
                             <form>
                                 <div class="row">
+                                    
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="firstname">Firstname</label>
-                                            <input id="firstname" type="text" class="form-control">
+                                            <label for="lastname">Họ</label>
+                                            <input id="lastname" type="text" class="form-control ">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="lastname">Lastname</label>
-                                            <input id="lastname" type="text" class="form-control">
+                                            <label for="firstname">Tên</label>
+                                            <input id="firstname" type="text" class="form-control" placeholder="{{Auth::user()->name}} ">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="company">Company</label>
-                                            <input id="company" type="text" class="form-control">
+                                            <label for="company">Email</label>
+                                            <input id="company" type="text" class="form-control" placeholder="{{Auth::user()->email}}" disabled>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="street">Street</label>
-                                            <input id="street" type="text" class="form-control">
+                                            <label for="company">Phone</label>
+                                            <input id="company" type="text" class="form-control" placeholder="{{Auth::user()->phone}}" >
                                         </div>
                                     </div>
+                                     
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6 col-lg-3">
@@ -107,7 +109,9 @@
                         </div>
                     </div>
                 </div>
+                <!-- END THONG TIN CA NHAN -->
 
+                <!-- DOI MAT KHAU -->
                 <div class="card card-primary">
                     <div id="headingOne" role="tab" class="heading">
 
@@ -152,7 +156,7 @@
                         </div>
                     </div>
                 </div>
-
+                <!-- END DOI MAT KHAU -->
             </div>
             <div class="col-lg-3 mt-4 mt-lg-0">
                 <!-- CUSTOMER MENU -->
@@ -171,7 +175,7 @@
                                     <i class="fa fa-heart"></i> Phim đã xem</a>
                             </li>
                             <li class="nav-item">
-                                <a  class="nav-link active">
+                                <a class="nav-link active">
                                     <i class="fa fa-user"></i> Cài đặt</a>
                             </li>
 

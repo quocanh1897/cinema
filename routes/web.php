@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('trangchu');
+    return view('page.trangchu');
 });
 
 Route::get('404',[
