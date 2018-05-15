@@ -5,18 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Hash;
 use App\User;
-use App\phim;
-use App\khuyen_mai;
 use Auth;
 class PageController extends Controller
 {
     public function getIndex()//lay trang chu
     {
-        $km = khuyen_mai::all();
-        $new_phim = phim::where('doituong',18)->get();
-        $pre_phim = phim::where('doituong','')->get();
-         
-        return view('page.trangchu', compact('new_phim','pre_phim','km'));
+        return view('page.trangchu');
     }
 
     public function get404()

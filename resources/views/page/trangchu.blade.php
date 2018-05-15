@@ -1,31 +1,77 @@
 @extends('master') @section('content')
 <section style="background: url('sources/img/photogrid.jpg') center center repeat; background-size: cover;" class="bar background-white relative-positioned">
-<div class="container">
-  <!-- SLIDER Start-->
-  <div class="home-carousel">
-    <div class="dark-mask mask-primary"></div>
-    <div class="container">
-      <div class="homepage owl-carousel">
-        @foreach($km as $km)
-        <div class="item">
-          <div class="row">
-            <div class="col-md-5 text-right">
-
-              <h1>{{$km->tenkm}} </h1>
-
+  <div class="container">
+    <!-- SLIDER Start-->
+    <div class="home-carousel">
+      <div class="dark-mask mask-primary"></div>
+      <div class="container">
+        <div class="homepage owl-carousel">
+          <div class="item">
+            <div class="row">
+              <div class="col-md-5 text-right">
+                <p>
+                  <img src="sources/img/logo.png" alt="" class="ml-auto">
+                </p>
+                <h1>THÔNG TIN KHUYẾN MÃI MỚI NHẤT</h1>
+                <p>SẼ nằm
+                  <br>ở chỗ này</p>
+              </div>
+              <div class="col-md-7">
+                <img src="sources/img/template-homepage.png" alt="" class="img-fluid">
+              </div>
             </div>
-            <div class="col-md-7">
-              <img src="{{$km->hinhanh}} " alt="" class="img-fluid">
+          </div>
+          <div class="item">
+            <div class="row">
+              <div class="col-md-7 text-center">
+                <img src="sources/img/template-mac.png" alt="" class="img-fluid">
+              </div>
+              <div class="col-md-5">
+                <h2>46 HTML pages full of features</h2>
+                <ul class="list-unstyled">
+                  <li>Sliders and carousels</li>
+                  <li>4 Header variations</li>
+                  <li>Google maps, Forms, Megamenu, CSS3 Animations and much more</li>
+                  <li>+ 11 extra pages showing template features</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="row">
+              <div class="col-md-5 text-right">
+                <h1>Design</h1>
+                <ul class="list-unstyled">
+                  <li>Clean and elegant design</li>
+                  <li>Full width and boxed mode</li>
+                  <li>Easily readable Roboto font and awesome icons</li>
+                  <li>7 preprepared colour variations</li>
+                </ul>
+              </div>
+              <div class="col-md-7">
+                <img src="sources/img/template-easy-customize.png" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="row">
+              <div class="col-md-7">
+                <img src="sources/img/template-easy-code.png" alt="" class="img-fluid">
+              </div>
+              <div class="col-md-5">
+                <h1>Easy to customize</h1>
+                <ul class="list-unstyled">
+                  <li>7 preprepared colour variations.</li>
+                  <li>Easily to change fonts</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-        @endforeach
       </div>
-     
     </div>
+    <!-- END SLIDER -->
   </div>
-  <!-- END SLIDER -->
-</div>
 </section>
 
 <div class="col-md-12"><section class="bar bg-gray no-mb text-md-center">
@@ -42,68 +88,11 @@
       
     </ul>
     <div id="pills-tabContent" class="tab-content">
-<div id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" class="tab-pane fade show active">
-  
-<div class="row portfolio text-center">
-  @foreach($new_phim as $new)
-
-  <div class="col-md-6">
-    <div class="box-image">
-      <div class="image">
-        <img src="{{$new->hinhanh}} " alt="" class="img-fluid">
-        <div class="overlay d-flex align-items-center justify-content-center">
-          <div class="content">
-            <div class="name">
-              <h3>
-                <a href="portfolio-detail.html" class="color-white">{{$new->tenphim}} </a>
-              </h3>
-            </div>
-            <div class="text">
-              <p class="d-none d-sm-block"> </p>
-              <p class="buttons">
-                <a href="portfolio-detail.html" class="btn btn-template-outlined-white">Chi tiết</a>
-                <a href="#" class="btn btn-template-outlined-white">Chọn</a>
-              </p>
-            </div>
-          </div>
-        </div>
+      <div id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" class="tab-pane fade show active">
+        <h1>phim đang chiếu để vô đây </h1>
       </div>
-    </div>
-  </div>
- 
-  @endforeach
-</div>
-</div>
       <div id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" class="tab-pane fade">
-      <div class="row portfolio text-center">
-  @foreach($pre_phim as $pre)
-
-  <div class="col-md-6">
-    <div class="box-image">
-      <div class="image">
-        <img src="{{$pre->hinhanh}} " alt="" class="img-fluid">
-        <div class="overlay d-flex align-items-center justify-content-center">
-          <div class="content">
-            <div class="name">
-              <h3>
-                <a href="portfolio-detail.html" class="color-white">{{$pre->tenphim}} </a>
-              </h3>
-            </div>
-            <div class="text">
-              <p class="d-none d-sm-block"> </p>
-              <p class="buttons">
-                <a href="portfolio-detail.html" class="btn btn-template-outlined-white">Chi tiết</a>
-                <a href="#" class="btn btn-template-outlined-white">Chọn</a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
- 
-  @endforeach
-</div>
+        <h1>phim sắp chiếu để vô đây </h1>
     </div>
       
     </div>
