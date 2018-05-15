@@ -45,7 +45,7 @@
                 <a href="404" class="nav-link">Hà Nội</a>
               </li>
               <li class="nav-item">
-                <a href="404" class="nav-link">Khác..</a>
+                <a href="404" class="nav-link">Xem tất cả</a>
               </li>
               </ul>
               </div>
@@ -71,7 +71,7 @@
             </a>
             <ul class="dropdown-menu megamenu">
               <li>
-                <div class="row">
+                <div class="row"> 
                   <div class="col-lg-3">
                     <a href="404">
                       <img src="sources/img/template-easy-customize.png" alt="" class="img-fluid d-none d-lg-block">
