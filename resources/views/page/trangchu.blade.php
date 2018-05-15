@@ -98,9 +98,9 @@
   @foreach($new_phim as $new)
 
   <div class="col-md-6">
-    <div class="box-image"  >
+    <div class="box-image">
       <div class="image">
-        <img src="{{$new->hinhanh}} " alt="" class="img-fluid" height="100" width="300">
+        <img src="{{$new->hinhanh}} " alt="" class="img-fluid">
         <div class="overlay d-flex align-items-center justify-content-center">
           <div class="content">
             <div class="name">
@@ -129,7 +129,7 @@
   <div class="col-md-6">
     <div class="box-image">
       <div class="image">
-        <img src="{{$pre->hinhanh}} " alt="" class="img-fluid" height="100" width="300">
+        <img src="{{$pre->hinhanh}} " alt="" class="img-fluid">
         <div class="overlay d-flex align-items-center justify-content-center">
           <div class="content">
             <div class="name">

@@ -110,26 +110,6 @@ Route::get('dang-xuat',[
     'uses'=>'PageController@getDangxuat'
 ]);
 
-Route::get('mua-ve',[
-    'as'=>'mua-ve',
-    'uses'=>'PageController@getMuaVe'
-]);
-
-Route::post('chon-phim',[
-    'as'=>'chon-phim',
-    'uses'=>'PageController@postChonPhim'
-]);
-
-Route::post('chon-rap',[
-    'as'=>'chon-rap',
-    'uses'=>'PageController@postChonRap'
-]);
-
-Route::get('chon-suat-chieu',[
-    'as'=>'chon-suat-chieu',
-    'uses'=>'PageController@getChonSuatChieu'
-]);
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -43,7 +43,10 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 32a1cf3... resolve confilct
                     </li>
                     <li class="nav-item">
                       <a href="404" class="nav-link">Hà Nội</a>
@@ -53,6 +56,7 @@
                     </li>
                   </ul>
                 </div>
+<<<<<<< HEAD
 
 =======
 >>>>>>> parent of 0727873... chinh sua temple + thay logo
@@ -61,6 +65,9 @@
 =======
 
 >>>>>>> 32a1cf3d99697136a12340d168992206f1e38401
+=======
+=======
+>>>>>>> parent of 32a1cf3... resolve confilct
               </li>
               <li class="nav-item">
                 <a href="404" class="nav-link">Hà Nội</a>
@@ -72,6 +79,7 @@
               </li>
               </ul>
               </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 =======
@@ -88,6 +96,9 @@
                 <a href="404" class="nav-link">Khác..</a>
               </li>
               </ul>
+=======
+>>>>>>> 6f5736c959f99077e3c525bf7d3dcb659c7a4347
+>>>>>>> parent of 32a1cf3... resolve confilct
               </div>
               </div>
 >>>>>>> parent of 0727873... chinh sua temple + thay logo
@@ -116,8 +127,13 @@
           </a>
         </li>
         <!-- END HE THONG RAP -->
+<<<<<<< HEAD
  
 >>>>>>> 32a1cf3d99697136a12340d168992206f1e38401
+=======
+
+<<<<<<< HEAD
+>>>>>>> parent of 32a1cf3... resolve confilct
         <!-- KHUYEN MAI -->
         <!-- TODO get chuong trinh khuyen mai hien co vao src-->
         <li class="nav-item dropdown menu-large">
@@ -131,6 +147,7 @@
                   <a href="404">
                     <img src="sources/img/template-easy-customize.png" alt="" class="img-fluid d-none d-lg-block">
                   </a>
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 =======
@@ -138,6 +155,9 @@
 =======
 
 >>>>>>> parent of 0727873... chinh sua temple + thay logo
+=======
+=======
+>>>>>>> parent of 32a1cf3... resolve confilct
           <!-- KHUYEN MAI -->
           <!-- TODO get chuong trinh khuyen mai hien co vao src-->
           <li class="nav-item dropdown menu-large">
@@ -148,6 +168,7 @@
               <li>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <div class="row"> 
 =======
                 <div class="row">
@@ -155,6 +176,9 @@
 =======
                 <div class="row">
 >>>>>>> parent of 0727873... chinh sua temple + thay logo
+=======
+                <div class="row"> 
+>>>>>>> parent of 32a1cf3... resolve confilct
                   <div class="col-lg-3">
                     <a href="404">
                       <img src="sources/img/template-easy-customize.png" alt="" class="img-fluid d-none d-lg-block">
@@ -180,9 +204,13 @@
                   </div>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 32a1cf3d99697136a12340d168992206f1e38401
+=======
+>>>>>>> 6f5736c959f99077e3c525bf7d3dcb659c7a4347
+>>>>>>> parent of 32a1cf3... resolve confilct
                 </div>
                 <div class="col-lg-3">
                   <a href="404">
