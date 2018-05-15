@@ -7,14 +7,20 @@ use Hash;
 use App\User;
 use App\phim;
 use App\khuyen_mai;
+use App\rap_chieu;
+use App\suat_chieu;
+use App\khung_gio;
 use Auth;
+use Carbon;
+
 class PageController extends Controller
 {
     public function getIndex()//lay trang chu
     {
+        $currentDate = Carbon\Carbon::now()->toDateString();
         $km = khuyen_mai::all();
-        $new_phim = phim::where('doituong',18)->get();
-        $pre_phim = phim::where('doituong','')->get();
+        $pre_phim = phim::where('batdau','>',$currentDate)->get();
+        $new_phim = phim::where('batdau','<',$currentDate)->get();
          
         return view('page.trangchu', compact('new_phim','pre_phim','km'));
     }
@@ -51,13 +57,15 @@ class PageController extends Controller
 
     public function phimDangChieu()
     {
-        $phim = phim::where('doituong',18)->get();
+        $currentDate = Carbon\Carbon::now()->toDateString();
+        $phim = phim::where('batdau','<',$currentDate)->get();
         return view('page.phimdangchieu',compact('phim'));
     }
 
     public function phimSapChieu()
     {
-        $phim = phim::where('doituong','')->get();
+        $currentDate = Carbon\Carbon::now()->toDateString();
+        $phim = phim::where('batdau','>',$currentDate)->get();
         return view('page.phimsapchieu',compact('phim'));
     }
 
@@ -89,6 +97,36 @@ class PageController extends Controller
     public function getChitiet()
     {
         return view('page.chitiet');
+    }
+
+    public function getChonPhim($idPhim)
+    {
+        $phimDaChon = phim::where('maphim',$idPhim)->get();
+        //dd($phimDaChon);
+        return view('page.chonphim',compact('phimDaChon'));
+    }
+
+    public function getChonRap($idPhim)
+    {
+        $phimDaChon = phim::where('maphim',$idPhim)->get();
+        $rap = rap_chieu::all();
+        return view('page.chonrap',compact('phimDaChon','rap'));
+    }
+
+    public function getChonSuatChieu($idPhim, $idRap)
+    {
+        $currentDate = Carbon\Carbon::now();
+        $due = Carbon\Carbon::now()->modify('+7 day');
+        $arrDate = [];
+        for($i = $currentDate; $i <= $due; $i++){
+            $arrDate[] = $currentDate->toDateString();
+            $currentDate->addDay();
+        }
+        $phimDaChon = phim::where('maphim',$idPhim)->get();
+        $rapDaChon = rap_chieu::where('marap',$idRap)->get();
+        $khunggio = khung_gio::all();
+        //dd($khunggio);
+        return view('page.chonsuatchieu',compact('phimDaChon','rapDaChon','khunggio','arrDate'));
     }
 
     public function postSignin(Request $req)

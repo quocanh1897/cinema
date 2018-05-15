@@ -55,14 +55,14 @@
           <div class="content">
             <div class="name">
               <h3>
-                <a href="portfolio-detail.html" class="color-white">{{$new->tenphim}} </a>
+                <a href="{{route('chi-tiet')}}" class="color-white">{{$new->tenphim}} </a>
               </h3>
             </div>
             <div class="text">
               <p class="d-none d-sm-block"> </p>
               <p class="buttons">
-                <a href="portfolio-detail.html" class="btn btn-template-outlined-white">Chi tiết</a>
-                <a href="#" class="btn btn-template-outlined-white">Chọn</a>
+                <a href="{{route('chi-tiet')}}" class="btn btn-template-outlined-white">Chi tiết</a>
+                <a href="{{route('chon-phim',$new->maphim)}}" class="btn btn-template-outlined-white">Chọn</a>
               </p>
             </div>
           </div>
@@ -86,14 +86,14 @@
           <div class="content">
             <div class="name">
               <h3>
-                <a href="portfolio-detail.html" class="color-white">{{$pre->tenphim}} </a>
+                <a href="{{route('chi-tiet')}}" class="color-white">{{$pre->tenphim}} </a>
               </h3>
             </div>
             <div class="text">
               <p class="d-none d-sm-block"> </p>
               <p class="buttons">
-                <a href="portfolio-detail.html" class="btn btn-template-outlined-white">Chi tiết</a>
-                <a href="#" class="btn btn-template-outlined-white">Chọn</a>
+                <a href="{{route('chi-tiet')}}" class="btn btn-template-outlined-white">Chi tiết</a>
+                <a href="{{route('chon-phim',$pre->maphim)}}" class="btn btn-template-outlined-white">Chọn</a>
               </p>
             </div>
           </div>

@@ -41,7 +41,7 @@
                     <div class="text">
                       <p class="buttons">
                         <a href="{{route('chi-tiet')}}" class="btn btn-template-outlined-white">CHI TIẾT</a>
-                        <a href="{{route('mua-ve')}} " class="btn btn-template-outlined-white">Chọn</a>
+                        <a href="{{route('chon-phim',$phim->maphim)}} " class="btn btn-template-outlined-white">Chọn</a>
                       </p>
                     </div>
                   </div>

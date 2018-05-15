@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('page.trangchu');
-});
+Route::get('/', [
+    'uses'=>'PageController@getIndex'
+]);
 
 Route::get('404',[
     'as'=>'404',
@@ -115,17 +115,17 @@ Route::get('mua-ve',[
     'uses'=>'PageController@getMuaVe'
 ]);
 
-Route::post('chon-phim',[
+Route::get('chon-phim/{id}',[
     'as'=>'chon-phim',
-    'uses'=>'PageController@postChonPhim'
+    'uses'=>'PageController@getChonPhim'
 ]);
 
-Route::post('chon-rap',[
+Route::get('chon-rap/{idPhim}',[
     'as'=>'chon-rap',
-    'uses'=>'PageController@postChonRap'
+    'uses'=>'PageController@getChonRap'
 ]);
 
-Route::get('chon-suat-chieu',[
+Route::get('chon-suat-chieu/{idPhim}/{idRap}',[
     'as'=>'chon-suat-chieu',
     'uses'=>'PageController@getChonSuatChieu'
 ]);
