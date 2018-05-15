@@ -88,11 +88,71 @@
       
     </ul>
     <div id="pills-tabContent" class="tab-content">
+<<<<<<< HEAD
       <div id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" class="tab-pane fade show active">
         <h1>phim đang chiếu để vô đây </h1>
+=======
+<div id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" class="tab-pane fade show active">
+  
+<div class="row portfolio text-center">
+  @foreach($new_phim as $new)
+
+  <div class="col-md-6">
+    <div class="box-image"  >
+      <div class="image">
+        <img src="{{$new->hinhanh}} " alt="" class="img-fluid" height="100" width="300">
+        <div class="overlay d-flex align-items-center justify-content-center">
+          <div class="content">
+            <div class="name">
+              <h3>
+                <a href="portfolio-detail.html" class="color-white">{{$new->tenphim}} </a>
+              </h3>
+            </div>
+            <div class="text">
+              <p class="d-none d-sm-block"> </p>
+              <p class="buttons">
+                <a href="portfolio-detail.html" class="btn btn-template-outlined-white">Chi tiết</a>
+                <a href="#" class="btn btn-template-outlined-white">Chọn</a>
+              </p>
+            </div>
+          </div>
+        </div>
+>>>>>>> 32a1cf3d99697136a12340d168992206f1e38401
       </div>
       <div id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" class="tab-pane fade">
+<<<<<<< HEAD
         <h1>phim sắp chiếu để vô đây </h1>
+=======
+      <div class="row portfolio text-center">
+  @foreach($pre_phim as $pre)
+
+  <div class="col-md-6">
+    <div class="box-image">
+      <div class="image">
+        <img src="{{$pre->hinhanh}} " alt="" class="img-fluid" height="100" width="300">
+        <div class="overlay d-flex align-items-center justify-content-center">
+          <div class="content">
+            <div class="name">
+              <h3>
+                <a href="portfolio-detail.html" class="color-white">{{$pre->tenphim}} </a>
+              </h3>
+            </div>
+            <div class="text">
+              <p class="d-none d-sm-block"> </p>
+              <p class="buttons">
+                <a href="portfolio-detail.html" class="btn btn-template-outlined-white">Chi tiết</a>
+                <a href="#" class="btn btn-template-outlined-white">Chọn</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  @endforeach
+</div>
+>>>>>>> 32a1cf3d99697136a12340d168992206f1e38401
     </div>
       
     </div>
