@@ -5,12 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Hash;
 use App\User;
+use App\phim;
+use App\khuyen_mai;
 use Auth;
 class PageController extends Controller
 {
     public function getIndex()//lay trang chu
     {
-        return view('page.trangchu');
+        $km = khuyen_mai::all();
+        $new_phim = phim::where('doituong',18)->get();
+        $pre_phim = phim::where('doituong','')->get();
+         
+        return view('page.trangchu', compact('new_phim','pre_phim','km'));
     }
 
     public function get404()
@@ -134,7 +140,62 @@ class PageController extends Controller
         return redirect()->back()->with('thanhcong','Tạo tài khoản thành công, hãy đăng nhập lại');
 
     }
+
+    public function postChangePass(Request $req)
+    {
+        $this->validate($req,
+            [
+                'password_old'=>'required',
+                'password'=>'required|min:6|max:20',
+                're_password'=>'required|same:password'
+            ],
+            [
+                'password_old.required'=>'Vui lòng nhập mật khẩu cũ! ',
+                'password.required'=>'Vui lòng nhập mật khẩu! ',
+                're_password.required'=>'Vui lòng nhập lại mật khẩu! ',
+                're_password.same'=>'Mật khẩu không khớp! ',
+                'password.max'=>'Mật khẩu tối đa 20 kí tự! ',
+                'password.min'=>'Mật khẩu cần ít nhất 6 kí tự! '
+            ]);
+        
+        if(Hash::check($req['password_old'], Auth::user()->password))
+        {
+            $user_id = Auth::user()->id;                       
+            $obj_user = User::find($user_id);
+            $obj_user->password = Hash::make($req['password']);;
+            $obj_user->save(); 
+            return redirect()->back()->with(['flag'=>'success','mes'=>'Đổi mật khẩu thành công']);
+        }else{
+            return redirect()->back()->with(['flag'=>'danger','mes'=>'Sai mật khẩu']);
+        }
+    }
     
+    public function postchangePersonalData(Request $req)
+    {
+        $this->validate($req,
+            [
+                'hoten'=>'required|max:50',
+                'phone'=>'numeric'
+            ],
+            [
+                'hoten.required'=>'Vui lòng nhập đúng tên! ',
+                'phone.numeric'=>'Số điện thoại không đúng',
+                'hoten.max'=>'Tên quá dài! ',
+            ]);
+        
+        $user_id = Auth::user()->id;                       
+        $obj_user = User::find($user_id);
+        $obj_user->phone = $req['phone'];
+        $obj_user->name = $req['hoten'];
+        $obj_user->diachi = $req['diachi'];
+        $obj_user->gioitinh = $req['gioitinh'];
+        $obj_user->ngaysinh = $req['ngaysinh'];
+        $obj_user->quocgia = $req['quocgia'];
+        $obj_user->save(); 
+        return redirect()->back()->with(['flag'=>'success','mes'=>'Đổi thông tin thành công']);
+        
+    }
+
     public function getDangxuat()
     {
         Auth::logout();

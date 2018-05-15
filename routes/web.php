@@ -25,6 +25,16 @@ Route::get('profile',[
     'uses'=>'PageController@getProfile'
 ]);
 
+Route::post('changepass',[
+    'as'=>'changepass',
+    'uses'=>'PageController@postChangePass'
+]);
+
+Route::post('changePersonalData',[
+    'as'=>'changePersonalData',
+    'uses'=>'PageController@postchangePersonalData'
+]);
+
 Route::get('about',[
     'as'=>'about',
     'uses'=>'PageController@getAbout'
