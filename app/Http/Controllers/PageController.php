@@ -51,12 +51,19 @@ class PageController extends Controller
 
     public function phimDangChieu()
     {
-        return view('page.phimdangchieu');
+        $phim = phim::where('doituong',18)->get();
+        return view('page.phimdangchieu',compact('phim'));
     }
 
     public function phimSapChieu()
     {
-        return view('page.phimsapchieu');
+        $phim = phim::where('doituong','')->get();
+        return view('page.phimsapchieu',compact('phim'));
+    }
+
+    public function getMuaVe()
+    {
+        return view('page.muave');
     }
 
     public function heThongRap()

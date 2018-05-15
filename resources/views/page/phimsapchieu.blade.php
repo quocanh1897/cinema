@@ -27,124 +27,38 @@
             <div class="col-md-12">
                 
                     <div class="row portfolio text-center">
-                        <div class="col-md-3">
-                            <div class="box-image">
-                              <div class="image"><img src="sources/img/product1.jpg" alt="" class="img-fluid">
-                                <div class="overlay d-flex align-items-center justify-content-center">
-                                  <div class="content">
-                                    <div class="name mb-small">
-                                      <h3><a class="color-white">Phim 1</a></h3>
-                                    </div>
-                                    <div class="text">
-                                      <p class="buttons"><a href="{{route('chi-tiet')}}" class="btn btn-template-outlined-white">CHI TIẾT</a><a href="https://www.youtube.com/watch?v=6ZfuNTqbHE8" class="btn btn-template-outlined-white">TRAILER</a></p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="ribbon-holder">
-                                <div class="ribbon sale">KM</div>
-                                <div class="ribbon new">HOT</div>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="box-image">
-                              <div class="image"><img src="sources/img/product2.jpg" alt="" class="img-fluid">
-                                <div class="overlay d-flex align-items-center justify-content-center">
-                                  <div class="content">
-                                    <div class="name mb-small">
-                                      <h3><a class="color-white">Phim 2</a></h3>
-                                    </div>
-                                    <div class="text">
-                                      <p class="d-none">Ghi chú</p>
-                                      <p class="buttons"><a href="#" class="btn btn-template-outlined-white">Chi tiết</a><a href="#" class="btn btn-template-outlined-white">Trailer</a></p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="box-image">
-                              <div class="image"><img src="sources/img/product3.jpg" alt="" class="img-fluid">
-                                <div class="overlay d-flex align-items-center justify-content-center">
-                                  <div class="content">
-                                    <div class="name mb-small">
-                                      <h3><a class="color-white">Phim 3</a></h3>
-                                    </div>
-                                    <div class="text">
-                                      <p class="d-none">Ghi chú</p>
-                                      <p class="buttons"><a href="#" class="btn btn-template-outlined-white">Chi tiết</a><a href="#" class="btn btn-template-outlined-white">Trailer</a></p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="ribbon-holder">
-                                <div class="ribbon new">HOT</div>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="box-image">
-                              <div class="image"><img src="sources/img/product4.jpg" alt="" class="img-fluid">
-                                <div class="overlay d-flex align-items-center justify-content-center">
-                                  <div class="content">
-                                    <div class="name mb-small">
-                                      <h3><a class="color-white">Phim 4</a></h3>
-                                    </div>
-                                    <div class="text">
-                                      <p class="d-none">Ghi chú</p>
-                                      <p class="buttons"><a href="#" class="btn btn-template-outlined-white">Chi tiết</a><a href="#" class="btn btn-template-outlined-white">Trailer</a></p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="box-image">
-                              <div class="image"><img src="sources/img/product2.jpg" alt="" class="img-fluid">
-                                <div class="overlay d-flex align-items-center justify-content-center">
-                                  <div class="content">
-                                    <div class="name mb-small">
-                                      <h3><a class="color-white">Phim 4</a></h3>
-                                    </div>
-                                    <div class="text">
-                                      <p class="d-none">Ghi chú</p>
-                                      <p class="buttons"><a href="#" class="btn btn-template-outlined-white">Chi tiết</a><a href="#" class="btn btn-template-outlined-white">Trailer</a></p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="box-image">
-                              <div class="image"><img src="sources/img/product2.jpg" alt="" class="img-fluid">
-                                <div class="overlay d-flex align-items-center justify-content-center">
-                                  <div class="content">
-                                    <div class="name mb-small">
-                                      <h3><a class="color-white">Phim 4</a></h3>
-                                    </div>
-                                    <div class="text">
-                                      <p class="d-none">Ghi chú</p>
-                                      <p class="buttons"><a href="#" class="btn btn-template-outlined-white">Chi tiết</a><a href="#" class="btn btn-template-outlined-white">Trailer</a></p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
+                        @foreach($phim as $phim)
+          <div class="col-md-3">
+            <div class="box-image">
+              <div class="image">
+                <img src="{{$phim->hinhanh}} " alt="" class="img-fluid"  height="100" width="300">
+                <div class="overlay d-flex align-items-center justify-content-center">
+                  <div class="content">
+                    <div class="name mb-small">
+                      <h3>
+                        <a class="color-white">{{$phim->tenphim}} </a>
+                      </h3>
+                    </div>
+                    <div class="text">
+                      <p class="buttons">
+                        <a href="{{route('chi-tiet')}}" class="btn btn-template-outlined-white">CHI TIẾT</a>
+                        <a href="{{route('mua-ve')}} " class="btn btn-template-outlined-white">Chọn</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="ribbon-holder">
+                <div class="ribbon sale">KM</div>
+                <div class="ribbon new">HOT</div>
+              </div>
+            </div>
+          </div>
+          @endforeach
                         
                     </div>
                 
-                <div class="row">
-                    <div class="col-md-12 banner mb-small text-center">
-                        <a href="#">
-                            <img src="sources/img/banner2.jpg" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
+                 
                 <div class="pages">
                     <p class="loadMore text-center">
                         <a href="#" class="btn btn-template-outlined">

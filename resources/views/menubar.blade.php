@@ -40,17 +40,7 @@
                     <h5>XEM THEO RẠP</h5>
                     <ul class="list-unstyled mb-3">
                       <a href="404" class="nav-link">Tp. Hồ Chí Minh</a>
-<<<<<<< HEAD
-                    </li>
-                    <li class="nav-item">
-                      <a href="404" class="nav-link">Hà Nội</a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="404" class="nav-link">Khác..</a>
-                    </li>
-                  </ul>
-                </div>
-=======
+
               </li>
               <li class="nav-item">
                 <a href="404" class="nav-link">Hà Nội</a>
@@ -60,7 +50,7 @@
               </li>
               </ul>
               </div>
->>>>>>> 6f5736c959f99077e3c525bf7d3dcb659c7a4347
+ 
               </div>
             </li>
           </ul>
@@ -74,8 +64,7 @@
           </a>
         </li>
         <!-- END HE THONG RAP -->
-
-<<<<<<< HEAD
+ 
         <!-- KHUYEN MAI -->
         <!-- TODO get chuong trinh khuyen mai hien co vao src-->
         <li class="nav-item dropdown menu-large">
@@ -89,40 +78,7 @@
                   <a href="404">
                     <img src="sources/img/template-easy-customize.png" alt="" class="img-fluid d-none d-lg-block">
                   </a>
-=======
-          <!-- KHUYEN MAI -->
-          <!-- TODO get chuong trinh khuyen mai hien co vao src-->
-          <li class="nav-item dropdown menu-large">
-            <a href="404" data-toggle="dropdown" class="dropdown-toggle">KHUYẾN MÃI
-              <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu megamenu">
-              <li>
-                <div class="row"> 
-                  <div class="col-lg-3">
-                    <a href="404">
-                      <img src="sources/img/template-easy-customize.png" alt="" class="img-fluid d-none d-lg-block">
-                    </a>
-                  </div>
-                  <div class="col-lg-3">
-                    <a href="404">
-                      <img src="sources/img/template-easy-customize.png" alt="" class="img-fluid d-none d-lg-block">
-                    </a>
-                  </div>
-                  <div class="col-lg-3">
-                    <a href="404">
-                      <img src="sources/img/template-easy-customize.png" alt="" class="img-fluid d-none d-lg-block">
-                    </a>
-                  </div>
-                  <div class="col-lg-3">
-                    <a href="404">
-                      <img src="sources/img/template-easy-customize.png" alt="" class="img-fluid d-none d-lg-block">
-                    </a>
-                  </div>
-                  <div class="col-lg-3 col-md-1 nav-link">
-                    <a href="404" class="nav-link">XEM TẤT CẢ</a>
-                  </div>
->>>>>>> 6f5736c959f99077e3c525bf7d3dcb659c7a4347
+
                 </div>
                 <div class="col-lg-3">
                   <a href="404">
