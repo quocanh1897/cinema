@@ -25,150 +25,119 @@
     <div class="container">
         <div class="row bar">
             <div class="col-md-12">
-                <p class="text-muted lead text-center">In our Ladies department we offer wide selection of the best products we have found and carefully selected
-                    worldwide. Pellentesque habitant morbi tristique senectus et netuss.</p>
-                <div class="products-big">
-                    <div class="row products">
-                        <div class="col-lg-3 col-md-4">
-                            <div class="product">
-                                <div class="image">
-                                    <a href="{{route('chi-tiet')}}">
-                                        <img src="sources/img/product1.jpg" alt="" class="img-fluid image1">
-                                    </a>
+                
+                    <div class="row portfolio text-center">
+                        <div class="col-md-3">
+                            <div class="box-image">
+                              <div class="image"><img src="sources/img/product1.jpg" alt="" class="img-fluid">
+                                <div class="overlay d-flex align-items-center justify-content-center">
+                                  <div class="content">
+                                    <div class="name mb-small">
+                                      <h3><a class="color-white">Phim 1</a></h3>
+                                    </div>
+                                    <div class="text">
+                                      <p class="buttons"><a href="{{route('chi-tiet')}}" class="btn btn-template-outlined-white">CHI TIẾT</a><a href="https://www.youtube.com/watch?v=6ZfuNTqbHE8" class="btn btn-template-outlined-white">TRAILER</a></p>
+                                    </div>
+                                  </div>
                                 </div>
-                                <div class="text">
-                                    <h3 class="h5">
-                                        <a href="{{route('chi-tiet')}}">PHIM NÀY ĐANG CHIẾU</a>
-                                    </h3>
-                                    <p class="price">$143.00</p>
-                                </div>
+                              </div>
+                              <div class="ribbon-holder">
+                                <div class="ribbon sale">KM</div>
+                                <div class="ribbon new">HOT</div>
+                              </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-4">
-                            <div class="product">
-                                <div class="image">
-                                    <a href="{{route('chi-tiet')}}">
-                                        <img src="sources/img/product2.jpg" alt="" class="img-fluid image1">
-                                    </a>
+                        <div class="col-md-3">
+                            <div class="box-image">
+                              <div class="image"><img src="sources/img/product2.jpg" alt="" class="img-fluid">
+                                <div class="overlay d-flex align-items-center justify-content-center">
+                                  <div class="content">
+                                    <div class="name mb-small">
+                                      <h3><a class="color-white">Phim 2</a></h3>
+                                    </div>
+                                    <div class="text">
+                                      <p class="d-none">Ghi chú</p>
+                                      <p class="buttons"><a href="#" class="btn btn-template-outlined-white">Chi tiết</a><a href="#" class="btn btn-template-outlined-white">Trailer</a></p>
+                                    </div>
+                                  </div>
                                 </div>
-                                <div class="text">
-                                    <h3 class="h5">
-                                        <a href="{{route('chi-tiet')}}">White Blouse Armani</a>
-                                    </h3>
-                                    <p class="price">
-                                        <del>$280</del> $143.00
-                                    </p>
-                                </div>
-                                <div class="ribbon-holder">
-                                    <div class="ribbon sale">SALE</div>
-                                    <div class="ribbon new">NEW</div>
-                                </div>
+                              </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-4">
-                            <div class="product">
-                                <div class="image">
-                                    <a href="{{route('chi-tiet')}}">
-                                        <img src="sources/img/product3.jpg" alt="" class="img-fluid image1">
-                                    </a>
+                        <div class="col-md-3">
+                            <div class="box-image">
+                              <div class="image"><img src="sources/img/product3.jpg" alt="" class="img-fluid">
+                                <div class="overlay d-flex align-items-center justify-content-center">
+                                  <div class="content">
+                                    <div class="name mb-small">
+                                      <h3><a class="color-white">Phim 3</a></h3>
+                                    </div>
+                                    <div class="text">
+                                      <p class="d-none">Ghi chú</p>
+                                      <p class="buttons"><a href="#" class="btn btn-template-outlined-white">Chi tiết</a><a href="#" class="btn btn-template-outlined-white">Trailer</a></p>
+                                    </div>
+                                  </div>
                                 </div>
-                                <div class="text">
-                                    <h3 class="h5">
-                                        <a href="{{route('chi-tiet')}}">Black Blouse Versace</a>
-                                    </h3>
-                                    <p class="price">$143.00</p>
-                                </div>
+                              </div>
+                              <div class="ribbon-holder">
+                                <div class="ribbon new">HOT</div>
+                              </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-4">
-                            <div class="product">
-                                <div class="image">
-                                    <a href="{{route('chi-tiet')}}">
-                                        <img src="sources/img/product4.jpg" alt="" class="img-fluid image1">
-                                    </a>
+                        <div class="col-md-3">
+                            <div class="box-image">
+                              <div class="image"><img src="sources/img/product4.jpg" alt="" class="img-fluid">
+                                <div class="overlay d-flex align-items-center justify-content-center">
+                                  <div class="content">
+                                    <div class="name mb-small">
+                                      <h3><a class="color-white">Phim 4</a></h3>
+                                    </div>
+                                    <div class="text">
+                                      <p class="d-none">Ghi chú</p>
+                                      <p class="buttons"><a href="#" class="btn btn-template-outlined-white">Chi tiết</a><a href="#" class="btn btn-template-outlined-white">Trailer</a></p>
+                                    </div>
+                                  </div>
                                 </div>
-                                <div class="text">
-                                    <h3 class="h5">
-                                        <a href="{{route('chi-tiet')}}">Black Blouse Versace</a>
-                                    </h3>
-                                    <p class="price">$143.00</p>
-                                </div>
+                              </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-4">
-                            <div class="product">
-                                <div class="image">
-                                    <a href="{{route('chi-tiet')}}">
-                                        <img src="sources/img/product3.jpg" alt="" class="img-fluid image1">
-                                    </a>
+                        <div class="col-md-3">
+                            <div class="box-image">
+                              <div class="image"><img src="sources/img/product2.jpg" alt="" class="img-fluid">
+                                <div class="overlay d-flex align-items-center justify-content-center">
+                                  <div class="content">
+                                    <div class="name mb-small">
+                                      <h3><a class="color-white">Phim 4</a></h3>
+                                    </div>
+                                    <div class="text">
+                                      <p class="d-none">Ghi chú</p>
+                                      <p class="buttons"><a href="#" class="btn btn-template-outlined-white">Chi tiết</a><a href="#" class="btn btn-template-outlined-white">Trailer</a></p>
+                                    </div>
+                                  </div>
                                 </div>
-                                <div class="text">
-                                    <h3 class="h5">
-                                        <a href="{{route('chi-tiet')}}">White Blouse Armani</a>
-                                    </h3>
-                                    <p class="price">
-                                        <del>$280</del> $143.00
-                                    </p>
-                                </div>
-                                <div class="ribbon-holder">
-                                    <div class="ribbon sale">SALE</div>
-                                    <div class="ribbon new">NEW</div>
-                                </div>
+                              </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-4">
-                            <div class="product">
-                                <div class="image">
-                                    <a href="{{route('chi-tiet')}}">
-                                        <img src="sources/img/product4.jpg" alt="" class="img-fluid image1">
-                                    </a>
+                        <div class="col-md-3">
+                            <div class="box-image">
+                              <div class="image"><img src="sources/img/product2.jpg" alt="" class="img-fluid">
+                                <div class="overlay d-flex align-items-center justify-content-center">
+                                  <div class="content">
+                                    <div class="name mb-small">
+                                      <h3><a class="color-white">Phim 4</a></h3>
+                                    </div>
+                                    <div class="text">
+                                      <p class="d-none">Ghi chú</p>
+                                      <p class="buttons"><a href="#" class="btn btn-template-outlined-white">Chi tiết</a><a href="#" class="btn btn-template-outlined-white">Trailer</a></p>
+                                    </div>
+                                  </div>
                                 </div>
-                                <div class="text">
-                                    <h3 class="h5">
-                                        <a href="{{route('chi-tiet')}}">White Blouse Versace</a>
-                                    </h3>
-                                    <p class="price">$143.00</p>
-                                </div>
-                                <div class="ribbon-holder">
-                                    <div class="ribbon new">NEW</div>
-                                </div>
+                              </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-4">
-                            <div class="product">
-                                <div class="image">
-                                    <a href="{{route('chi-tiet')}}">
-                                        <img src="sources/img/product2.jpg" alt="" class="img-fluid image1">
-                                    </a>
-                                </div>
-                                <div class="text">
-                                    <h3 class="h5">
-                                        <a href="{{route('chi-tiet')}}">White Blouse Versace</a>
-                                    </h3>
-                                    <p class="price">$143.00</p>
-                                </div>
-                                <div class="ribbon-holder">
-                                    <div class="ribbon new">NEW</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4">
-                            <div class="product">
-                                <div class="image">
-                                    <a href="{{route('chi-tiet')}}">
-                                        <img src="sources/img/product1.jpg" alt="" class="img-fluid image1">
-                                    </a>
-                                </div>
-                                <div class="text">
-                                    <h3 class="h5">
-                                        <a href="{{route('chi-tiet')}}">Fur coat</a>
-                                    </h3>
-                                    <p class="price">$143.00</p>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
-                </div>
+                
                 <div class="row">
                     <div class="col-md-12 banner mb-small text-center">
                         <a href="#">
@@ -179,7 +148,7 @@
                 <div class="pages">
                     <p class="loadMore text-center">
                         <a href="#" class="btn btn-template-outlined">
-                            <i class="fa fa-chevron-down"></i> Load more</a>
+                            <i class="fa fa-chevron-down"></i> Xem thêm</a>
                     </p>
                     <nav aria-label="Page navigation example" class="d-flex justify-content-center">
                         <ul class="pagination">
