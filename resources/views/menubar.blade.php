@@ -41,6 +41,7 @@
                     <ul class="list-unstyled mb-3">
                       <a href="404" class="nav-link">Tp. Hồ Chí Minh</a>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
                     </li>
                     <li class="nav-item">
@@ -54,11 +55,14 @@
 
 =======
 >>>>>>> parent of 0727873... chinh sua temple + thay logo
+=======
+>>>>>>> parent of 0727873... chinh sua temple + thay logo
               </li>
               <li class="nav-item">
                 <a href="404" class="nav-link">Hà Nội</a>
               </li>
               <li class="nav-item">
+<<<<<<< HEAD
 <<<<<<< HEAD
                 <a href="404" class="nav-link">Xem tất cả</a>
               </li>
@@ -72,6 +76,13 @@
               </div>
 >>>>>>> parent of 0727873... chinh sua temple + thay logo
               </div>
+=======
+                <a href="404" class="nav-link">Khác..</a>
+              </li>
+              </ul>
+              </div>
+              </div>
+>>>>>>> parent of 0727873... chinh sua temple + thay logo
           </li>
           </ul>
           </li>
@@ -84,6 +95,7 @@
             </a>
           </li>
           <!-- END HE THONG RAP -->
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 
@@ -103,6 +115,9 @@
 
 =======
 >>>>>>> parent of 0727873... chinh sua temple + thay logo
+=======
+
+>>>>>>> parent of 0727873... chinh sua temple + thay logo
           <!-- KHUYEN MAI -->
           <!-- TODO get chuong trinh khuyen mai hien co vao src-->
           <li class="nav-item dropdown menu-large">
@@ -112,7 +127,11 @@
             <ul class="dropdown-menu megamenu">
               <li>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <div class="row"> 
+=======
+                <div class="row">
+>>>>>>> parent of 0727873... chinh sua temple + thay logo
 =======
                 <div class="row">
 >>>>>>> parent of 0727873... chinh sua temple + thay logo
@@ -140,6 +159,7 @@
                     <a href="404" class="nav-link">XEM TẤT CẢ</a>
                   </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
                 </div>
                 <div class="col-lg-3">
@@ -159,6 +179,8 @@
                 </div>
                 <div class="col-lg-3 col-md-1 nav-link">
                   <a href="404" class="nav-link">XEM TẤT CẢ</a>
+=======
+>>>>>>> parent of 0727873... chinh sua temple + thay logo
 =======
 >>>>>>> parent of 0727873... chinh sua temple + thay logo
                 </div>
