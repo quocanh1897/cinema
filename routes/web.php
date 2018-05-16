@@ -11,8 +11,7 @@
 |
 */
 
-Route::get('index',[
-    'as'=>'index',
+Route::get('',[
     'uses'=>'PageController@getIndex'
 ]);
 
