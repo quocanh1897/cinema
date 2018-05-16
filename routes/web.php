@@ -110,6 +110,8 @@ Route::get('dang-xuat',[
     'uses'=>'PageController@getDangxuat'
 ]);
 
+
+
 Route::get('mua-ve',[
     'as'=>'mua-ve',
     'uses'=>'PageController@getMuaVe'
