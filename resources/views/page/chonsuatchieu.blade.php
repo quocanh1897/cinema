@@ -1,4 +1,5 @@
-@extends('master') @section('content')
+@extends('master') 
+@section('content')
 <div id="heading-breadcrumbs">
     <div class="container">
         <div class="row d-flex align-items-center flex-wrap">
@@ -35,17 +36,17 @@
                         <section>
                             <div id="accordion" role="tablist">
 
-                            @foreach($arrDate as $day)
+                            @foreach($suatchieu as $sc)
                                 <div class="card card-primary">
                                     <div id="headingOne" role="tab" class="card-header">
                                         <h5 class="mb-0 mt-0">
-                                            <a data-toggle="collapse" href="#{{$day}}" aria-expanded="false" aria-controls="{{$day}}">{{$day}} </a>
+                                            <a data-toggle="collapse" href="#{{$day}}" aria-expanded="false" aria-controls="{{$day}}">{{$sc->ngaychieu}} </a>
                                         </h5>
                                     </div>
                                     <div id="{{$day}}" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" class="collapse">
                                         <div id="suatchieu-btn" class="card-body portfolio row">
-                                            @foreach($khunggio as $kg)
-                                            <button type="button" class="btn btn-outline-dark">{{$kg->batdau}} </button>
+                                            @foreach($suatchieu as $sc)
+                                            <button type="button" class="btn btn-outline-dark">{{$sc->khunggio}} </button>
                                             
                                             @endforeach
                                         </div>

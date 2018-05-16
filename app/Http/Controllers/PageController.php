@@ -10,6 +10,8 @@ use App\khuyen_mai;
 use App\rap_chieu;
 use App\suat_chieu;
 use App\khung_gio;
+use App\dien_vien;
+use App\the_loai;
 use Auth;
 use Carbon;
 
@@ -76,7 +78,8 @@ class PageController extends Controller
 
     public function heThongRap()
     {
-        return view('page.hethongrap');
+        $rap = rap_chieu::all();
+        return view('page.hethongrap',compact('rap'));
     }
 
     public function contact()
@@ -94,9 +97,14 @@ class PageController extends Controller
         return view('page.faq');
     }
 
-    public function getChitiet()
+    public function getChitiet($idPhim)
     {
-        return view('page.chitiet');
+        
+        $phim = phim::where('maphim',$idPhim)->get();
+        $dienvien = dien_vien::where('maphim',$idPhim)->get();
+        $theloai = the_loai::where('maphim',$idPhim)->get();
+         
+        return view('page.chitiet',compact('phim','dienvien','theloai'));
     }
 
     public function getChonPhim($idPhim)
@@ -115,6 +123,12 @@ class PageController extends Controller
 
     public function getChonSuatChieu($idPhim, $idRap)
     {
+        $phimDaChon = phim::where('maphim',$idPhim)->get();
+        $rapDaChon = rap_chieu::where('marap',$idRap)->get();
+        $khunggio = khung_gio::all();
+        
+        $suatchieu = suat_chieu::where(['maphim',$idPhim],['marap',$idRap]);
+        
         $currentDate = Carbon\Carbon::now();
         $due = Carbon\Carbon::now()->modify('+7 day');
         $arrDate = [];
@@ -122,11 +136,10 @@ class PageController extends Controller
             $arrDate[] = $currentDate->toDateString();
             $currentDate->addDay();
         }
-        $phimDaChon = phim::where('maphim',$idPhim)->get();
-        $rapDaChon = rap_chieu::where('marap',$idRap)->get();
-        $khunggio = khung_gio::all();
-        //dd($khunggio);
-        return view('page.chonsuatchieu',compact('phimDaChon','rapDaChon','khunggio','arrDate'));
+        //dd($rapDaChon);
+        
+        //dd($suatchieu);
+        return view('page.chonsuatchieu',compact('phimDaChon','rapDaChon','khunggio','arrDate','suatchieu'));
     }
 
     public function postSignin(Request $req)
