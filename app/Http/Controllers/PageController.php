@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Hash;
 use App\User;
-
 use App\phim;
 use App\khuyen_mai;
 use App\rap_chieu;
@@ -18,16 +17,12 @@ class PageController extends Controller
 {
     public function getIndex()//lay trang chu
     {
-
-        return view('page.trangchu');
-
         $currentDate = Carbon\Carbon::now()->toDateString();
         $km = khuyen_mai::all();
         $pre_phim = phim::where('batdau','>',$currentDate)->get();
         $new_phim = phim::where('batdau','<',$currentDate)->get();
          
         return view('page.trangchu', compact('new_phim','pre_phim','km'));
-
     }
 
     public function get404()
@@ -62,20 +57,13 @@ class PageController extends Controller
 
     public function phimDangChieu()
     {
-
-        return view('page.phimdangchieu');
-
         $currentDate = Carbon\Carbon::now()->toDateString();
         $phim = phim::where('batdau','<',$currentDate)->get();
         return view('page.phimdangchieu',compact('phim'));
-
     }
 
     public function phimSapChieu()
     {
-
-        return view('page.phimsapchieu');
-
         $currentDate = Carbon\Carbon::now()->toDateString();
         $phim = phim::where('batdau','>',$currentDate)->get();
         return view('page.phimsapchieu',compact('phim'));
@@ -84,7 +72,6 @@ class PageController extends Controller
     public function getMuaVe()
     {
         return view('page.muave');
-
     }
 
     public function heThongRap()

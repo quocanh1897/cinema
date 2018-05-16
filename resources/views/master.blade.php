@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Universal - All In 1 Template</title>
+  <title>BK CINEMA</title>
   <base href="{{asset('')}}">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="sources/vendor/owl.carousel/assets/owl.carousel.css">
   <link rel="stylesheet" href="sources/vendor/owl.carousel/assets/owl.theme.default.css">
   <!-- theme stylesheet-->
-  <link rel="stylesheet" href="sources/css/style.default.css" id="theme-stylesheet">
+  <link rel="stylesheet" href="sources/css/style.lightblue.css" id="theme-stylesheet">
   <!-- Custom stylesheet - for your changes-->
   <link rel="stylesheet" href="sources/css/custom.css">
   <!-- Favicon and apple touch icons-->

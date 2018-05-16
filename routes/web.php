@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/',[
+Route::get('/', [
     'uses'=>'PageController@getIndex'
 ]);
 
@@ -109,8 +109,6 @@ Route::get('dang-xuat',[
     'as'=>'dang-xuat',
     'uses'=>'PageController@getDangxuat'
 ]);
-
-
 
 Route::get('mua-ve',[
     'as'=>'mua-ve',
