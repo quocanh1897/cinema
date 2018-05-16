@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', [
+Route::get('index',[
+    'as'=>'index',
     'uses'=>'PageController@getIndex'
 ]);
 
@@ -110,8 +111,8 @@ Route::get('dang-xuat',[
     'uses'=>'PageController@getDangxuat'
 ]);
 
-<<<<<<< HEAD
-=======
+
+
 Route::get('mua-ve',[
     'as'=>'mua-ve',
     'uses'=>'PageController@getMuaVe'
@@ -132,7 +133,6 @@ Route::get('chon-suat-chieu/{idPhim}/{idRap}',[
     'uses'=>'PageController@getChonSuatChieu'
 ]);
 
->>>>>>> a4131c660893e4b8b60470692bd366901e5e415b
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

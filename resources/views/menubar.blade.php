@@ -33,81 +33,31 @@
                       <li class="nav-item">
                         <a href="phim-sap-chieu" class="nav-link">Phim sắp chiếu</a>
                       </li>
-
                     </ul>
                   </div>
                   <div class="col-lg-3 col-md-6">
                     <h5>XEM THEO RẠP</h5>
                     <ul class="list-unstyled mb-3">
-                      <a href="404" class="nav-link">Tp. Hồ Chí Minh</a>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> parent of 32a1cf3... resolve confilct
-                    </li>
-                    <li class="nav-item">
-                      <a href="404" class="nav-link">Hà Nội</a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="404" class="nav-link">Khác..</a>
-                    </li>
-                  </ul>
+                      <li>
+                        <a href="404" class="nav-link">Tp. Hồ Chí Minh</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="404" class="nav-link">Hà Nội</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="404" class="nav-link">Xem tất cả</a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> parent of 0727873... chinh sua temple + thay logo
-=======
->>>>>>> parent of 0727873... chinh sua temple + thay logo
-=======
-
->>>>>>> 32a1cf3d99697136a12340d168992206f1e38401
-=======
-=======
->>>>>>> parent of 32a1cf3... resolve confilct
               </li>
-              <li class="nav-item">
-                <a href="404" class="nav-link">Hà Nội</a>
-              </li>
-              <li class="nav-item">
-<<<<<<< HEAD
-<<<<<<< HEAD
-                <a href="404" class="nav-link">Xem tất cả</a>
-              </li>
-              </ul>
-              </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
-                <a href="404" class="nav-link">Khác..</a>
-              </li>
-              </ul>
-              </div>
->>>>>>> parent of 0727873... chinh sua temple + thay logo
-=======
- 
->>>>>>> 32a1cf3d99697136a12340d168992206f1e38401
-              </div>
-=======
-                <a href="404" class="nav-link">Khác..</a>
-              </li>
-              </ul>
-=======
->>>>>>> 6f5736c959f99077e3c525bf7d3dcb659c7a4347
->>>>>>> parent of 32a1cf3... resolve confilct
-              </div>
-              </div>
->>>>>>> parent of 0727873... chinh sua temple + thay logo
+            </ul>
           </li>
-          </ul>
-          </li>
-          <!-- END LICH CHIEU -->
+          <!-- END LICH CHIEU -->   
+              
 
-<<<<<<< HEAD
+
+
           <!-- HE THONG RAP -->
           <li class="nav-item ">
             <a href="he-thong-rap">Hệ thống rạp
@@ -115,49 +65,8 @@
             </a>
           </li>
           <!-- END HE THONG RAP -->
-<<<<<<< HEAD
 
-<<<<<<< HEAD
 
-=======
-        <!-- HE THONG RAP -->
-        <li class="nav-item ">
-          <a href="he-thong-rap">Hệ thống rạp
-            <b class="caret"></b>
-          </a>
-        </li>
-        <!-- END HE THONG RAP -->
-<<<<<<< HEAD
- 
->>>>>>> 32a1cf3d99697136a12340d168992206f1e38401
-=======
-
-<<<<<<< HEAD
->>>>>>> parent of 32a1cf3... resolve confilct
-        <!-- KHUYEN MAI -->
-        <!-- TODO get chuong trinh khuyen mai hien co vao src-->
-        <li class="nav-item dropdown menu-large">
-          <a href="404" data-toggle="dropdown" class="dropdown-toggle">KHUYẾN MÃI
-            <b class="caret"></b>
-          </a>
-          <ul class="dropdown-menu megamenu">
-            <li>
-              <div class="row">
-                <div class="col-lg-3">
-                  <a href="404">
-                    <img src="sources/img/template-easy-customize.png" alt="" class="img-fluid d-none d-lg-block">
-                  </a>
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-=======
->>>>>>> parent of 0727873... chinh sua temple + thay logo
-=======
-
->>>>>>> parent of 0727873... chinh sua temple + thay logo
-=======
-=======
->>>>>>> parent of 32a1cf3... resolve confilct
           <!-- KHUYEN MAI -->
           <!-- TODO get chuong trinh khuyen mai hien co vao src-->
           <li class="nav-item dropdown menu-large">
@@ -166,19 +75,7 @@
             </a>
             <ul class="dropdown-menu megamenu">
               <li>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
                 <div class="row"> 
-=======
-                <div class="row">
->>>>>>> parent of 0727873... chinh sua temple + thay logo
-=======
-                <div class="row">
->>>>>>> parent of 0727873... chinh sua temple + thay logo
-=======
-                <div class="row"> 
->>>>>>> parent of 32a1cf3... resolve confilct
                   <div class="col-lg-3">
                     <a href="404">
                       <img src="sources/img/template-easy-customize.png" alt="" class="img-fluid d-none d-lg-block">
@@ -202,49 +99,17 @@
                   <div class="col-lg-3 col-md-1 nav-link">
                     <a href="404" class="nav-link">XEM TẤT CẢ</a>
                   </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> 32a1cf3d99697136a12340d168992206f1e38401
-=======
->>>>>>> 6f5736c959f99077e3c525bf7d3dcb659c7a4347
->>>>>>> parent of 32a1cf3... resolve confilct
-                </div>
-                <div class="col-lg-3">
-                  <a href="404">
-                    <img src="sources/img/template-easy-customize.png" alt="" class="img-fluid d-none d-lg-block">
-                  </a>
-                </div>
-                <div class="col-lg-3">
-                  <a href="404">
-                    <img src="sources/img/template-easy-customize.png" alt="" class="img-fluid d-none d-lg-block">
-                  </a>
-                </div>
-                <div class="col-lg-3">
-                  <a href="404">
-                    <img src="sources/img/template-easy-customize.png" alt="" class="img-fluid d-none d-lg-block">
-                  </a>
-                </div>
-                <div class="col-lg-3 col-md-1 nav-link">
-                  <a href="404" class="nav-link">XEM TẤT CẢ</a>
-=======
->>>>>>> parent of 0727873... chinh sua temple + thay logo
-=======
->>>>>>> parent of 0727873... chinh sua temple + thay logo
                 </div>
               </li>
             </ul>
-          </li>
+          </li>    
           <!-- END KHUYEN MAI -->
 
-          
-          <!-- GIOI THIEU 
+          <!-- GIOI THIEU-->
           <li class="nav-item ">
             <a href="about">Giới thiệu</a>
           </li>
-           END GIOI THIEU -->
+          <!--END GIOI THIEU -->
         </ul>
       </div>
       <div id="search" class="collapse clearfix">

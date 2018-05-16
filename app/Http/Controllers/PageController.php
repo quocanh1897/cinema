@@ -5,14 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Hash;
 use App\User;
-<<<<<<< HEAD
-=======
+
 use App\phim;
 use App\khuyen_mai;
 use App\rap_chieu;
 use App\suat_chieu;
 use App\khung_gio;
->>>>>>> a4131c660893e4b8b60470692bd366901e5e415b
 use Auth;
 use Carbon;
 
@@ -20,16 +18,16 @@ class PageController extends Controller
 {
     public function getIndex()//lay trang chu
     {
-<<<<<<< HEAD
+
         return view('page.trangchu');
-=======
+
         $currentDate = Carbon\Carbon::now()->toDateString();
         $km = khuyen_mai::all();
         $pre_phim = phim::where('batdau','>',$currentDate)->get();
         $new_phim = phim::where('batdau','<',$currentDate)->get();
          
         return view('page.trangchu', compact('new_phim','pre_phim','km'));
->>>>>>> a4131c660893e4b8b60470692bd366901e5e415b
+
     }
 
     public function get404()
@@ -64,20 +62,20 @@ class PageController extends Controller
 
     public function phimDangChieu()
     {
-<<<<<<< HEAD
+
         return view('page.phimdangchieu');
-=======
+
         $currentDate = Carbon\Carbon::now()->toDateString();
         $phim = phim::where('batdau','<',$currentDate)->get();
         return view('page.phimdangchieu',compact('phim'));
->>>>>>> a4131c660893e4b8b60470692bd366901e5e415b
+
     }
 
     public function phimSapChieu()
     {
-<<<<<<< HEAD
+
         return view('page.phimsapchieu');
-=======
+
         $currentDate = Carbon\Carbon::now()->toDateString();
         $phim = phim::where('batdau','>',$currentDate)->get();
         return view('page.phimsapchieu',compact('phim'));
@@ -86,7 +84,7 @@ class PageController extends Controller
     public function getMuaVe()
     {
         return view('page.muave');
->>>>>>> a4131c660893e4b8b60470692bd366901e5e415b
+
     }
 
     public function heThongRap()
