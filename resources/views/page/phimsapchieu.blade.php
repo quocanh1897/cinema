@@ -27,6 +27,7 @@
             <div class="col-md-12">
                 
                     <div class="row portfolio text-center">
+<<<<<<< HEAD
                         <div class="col-md-3">
                             <div class="box-image">
                               <div class="image"><img src="sources/img/product1.jpg" alt="" class="img-fluid">
@@ -135,6 +136,36 @@
                               </div>
                             </div>
                         </div>
+=======
+                        @foreach($phim as $phim)
+          <div class="col-md-3">
+            <div class="box-image">
+              <div class="image">
+                <img src="{{$phim->hinhanh}} " alt="" class="img-fluid"  height="100" width="300">
+                <div class="overlay d-flex align-items-center justify-content-center">
+                  <div class="content">
+                    <div class="name mb-small">
+                      <h3>
+                        <a class="color-white">{{$phim->tenphim}} </a>
+                      </h3>
+                    </div>
+                    <div class="text">
+                      <p class="buttons">
+                        <a href="{{route('chi-tiet')}}" class="btn btn-template-outlined-white">CHI TIẾT</a>
+                        <a href="{{route('chon-phim',$phim->maphim)}} " class="btn btn-template-outlined-white">Chọn</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="ribbon-holder">
+                <div class="ribbon sale">KM</div>
+                <div class="ribbon new">HOT</div>
+              </div>
+            </div>
+          </div>
+          @endforeach
+>>>>>>> a4131c660893e4b8b60470692bd366901e5e415b
                         
                     </div>
                 

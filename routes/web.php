@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('page.trangchu');
-});
+Route::get('/', [
+    'uses'=>'PageController@getIndex'
+]);
 
 Route::get('404',[
     'as'=>'404',
@@ -110,6 +110,29 @@ Route::get('dang-xuat',[
     'uses'=>'PageController@getDangxuat'
 ]);
 
+<<<<<<< HEAD
+=======
+Route::get('mua-ve',[
+    'as'=>'mua-ve',
+    'uses'=>'PageController@getMuaVe'
+]);
+
+Route::get('chon-phim/{id}',[
+    'as'=>'chon-phim',
+    'uses'=>'PageController@getChonPhim'
+]);
+
+Route::get('chon-rap/{idPhim}',[
+    'as'=>'chon-rap',
+    'uses'=>'PageController@getChonRap'
+]);
+
+Route::get('chon-suat-chieu/{idPhim}/{idRap}',[
+    'as'=>'chon-suat-chieu',
+    'uses'=>'PageController@getChonSuatChieu'
+]);
+
+>>>>>>> a4131c660893e4b8b60470692bd366901e5e415b
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

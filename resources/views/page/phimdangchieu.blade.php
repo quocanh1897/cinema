@@ -137,12 +137,20 @@
                         </div>
                         
                     </div>
+<<<<<<< HEAD
                 
                 <div class="row">
                     <div class="col-md-12 banner mb-small text-center">
                         <a href="#">
                             <img src="sources/img/banner2.jpg" alt="" class="img-fluid">
                         </a>
+=======
+                    <div class="text">
+                      <p class="buttons">
+                        <a href="{{route('chi-tiet')}}" class="btn btn-template-outlined-white">CHI TIẾT</a>
+                        <a href="{{route('chon-phim',$phim->maphim)}} " class="btn btn-template-outlined-white">Chọn</a>
+                      </p>
+>>>>>>> a4131c660893e4b8b60470692bd366901e5e415b
                     </div>
                 </div>
                 <div class="pages">
