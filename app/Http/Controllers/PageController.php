@@ -21,12 +21,12 @@ class PageController extends Controller
 
         return view('page.trangchu');
 
-        $currentDate = Carbon\Carbon::now()->toDateString();
-        $km = khuyen_mai::all();
-        $pre_phim = phim::where('batdau','>',$currentDate)->get();
-        $new_phim = phim::where('batdau','<',$currentDate)->get();
+        // $currentDate = Carbon\Carbon::now()->toDateString();
+        // $km = khuyen_mai::all();
+        // $pre_phim = phim::where('batdau','>',$currentDate)->get();
+        // $new_phim = phim::where('batdau','<',$currentDate)->get();
          
-        return view('page.trangchu', compact('new_phim','pre_phim','km'));
+        // return view('page.trangchu', compact('new_phim','pre_phim','km'));
 
     }
 
