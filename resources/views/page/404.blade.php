@@ -10,11 +10,11 @@
                         <img src="sources/img/logo.png" alt="Obaju template">
                     </a>
                 </p>
-                <h3>We are sorry - this page is not here anymore</h3>
-                <h4 class="text-muted">Error 404 - Page not found</h4>
+                <h3>Trang này không tồn tại. Có thể đang được xây dựng hoặc bảo trì.</h3>
+                <h4 class="text-muted">Error 404 - Trang không tồn tại</h4>
                 <p class="buttons">
                     <a href="index" class="btn btn-template-outlined">
-                        <i class="fa fa-home"></i> Go to Homepage</a>
+                        <i class="fa fa-home"></i> Về trang chủ</a>
                 </p>
             </div>
         </div>
