@@ -1,7 +1,5 @@
 @extends('master') @section('content')
 <!-- SLIDER Start-->
-
-
 <script src="sources/js/jssor.slider-27.1.0.min.js" type="text/javascript"></script>
 <script type="text/javascript">
   jssor_1_slider_init = function () {
@@ -195,6 +193,7 @@
   <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
     <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="sources/img/spin.svg">
   </div>
+  <!-- Slider img -->
   <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1300px;height:700px;overflow:hidden;">
     @foreach($km as $km)
     <div data-p="225.00">
@@ -232,12 +231,13 @@
 <!-- END SLIDER -->
 
 
-<div class="col-md-12">
+<div>
   <section class="bar bg-gray no-mb text-md-center">
-    <div class="container">
-      <ul id="pills-tab" role="tablist" class="nav nav-pills nav-justified">
+    <div class="container" >
+      <ul id="pills-tab" role="tablist" class="nav nav-pills nav-justified" >
         <li class="nav-item">
-          <a id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true" class="nav-link active">PHIM ĐANG CHIẾU</a>
+          <a id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true" 
+          class="nav-link active">PHIM ĐANG CHIẾU</a>
         </li>
         <li class="nav-item">
           <a id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false"
@@ -245,10 +245,10 @@
         </li>
 
       </ul>
-      <div id="pills-tabContent" class="tab-content">
+      <div id="pills-tabContent" class="tab-content"  >
         <div id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" class="tab-pane fade show active">
 
-          <div class="row portfolio text-center">
+          <div class="row portfolio text-center" >
             @foreach($new_phim as $new)
 
             <div class="col-md-6">
