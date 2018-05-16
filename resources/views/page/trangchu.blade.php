@@ -94,8 +94,8 @@
     </div>
   </div>
   
-  <!-- <div class="row portfolio text-center">
-    @foreach($new_phim as $new)
+  <div class="row portfolio text-center">
+    @foreach($new_phim as $new_phim)
     <div class="col-md-6">
       <div class="box-image">
         <div class="image">
@@ -121,7 +121,7 @@
     </div>
 
     @endforeach
-  </div> -->
+  </div>
 
 </div>
       
