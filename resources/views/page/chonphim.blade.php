@@ -42,7 +42,7 @@
                                                 <div class="content">
                                                     <div class="name">
                                                         <h3>
-                                                            <a  class="color-white">{{$phimDaChon->first()->tenphim}} </a>
+                                                            <a href="{{route('chi-tiet',$phimDaChon->first()->maphim)}}" class="color-white">{{$phimDaChon->first()->tenphim}} </a>
                                                         </h3>
                                                     </div>
                                                     
