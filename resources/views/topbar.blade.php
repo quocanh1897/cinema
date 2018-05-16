@@ -61,10 +61,10 @@
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                     <div class="form-group">
-                        <input name="email" id="email_modal" type="text" placeholder="email" class="form-control">
+                        <input name="email" id="email_modal" type="text" placeholder="Email" class="form-control">
                     </div>
                     <div class="form-group">
-                        <input name="password" id="password_modal" type="password" placeholder="password" class="form-control">
+                        <input name="password" id="password_modal" type="password" placeholder="Password" class="form-control">
                     </div>
                     <p class="text-center">
                         <button type="submit" class="btn btn-template-outlined">

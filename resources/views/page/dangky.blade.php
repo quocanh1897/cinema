@@ -4,29 +4,29 @@
     <div class="container">
         <div class="row d-flex align-items-center flex-wrap">
             <div class="col-md-7">
-                <h1 class="h2">Đăng ký tài khoản mới</h1>
+                <h1 class="h2">Mua vé</h1>
             </div>
-             
+
         </div>
     </div>
 </div>
 
 @if(count($errors) > 0)
-     
-    
-        @foreach($errors->all() as $err)
-         
-        <div role="alert" class=" alert alert-danger">
-            {{$err}}
-        <br>   
-        </div>
-        @endforeach
-    
-     
+
+
+@foreach($errors->all() as $err)
+
+<div role="alert" class=" alert alert-danger">
+    {{$err}}
+    <br>   
+</div>
+@endforeach
+
+
 @endif
 
 @if(Session::has('thanhcong'))
-    <div role="alert" class="alert alert-success">{{Session::get('thanhcong')}}</div>
+<div role="alert" class="alert alert-success">{{Session::get('thanhcong')}}</div>
 @endif
 
 <div id="content">
@@ -35,41 +35,100 @@
             <div class="col-lg-2"></div>
             <div class="col-lg-9">
                 <div class="box">
-                    <h2 class="text-uppercase">New account</h2>
-                    <p class="lead">Not our registered customer yet?</p>
-                    <p>With registration with us new world of fashion, fantastic discounts and much more opens to you! The whole
-                        process will not take you more than a minute!</p>
-                    <p class="text-muted">If you have any questions, please feel free to
-                        <a href="contact">contact us</a>, our customer service center is working for you 24/7.</p>
+                    <div class="col-md-12">
+                        <div class="heading text-center">
+                          <h2>Đăng kí tài khoản mới</h2>
+                      </div>
+                  </div>
+                  <hr>
+                  <!-- Form đăng kí -->
+                  <form action="{{route('dang-ky')}}" method="post">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <!-- Thông tin đăng nhập -->
+                    <div class="row">
+                        <div class="col-sm-6"> 
+                            <div class="form-group">
+                                <label for="accountname">Tên đăng nhập (*)</label>
+                                <input name="accountname" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="email">Email (*)</label>
+                                <input name="email" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="password">Mật khẩu (*)</label>
+                                <input name="password" type="password" class="form-control">
+                            </div>
+                        </div>   
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="re_password">Nhập lại mật khẩu (*)</label>
+                                <input name="re_password" type="password" class="form-control">
+                            </div>
+                        </div>  
+                    </div>
                     <hr>
-                    <form action="{{route('dang-ky')}}" method="post">
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}"> 
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input name="name" type="text" class="form-control">
+                    <!-- End Thông tin đăng nhập -->
+                    <!-- Thông tin cá nhân -->
+                    <div class="row">
+                        <div class="col-sm-6"> 
+                            <div class="form-group">
+                                <label for="username">Họ và tên</label>
+                                <input name="username" type="text" class="form-control">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input name="email" type="text" class="form-control">
+                        <div class="col-sm-6"> 
+                            <div class="form-group">
+                                <label for="birthday">Ngày sinh</label>
+                                <input name="birthday" type="date" class="form-control">
+                            </div>
+                        </div>                    
+                        <div class="col-sm-6"> 
+                            <div class="form-group">
+                                <label for="phone">Số điện thoại</label>
+                                <input name="phone" type="number" class="form-control">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="password">Mật khẩu</label>
-                            <input name="password" type="password" class="form-control">
+                        <div class="col-sm-6"> 
+                            <div class="form-group">
+                                <label for="gender">Giới tính</label>
+                                <select name="gender" class="form-control">
+                                    <option value="male">Nam</option>
+                                    <option value="female">Nữ</option>
+                                </select>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="re_password">Nhập lại mật khẩu</label>
-                            <input name="re_password" type="password" class="form-control">
+                        <div class="col-sm-6"> 
+                            <div class="form-group">
+                                <label for="cmnd">Chứng minh thư</label>
+                                <input name="cmnd" type="number" class="form-control">
+                            </div>
                         </div>
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-template-outlined">
-                                <i class="fa fa-user-md"></i>Đăng ký
-                            </button>
-                        </div>
-                    </form>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                             <label for="agree">Chấp nhận điều khoản sử dụng dịch vụ</label><br>
+                             <input type="checkbox" name="agree"/> Tôi đã đọc, hiểu và đồng ý với các <strong><a href="#">điều khoản</a></strong>
+                         </div>
+                     </div>
+                     <!-- End Thông tin cá nhân  -->  
+                 </div>
+
+                 <div class="text-center" align="center">
+                    <button type="submit" class="btn btn-template-outlined">
+                        <i class="fa fa-user-md"></i> Đăng ký
+                    </button>
                 </div>
-            </div>
-             
+
+            </form>
+            <!-- End form đăng kí -->
         </div>
     </div>
+
+</div>
+</div>
 </div>
 @endsection

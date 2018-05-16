@@ -67,6 +67,18 @@
   <script src="sources/vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js"></script>
   <script src="sources/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
   <script src="sources/js/front.js"></script>
+  <!-- Button back-to-top -->
+  <script type="text/javascript">
+    $(function(){
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) $('#goTop').fadeIn();
+        else $('#goTop').fadeOut();
+      });
+      $('#goTop').click(function () {
+        $('body,html').animate({scrollTop: 0}, 'slow');
+      });
+    });
+  </script>
 </body>
 
 </html>

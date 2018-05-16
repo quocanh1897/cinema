@@ -5,7 +5,7 @@
       <a href="index" class="navbar-brand home">
         <img src="sources/img/db-logo.png" alt="Universal logo" class="d-none d-md-inline-block">
         <img src="sources/img/db-logo-small.png" alt="Universal logo" class="d-inline-block d-md-none">
-        <span class="sr-only">Universal - go to homepage</span>
+        <span class="sr-only">Welcome to BK Cinema</span>
       </a>
       <button type="button" data-toggle="collapse" data-target="#navigation" class="navbar-toggler btn-template-outlined">
         <span class="sr-only">Toggle navigation</span>
