@@ -6,9 +6,9 @@
         <h4 class="h6">|| Giới thiệu</h4>
         <!-- <a href="about" class="btn btn-template-main">Về chúng tôi</a>
           <a href="contact" class="btn btn-template-main">Liên hệ</a>  -->     
-          <a href="faq" style="font-size: 14px">Về chúng tôi</a><br style="line-height: 1.8">
-          <a href="faq" style="font-size: 14px">Thỏa thuân sử dụng</a><br style="line-height: 1.8">
-          <a href="faq" style="font-size: 14px">Chính sách bảo mật</a>
+          <a href="about" style="font-size: 14px">Về chúng tôi</a><br style="line-height: 1.8">
+          <a href="contact" style="font-size: 14px">Liên hệ</a><br style="line-height: 1.8">
+           
         </div>
 
         <div class="col-lg-6">

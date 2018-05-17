@@ -175,19 +175,21 @@ class PageController extends Controller
             [
                 'email'=>'required|email|unique:users,email',
                 'password'=>'required|min:6|max:20',
-                'name'=>'required',
-                're_password'=>'required|same:password'
+                 
+                're_password'=>'required|same:password',
+                'agree'=>'required'
             ],
             [
                 'email.required'=>'Vui lòng nhập email! ',
                 'email.email'=>'email không đúng! ',
                 'email.unique'=>'email đã được sử dụng! ',
-                'name.required'=>'Vui lòng nhập tên! ',
+                 
                 'password.required'=>'Vui lòng nhập mật khẩu! ',
                 're_password.required'=>'Vui lòng nhập lại mật khẩu! ',
                 're_password.same'=>'Mật khẩu không khớp! ',
                 'password.max'=>'Mật khẩu tối đa 20 kí tự! ',
-                'password.min'=>'Mật khẩu cần ít nhất 6 kí tự! '
+                'password.min'=>'Mật khẩu cần ít nhất 6 kí tự! ',
+                'agree.required'=>'Bạn chưa đọc và đồng ý với các điều khoản.'
             ]);
         
         $user = new User();
