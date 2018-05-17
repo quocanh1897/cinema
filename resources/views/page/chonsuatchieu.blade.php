@@ -36,23 +36,27 @@
                         <section>
                             <div id="accordion" role="tablist">
 
-                            @foreach($suatchieu as $sc)
+                            @foreach($kgtungngay as $ngay)
                                 <div class="card card-primary">
                                     <div id="headingOne" role="tab" class="card-header">
                                         <h5 class="mb-0 mt-0">
-                                            <a data-toggle="collapse" href="#{{$day}}" aria-expanded="false" aria-controls="{{$day}}">{{$sc->ngaychieu}} </a>
+                                            <a data-toggle="collapse" href="#{{$ngay->first()->ngaychieu}}" aria-expanded="false" aria-controls="{{$ngay->first()->ngaychieu}}">
+                                                {{$ngay->first()->ngaychieu}} 
+                                            </a>
                                         </h5>
                                     </div>
-                                    <div id="{{$day}}" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" class="collapse">
+                                    <div id="{{$ngay->first()->ngaychieu}}" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" class="collapse">
                                         <div id="suatchieu-btn" class="card-body portfolio row">
-                                            @foreach($suatchieu as $sc)
-                                            <button type="button" class="btn btn-outline-dark">{{$sc->khunggio}} </button>
+                                             @foreach($ngay as $gio)
+                                             
+                                            <button type="button" class="btn btn-outline-dark">{{$gio->batdau}} </button>
                                             
-                                            @endforeach
+                                             @endforeach
+                                              
                                         </div>
                                     </div>
                                 </div>
-                            @endforeach   
+                            @endforeach
                             </div>
 
                         </section>

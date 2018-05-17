@@ -125,21 +125,37 @@ class PageController extends Controller
     {
         $phimDaChon = phim::where('maphim',$idPhim)->get();
         $rapDaChon = rap_chieu::where('marap',$idRap)->get();
-        $khunggio = khung_gio::all();
         
-        $suatchieu = suat_chieu::where(['maphim',$idPhim],['marap',$idRap]);
         
+        $suatchieu = suat_chieu::where([
+            ['maphim','=',$idPhim],
+            ['marap','=', $idRap]
+        ])->select('ngaychieu')->distinct()->get();
+
+        $qr = suat_chieu::join('khung_gio','suat_chieu.makhunggio','khung_gio.makhunggio')->where([
+            ['maphim','=',$idPhim],
+            ['marap','=', $idRap]
+        ])->get();
+
+        $kgtungngay = [];
+        foreach($suatchieu as $sc){
+            $kgtungngay[] = suat_chieu::join('khung_gio','suat_chieu.makhunggio','khung_gio.makhunggio')
+            ->where([
+                ['ngaychieu',$sc->ngaychieu],
+                ['maphim','=',$idPhim],
+                ['marap','=', $idRap]
+                ])->get();
+        }
+        /*
         $currentDate = Carbon\Carbon::now();
         $due = Carbon\Carbon::now()->modify('+7 day');
         $arrDate = [];
         for($i = $currentDate; $i <= $due; $i++){
             $arrDate[] = $currentDate->toDateString();
             $currentDate->addDay();
-        }
-        //dd($rapDaChon);
-        
-        //dd($suatchieu);
-        return view('page.chonsuatchieu',compact('phimDaChon','rapDaChon','khunggio','arrDate','suatchieu'));
+        }*/
+        //dd($kgtungngay[0]->first()->ngaychieu);
+        return view('page.chonsuatchieu',compact('phimDaChon','rapDaChon','kgtungngay','suatchieu'));
     }
 
     public function postSignin(Request $req)
