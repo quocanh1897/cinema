@@ -252,7 +252,7 @@
             @foreach($new_phim as $new)
             <div class="col-md-auto item">
               <div class="box-image">
-                <div class="image-duy">
+                <div class="image">
                   <img src="{{$new->hinhanh}} " alt="" class="img-fluid" height="50" width="250">
                   <div class="overlay d-flex align-items-center justify-content-center">
                     <div class="content">
