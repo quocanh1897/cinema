@@ -97,6 +97,11 @@ class PageController extends Controller
         return view('page.faq');
     }
 
+    public function getFAQduy()
+    {
+        return view('page.faqduy');
+    }
+
     public function getChitiet($idPhim)
     {
         

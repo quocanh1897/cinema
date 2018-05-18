@@ -317,7 +317,8 @@
 
 
 
-<section style="background: url('sources/img/fixed-background-2.jpg') center top no-repeat; background-size: cover;" class="bar no-mb color-white text-center bg-fixed relative-positioned">
+
+<section style="background: url('sources/img/ok.jpg') center top no-repeat; background-size: cover;" class="bar no-mb color-white text-center bg-fixed relative-positioned">
   <div class="dark-mask"></div>
   <div class="container">
     <div class="icon icon-outlined icon-lg">
@@ -330,5 +331,14 @@
     </p>
   </div>
 </section>
+
+
+  
+
+
+
+   
+  
+
 
 @endsection

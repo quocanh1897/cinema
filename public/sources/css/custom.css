@@ -10,8 +10,4 @@
 	align-items: 
 }
 
-.image-duy{
-	width: auto !important; /*Keep the aspect ratio of the image*/
-	max-height: 100px !important;
-	margin: 0 auto 1em auto; /*Center the image*/
-}
+
