@@ -222,59 +222,93 @@ class PageController extends Controller
 
     }
 
-    public function postChangePass(Request $req)
-    {
-        $this->validate($req,
-            [
-                'password_old'=>'required',
-                'password'=>'required|min:6|max:20',
-                're_password'=>'required|same:password'
-            ],
-            [
-                'password_old.required'=>'Vui lòng nhập mật khẩu cũ! ',
-                'password.required'=>'Vui lòng nhập mật khẩu! ',
-                're_password.required'=>'Vui lòng nhập lại mật khẩu! ',
-                're_password.same'=>'Mật khẩu không khớp! ',
-                'password.max'=>'Mật khẩu tối đa 20 kí tự! ',
-                'password.min'=>'Mật khẩu cần ít nhất 6 kí tự! '
-            ]);
+    // public function postChangePass(Request $req)
+    // {
+    //     $this->validate($req,
+    //         [
+    //             'password_old'=>'required',
+    //             'password'=>'required|min:6|max:20',
+    //             're_password'=>'required|same:password'
+    //         ],
+    //         [
+    //             'password_old.required'=>'Vui lòng nhập mật khẩu cũ! ',
+    //             'password.required'=>'Vui lòng nhập mật khẩu! ',
+    //             're_password.required'=>'Vui lòng nhập lại mật khẩu! ',
+    //             're_password.same'=>'Mật khẩu không khớp! ',
+    //             'password.max'=>'Mật khẩu tối đa 20 kí tự! ',
+    //             'password.min'=>'Mật khẩu cần ít nhất 6 kí tự! '
+    //         ]);
         
-        if(Hash::check($req['password_old'], Auth::user()->password))
-        {
-            $user_id = Auth::user()->id;                       
-            $obj_user = User::find($user_id);
-            $obj_user->password = Hash::make($req['password']);;
-            $obj_user->save(); 
-            return redirect()->back()->with(['flag'=>'success','mes'=>'Đổi mật khẩu thành công']);
-        }else{
-            return redirect()->back()->with(['flag'=>'danger','mes'=>'Sai mật khẩu']);
-        }
-    }
+    //     if(Hash::check($req['password_old'], Auth::user()->password))
+    //     {
+    //         $user_id = Auth::user()->id;                       
+    //         $obj_user = User::find($user_id);
+    //         $obj_user->password = Hash::make($req['password']);;
+    //         $obj_user->save(); 
+    //         return redirect()->back()->with(['flag'=>'success','mes'=>'Đổi mật khẩu thành công']);
+    //     }else{
+    //         return redirect()->back()->with(['flag'=>'danger','mes'=>'Sai mật khẩu']);
+    //     }
+    // }
     
     public function postchangePersonalData(Request $req)
     {
         $this->validate($req,
             [
-                'hoten'=>'required|max:50',
-                'phone'=>'numeric'
+                'name'=>'regex:/(^([a-zA-Z\sàáâãèéêìíòóôõùúăđĩũơưăạảấầẩẫậắằẳẵặẹẻẽềềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ]*)$)/|max:50',
+                'ngaysinh'=> 'after:"1950-01-01"',
+                'sodt'=>'numeric|digits_between:10,11',
+                
             ],
             [
-                'hoten.required'=>'Vui lòng nhập đúng tên! ',
-                'phone.numeric'=>'Số điện thoại không đúng',
-                'hoten.max'=>'Tên quá dài! ',
+                'name.regex'=>'Tên không được chứa số hoặc ký tự đặc biệt',              
+                'name.max'=>'Tên không được vượt quá 50 ký tự',
+                'ngaysinh.after'=>'Ngày sinh không hợp lệ',
+                'sodt.numeric'=>'Số điện thoại không hợp lệ',
+                'sodt.digits_between'=>'Số điên thoại không hợp lệ',
+                
             ]);
         
         $user_id = Auth::user()->id;                       
         $obj_user = User::find($user_id);
-        $obj_user->name = $req['hoten'];    
-        $obj_user->gioitinh = $req['gioitinh'];
-        $obj_user->ngaysinh = $req['ngaysinh'];
+        $obj_user->name = $req['name'];
+        $obj_user->ngaysinh = $req['ngaysinh'];    
+        $obj_user->gioitinh = $req['gioitinh'];       
         $obj_user->sodt = $req['sodt'];
-        
-        
-        $obj_user->save(); 
-        return redirect()->back()->with(['flag'=>'success','mes'=>'Đổi thông tin thành công']);
-        
+
+        if (is_null($req['password']) && is_null($req['password_old']) && is_null($req['re_password'])) {
+            $obj_user->save(); 
+            return redirect()->back()->with(['flag'=>'success','mes'=>'Thay đổi thông tin thành công']);
+        } 
+        else 
+        {   
+            $this->validate($req,
+                [
+                    'password_old'=>'required',
+                    'password'=>'required|min:6|max:20',
+                    're_password'=>'required|same:password'
+                ],
+                [      
+                    'password_old.required'=>'Vui lòng nhập mật khẩu hiện tại! ',
+                    'password.required'=>'Vui lòng nhập mật khẩu mới! ',
+                    're_password.required'=>'Vui lòng nhập lại mật khẩu mới! ',
+                    're_password.same'=>'Mật khẩu mới không trùng khớp! Vui lòng thử lại ',
+                    'password.max'=>'Mật khẩu tối đa 20 kí tự! ',
+                    'password.min'=>'Mật khẩu cần ít nhất 6 kí tự! '
+                ]
+            );      
+            if(Hash::check($req['password_old'], Auth::user()->password))
+            {
+                $obj_user->password = Hash::make($req['password']);;
+                $obj_user->save(); 
+                return redirect()->back()->with(['flag'=>'success','mes'=>'Đổi mật khẩu/thông tin thành công']);
+            }
+            else
+            {
+                $obj_user->save();
+                return redirect()->back()->with(['flag'=>'danger','mes'=>'Mật khẩu hiện tại không đúng']);
+            }
+        }      
     }
 
     public function getDangxuat()
