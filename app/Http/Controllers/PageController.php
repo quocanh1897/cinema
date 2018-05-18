@@ -266,12 +266,12 @@ class PageController extends Controller
         
         $user_id = Auth::user()->id;                       
         $obj_user = User::find($user_id);
-        $obj_user->phone = $req['phone'];
-        $obj_user->name = $req['hoten'];
-        $obj_user->diachi = $req['diachi'];
+        $obj_user->name = $req['hoten'];    
         $obj_user->gioitinh = $req['gioitinh'];
         $obj_user->ngaysinh = $req['ngaysinh'];
-        $obj_user->quocgia = $req['quocgia'];
+        $obj_user->sodt = $req['sodt'];
+        
+        
         $obj_user->save(); 
         return redirect()->back()->with(['flag'=>'success','mes'=>'Đổi thông tin thành công']);
         
