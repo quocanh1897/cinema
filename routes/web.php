@@ -115,14 +115,14 @@ Route::get('mua-ve',[
     'uses'=>'PageController@getMuaVe'
 ]);
 
-Route::get('chon-phim/{id}',[
+Route::post('chon-phim',[
     'as'=>'chon-phim',
-    'uses'=>'PageController@getChonPhim'
+    'uses'=>'PageController@postChonPhim'
 ]);
 
-Route::get('chon-rap/{idPhim}',[
+Route::post('chon-rap',[
     'as'=>'chon-rap',
-    'uses'=>'PageController@getChonRap'
+    'uses'=>'PageController@postChonRap'
 ]);
 
 Route::get('chon-suat-chieu/{idPhim}/{idRap}',[

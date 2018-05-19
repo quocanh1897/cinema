@@ -262,13 +262,16 @@
                           <a href="{{route('chi-tiet',$new->maphim)}}" class="color-white">{{$new->tenphim}} </a>
                         </h3>
                       </div>
-                      <div class="text">
-                        <p class="d-none d-sm-block"> </p>
-                        <p class="buttons">
+                       
+                        <form action="{{route('chon-phim')}}" method="post">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        
                           <a href="{{route('chi-tiet',$new->maphim)}}" class="btn btn-template-outlined-white">Chi tiết</a>
-                          <a href="{{route('chon-phim',$new->maphim)}}" class="btn btn-template-outlined-white">Chọn</a>
-                        </p>
-                      </div>
+                          <button name="idphim" type="submit" value="{{$new->maphim}}"  class="btn btn-template-outlined-white">Chọn</button>
+                          
+                        
+                        </form>
+                       
                     </div>
                   </div>
                 </div>
@@ -293,13 +296,14 @@
                           <a href="{{route('chi-tiet',$pr->maphim)}}" class="color-white">{{$pr->tenphim}} </a>
                         </h3>
                       </div>
-                      <div class="text">
-                        <p class="d-none d-sm-block"> </p>
-                        <p class="buttons">
+                      <form action="{{route('chon-phim')}}" method="post">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        
                           <a href="{{route('chi-tiet',$pr->maphim)}}" class="btn btn-template-outlined-white">Chi tiết</a>
-                          <a href="{{route('chon-phim',$pr->maphim)}}" class="btn btn-template-outlined-white">Chọn</a>
-                        </p>
-                      </div>
+                          <button name="idphim" type="submit" value="{{$pr->maphim}}"  class="btn btn-template-outlined-white">Chọn</button>
+                          
+                        
+                        </form>
                     </div>
                   </div>
                 </div>
