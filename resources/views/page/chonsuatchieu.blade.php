@@ -1,5 +1,4 @@
-@extends('master') 
-@section('content')
+@extends('master') @section('content')
 <div id="heading-breadcrumbs">
     <div class="container">
         <div class="row d-flex align-items-center flex-wrap">
@@ -15,63 +14,72 @@
         <div class="row">
             <div id="checkout" class="col-lg-9">
                 <div class="box border-bottom-0">
-                    <form method="get" action="shop-checkout2.html">
-                        <ul class="nav nav-pills nav-fill">
-                            <li class="nav-item">
-                                <a   class="nav-link disabled">
-                                    <i class="fa fa-map-marker"></i>
-                                    <br>Chọn phim</a>
-                            </li>
-                            <li class="nav-item">
-                                <a  class="nav-link disabled">
-                                    <i class="fa fa-truck"></i>
-                                    <br>Chọn rạp</a>
-                            </li>
-                            <li class="nav-item">
-                                <a  class="nav-link active">
-                                    <i class="fa fa-money"></i>
-                                    <br>Chọn ngày</a>
-                            </li>
-                        </ul>
-                        <section>
-                            <div id="accordion" role="tablist">
+                    <ul class="nav nav-pills nav-fill">
+                        <li class="nav-item">
+                            <a class="nav-link disabled">
+                                <i class="fa fa-map-marker"></i>
+                                <br>Chọn phim</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled">
+                                <i class="fa fa-truck"></i>
+                                <br>Chọn rạp</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active">
+                                <i class="fa fa-money"></i>
+                                <br>Chọn ngày</a>
+                        </li>
+                    </ul>
+                    <section>
+                        <div id="accordion" role="tablist">
+                            <form action="{{route('mua-ve')}} " method="post">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                             @foreach($kgtungngay as $ngay)
-                                <div class="card card-primary">
-                                    <div id="headingOne" role="tab" class="card-header">
-                                        <h5 class="mb-0 mt-0">
-                                            <a data-toggle="collapse" href="#{{$ngay->first()->ngaychieu}}" aria-expanded="false" aria-controls="{{$ngay->first()->ngaychieu}}">
-                                                {{$ngay->first()->ngaychieu}} 
-                                            </a>
-                                        </h5>
-                                    </div>
-                                    <div id="{{$ngay->first()->ngaychieu}}" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" class="collapse">
-                                        <div id="suatchieu-btn" class="card-body portfolio row">
-                                             @foreach($ngay as $gio)
-                                             
-                                            <button type="button" class="btn btn-outline-dark">{{$gio->batdau}} </button>
-                                            
-                                             @endforeach
-                                              
-                                        </div>
+                            <div class="card card-primary">
+                                <div id="headingOne" role="tab" class="card-header">
+                                    <h5 class="mb-0 mt-0">
+                                        <a data-toggle="collapse" href="#{{$ngay->first()->ngaychieu}}" aria-expanded="false" aria-controls="{{$ngay->first()->ngaychieu}}">
+                                            {{$ngay->first()->ngaychieu}}
+                                        </a>
+                                    </h5>
+                                </div>
+                                <select hidden name="ngaychieu" ><option value="{{$ngay->first()->ngaychieu}}"></option> </select>
+                                <div id="{{$ngay->first()->ngaychieu}}" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" class="collapse">
+                                    <div id="suatchieu-btn" class="card-body portfolio row">
+                                        @foreach($ngay as $gio)
+
+                                        <button name="giochieu" type="submit" value="{{$gio->batdau}}" class="btn btn-outline-dark">{{$gio->batdau}} </button>
+
+                                        @endforeach
+
                                     </div>
                                 </div>
+                            </div>
                             @endforeach
-                            </div>
-
-                        </section>
-                        <div class="box-footer d-flex flex-wrap align-items-center justify-content-between">
-                            <div class="left-col">
-                                <a href="{{route('chon-rap',$phimDaChon->first()->maphim)}}" class="btn btn-secondary mt-0">
-                                    <i class="fa fa-chevron-left"></i>Quay lại</a>
-                            </div>
-                            <div class="right-col">
-                                <button type="submit" class="btn btn-template-main">Bước kế
-                                    <i class="fa fa-chevron-right"></i>
-                                </button>
-                            </div>
+                        </form>
                         </div>
-                    </form>
+
+                    </section>
+                    <div class="box-footer d-flex flex-wrap align-items-center justify-content-between">
+                        <div class="left-col">
+                            <form action="{{route('chon-phim')}}" method="post">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <select hidden name="idrap">
+                                    <option value="{{$rapDaChon->first()->marap}}"></option>
+                                </select>
+                                <button type="submit" name="idphim" value="{{$phimDaChon->first()->maphim}} " class="btn btn-secondary mt-0">
+                                    <i class="fa fa-chevron-left"></i>Quay lại
+                                </button>
+                            </form>
+                        </div>
+                        <div class="right-col">
+                            <button type="submit" class="btn btn-template-main" disabled>Bước kế
+                                <i class="fa fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-3">
@@ -109,15 +117,15 @@
 </div>
 
 <script>
-// Add active class to the current button (highlight it)
-var header = document.getElementById("suatchieu-btn");
-var btns = document.getElementsByClassName("btn-outline-dark");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  });
-}
+    // Add active class to the current button (highlight it)
+    var header = document.getElementById("suatchieu-btn");
+    var btns = document.getElementsByClassName("btn-outline-dark");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+        });
+    }
 </script>
 @endsection

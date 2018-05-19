@@ -25,13 +25,15 @@
     <div class="row bar">
       <!-- LEFT COLUMN _________________________________________________________-->
       <div class="col-lg-18">
-        
-          <div id="productMain" class="row">
-            <!-- Poster phim -->
-            <div class="col-sm-4">
-              <div data-slider-id="1" class="owl-carousel shop-detail-carousel">
-                <div> <img src="{{$phim->first()->hinhanh}} " alt="" class="img-fluid"></div>
-              </div>
+
+        <p class="lead">
+          <b>Nội dung phim: </b>{{$phim->first()->mota}} </p>
+        <div id="productMain" class="row">
+          <div class="col-sm-2">
+            <div>
+              <br><br>
+              <img src="{{$phim->first()->hinhanh}} " alt="" class="img-fluid">
+
             </div>
             <!-- Chi tiet phim -->
             <div class="col-sm-duy">

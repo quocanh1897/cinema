@@ -130,9 +130,14 @@ Route::post('chon-rap',[
     'uses'=>'PageController@postChonRap'
 ]);
 
-Route::get('chon-suat-chieu/{idPhim}/{idRap}',[
+Route::post('chon-suat-chieu',[
     'as'=>'chon-suat-chieu',
-    'uses'=>'PageController@getChonSuatChieu'
+    'uses'=>'PageController@postChonSuatChieu'
+]);
+
+Route::post('mua-ve',[
+    'as'=>'mua-ve',
+    'uses'=>'PageController@postMuaVe'
 ]);
 
 Auth::routes();

@@ -128,16 +128,17 @@ class PageController extends Controller
         return view('page.chonrap',compact('phimDaChon','rap'));
     }
 
-    public function getChonSuatChieu($idPhim, $idRap)
+    public function postChonSuatChieu(Request $req)
     {
-        $phimDaChon = phim::where('maphim',$idPhim)->get();
-        $rapDaChon = rap_chieu::where('marap',$idRap)->get();
+        $phimDaChon = phim::where('maphim',$req['idphim'])->get();
+        $rapDaChon = rap_chieu::where('marap',$req['idrap'])->get();
         
         
         $suatchieu = suat_chieu::where([
-            ['maphim','=',$idPhim],
-            ['marap','=', $idRap]
+            ['maphim','=',$req['idphim']],
+            ['marap','=', $req['idrap']]
         ])->select('ngaychieu')->distinct()->get();
+
 
         $currentDate = Carbon\Carbon::now()->toDateString();
         $kgtungngay = [];
@@ -146,8 +147,8 @@ class PageController extends Controller
             $kgtungngay[] = suat_chieu::join('khung_gio','suat_chieu.makhunggio','khung_gio.makhunggio')
             ->where([
                 ['ngaychieu',$sc->ngaychieu],
-                ['maphim','=',$idPhim],
-                ['marap','=', $idRap]
+                ['maphim','=',$req['idphim']],
+                ['marap','=', $req['idrap']]
                 ])->get();
         }
         
@@ -161,6 +162,16 @@ class PageController extends Controller
         }*/
         //dd($kgtungngay[0]->first()->ngaychieu);
         return view('page.chonsuatchieu',compact('phimDaChon','rapDaChon','kgtungngay'));
+
+    }
+
+    public function postMuaVe(Request $req)
+    {
+        //$phimDaChon = phim::where('maphim',$req['idphim'] )->get();
+        //dd($phimDaChon);
+        //$rap = rap_chieu::all();
+        return view('page.muave');
+
     }
 
     public function postSignin(Request $req)
