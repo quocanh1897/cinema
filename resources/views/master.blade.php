@@ -42,13 +42,18 @@
 
 <body>
   <div id="all">
+
     @include('topbar')
 
     @include('menubar')
 
+    @include('flash-message')
+    
     @yield('content')
 
     @include('footer')
+
+    
   </div>
   <!-- Javascript files-->
   <script src="sources/vendor/jquery/jquery.min.js"></script>
@@ -79,6 +84,7 @@
       });
     });
   </script>
+
   
 </body>
 
