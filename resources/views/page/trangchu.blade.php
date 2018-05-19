@@ -228,12 +228,12 @@
     <div class="row">
       <div class="col-md-12">
         <dir class="rowduy" style="padding-top: 20px !important;">
-          <div class="heading text-center" style="margin-right: 40px;" id="dang">
+          <div class="heading text-center"  id="dang">
             <a href="javascript:void(null);">
               <h4 onclick="hienPhimdangchieu()">Phim đang chiếu</h4>
             </a>
           </div>
-          <div class="heading text-center" id="sap">
+          <div class="heading text-center"  id="sap">
             <a href="javascript:void(null);">
               <h4 onclick="hienPhimsapchieu()">Phim sắp chiếu</h4>
             </a>
@@ -254,9 +254,9 @@
                   <div class="overlay d-flex align-items-center justify-content-center">
                     <div class="content">
                       <div class="name">
-                        <h3>
+                        <h4>
                           <a href="{{route('chi-tiet',$new->maphim)}}" class="color-white">{{$new->tenphim}} </a>
-                        </h3>
+                        </h4>
                       </div>
                       <form action="{{route('chon-phim')}}" method="post">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -283,9 +283,9 @@
                   <div class="overlay d-flex align-items-center justify-content-center">
                     <div class="content">
                       <div class="name">
-                        <h3>
+                        <h4>
                           <a href="{{route('chi-tiet',$pr->maphim)}}" class="color-white">{{$pr->tenphim}} </a>
-                        </h3>
+                        </h4>
                       </div>
                       <form action="{{route('chon-phim')}}" method="post">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">

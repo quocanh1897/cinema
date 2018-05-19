@@ -26,9 +26,9 @@
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
-  justify-content: center;
+  /*margin-right: -15px;
+  margin-left: -15px;*/
+  justify-content: space-around;
 }
 
 .ribbon.hot {
@@ -41,4 +41,13 @@
 
 p.lead-duy {
 	margin-bottom: 10px;
+}
+
+.myposter img {
+    display: block;
+    max-width:300px;
+    max-height:370px;
+    width: auto;
+    height: auto;
+
 }

@@ -11,7 +11,7 @@
             <div class="col-md-5">
                 <ul class="breadcrumb d-flex justify-content-end">
                     <li class="breadcrumb-item">
-                        <a href="index.html">Trang chủ</a>
+                        <a href="#">Trang chủ</a>
                     </li>
                     <li class="breadcrumb-item active">Về chúng tôi</li>
                 </ul>

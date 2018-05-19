@@ -8,7 +8,7 @@
             <div class="col-md-5">
                 <ul class="breadcrumb d-flex justify-content-end">
                     <li class="breadcrumb-item">
-                        <a href="index">Về trang chủ</a>
+                        <a href="#">Về trang chủ</a>
                     </li>
                     <li class="breadcrumb-item active">Điều khoản dịch vụ</li>
                 </ul>
