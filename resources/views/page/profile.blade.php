@@ -5,14 +5,7 @@
             <div class="col-md-7">
                 <h1 class="h2">Tài khoản của tôi</h1>
             </div>
-            <div class="col-md-5">
-                <ul class="breadcrumb d-flex justify-content-end">
-                    <li class="breadcrumb-item">
-                        <a href="index.html">Trang chủ</a>
-                    </li>
-                    <li class="breadcrumb-item active">Tài khoản</li>
-                </ul>
-            </div>
+            
         </div>
     </div>
 </div>

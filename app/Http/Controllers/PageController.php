@@ -121,7 +121,7 @@ class PageController extends Controller
     public function postChonRap(Request $req)
     {
         $phimDaChon = phim::where('maphim',$req['idphim'] )->get();
-        dd($phimDaChon);
+        //dd($phimDaChon);
         $rap = rap_chieu::all();
         return view('page.chonrap',compact('phimDaChon','rap'));
     }

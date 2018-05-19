@@ -5,19 +5,7 @@
             <div class="col-md-7">
               <h1 class="h2">Giao dịch của tôi</h1>
             </div>
-            <div class="col-md-5">
-              <ul class="breadcrumb d-flex justify-content-end">
-                <li class="breadcrumb-item">
-                  <a href="index.html">Trang chủ</a>
-                </li>
-                <li class="breadcrumb-item active">
-                  <a href="profile">Tài khoản</a>
-                </li>
-                <li class="breadcrumb-item">
-                  Lịch sử giao dịch
-                </li>
-              </ul>
-            </div> 
+             
           </div>
         </div>
       </div>
