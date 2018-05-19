@@ -21,6 +21,13 @@
     max-width: 20%;
 }
 
+.ribbon.hot {
+  background: #f71a13;
+}
+
+.ribbon.newduy {
+  background: #38c910;
+}
 
 p.lead-duy {
   margin-bottom: 10px;
