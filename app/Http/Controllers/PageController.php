@@ -167,10 +167,11 @@ class PageController extends Controller
 
     public function postMuaVe(Request $req)
     {
-        //$phimDaChon = phim::where('maphim',$req['idphim'] )->get();
-        //dd($phimDaChon);
-        //$rap = rap_chieu::all();
-        return view('page.muave');
+        $phimDaChon = phim::where('maphim',$req['idphim'])->get();
+        $rapDaChon = rap_chieu::where('marap',$req['idrap'])->get();
+        $ngay = $req['ngaychieu'];
+        $gio = $req['giochieu'];
+        return view('page.muave',compact('phimDaChon','rapDaChon','ngay','gio') );
 
     }
 

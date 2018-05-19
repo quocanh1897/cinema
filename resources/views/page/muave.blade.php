@@ -1,4 +1,5 @@
-@extends('master') @section('content')
+@extends('master') 
+@section('content')
 <div id="heading-breadcrumbs">
     <div class="container">
         <div class="row d-flex align-items-center flex-wrap">
@@ -30,7 +31,7 @@
                                     <tr>
                                         <td>
                                             <a href="#">
-                                                <img src="img/detailsquare.jpg" alt="White Blouse Armani" class="img-fluid">
+                                                <img src="sources/img/detailsquare.jpg" alt="White Blouse Armani" class="img-fluid">
                                             </a>
                                         </td>
                                         <td>
@@ -45,7 +46,7 @@
                                     <tr>
                                         <td>
                                             <a href="#">
-                                                <img src="img/basketsquare.jpg" alt="Black Blouse Armani" class="img-fluid">
+                                                <img src="sources/img/basketsquare.jpg" alt="Black Blouse Armani" class="img-fluid">
                                             </a>
                                         </td>
                                         <td>
@@ -78,7 +79,7 @@
                                     <tr>
                                         <td>
                                             <a href="#">
-                                                <img src="img/detailsquare.jpg" alt="White Blouse Armani" class="img-fluid">
+                                                <img src="sources/img/detailsquare.jpg" alt="White Blouse Armani" class="img-fluid">
                                             </a>
                                         </td>
                                         <td>
@@ -93,7 +94,7 @@
                                     <tr>
                                         <td>
                                             <a href="#">
-                                                <img src="img/basketsquare.jpg" alt="Black Blouse Armani" class="img-fluid">
+                                                <img src="sources/img/basketsquare.jpg" alt="Black Blouse Armani" class="img-fluid">
                                             </a>
                                         </td>
                                         <td>
@@ -108,7 +109,7 @@
                                     <tr>
                                         <td>
                                             <a href="#">
-                                                <img src="img/basketsquare.jpg" alt="Black Blouse Armani" class="img-fluid">
+                                                <img src="sources/img/basketsquare.jpg" alt="Black Blouse Armani" class="img-fluid">
                                             </a>
                                         </td>
                                         <td>
@@ -147,7 +148,7 @@
                 <div id="order-summary" class="box mt-0 mb-4 p-0">
                     <div class="box-header mt-0">
                         <h3>
-                            <img src="img/basketsquare.jpg" alt="Black Blouse Armani" class="img-fluid">
+                            <img src="sources/img/basketsquare.jpg" alt="Black Blouse Armani" class="img-fluid">
                         </h3>
                     </div>
                     <p class="text-muted" align="center">Tên phim</p>
@@ -190,361 +191,131 @@
         </div>
     </div>
 </div>
-<div id="content2">
-    <div class="container">
-        <div class="row bar">
-            <div class="col-lg-12">
-                <p class="text-muted lead">Chọn ghế ngồi</p>
+
+<!-- SELECT SEATS -->
+<div >
+     
+    <div class="main">
+         
+        <div class="demo">
+            <div id="seat-map">
+                <div class="front">MÀN HÌNH</div>
             </div>
-            <div id="basket" class="col-lg-9">
-                <div class="box mt-0 pb-0 no-horizontal-padding">
-                    <form method="get">
-                        <div class="bg-primary bar padding-horizontal ">
-                            <div class="panel-body" align="center">
-                                <ul class="tag-cloud list-inline">
-                                    <li class="list-inline-item">A</li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">1</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">2</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">3</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">4</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">5</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">6</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">7</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">8</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">9</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">10</button>
-                                    </li>
-                                    <li class="list-inline-item">A</li>
-                                </ul>
-                                <ul class="tag-cloud list-inline">
-                                    <li class="list-inline-item">B</li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">1</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">2</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">3</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">4</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">5</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">6</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">7</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">8</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">9</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">10</button>
-                                    </li>
-                                    <li class="list-inline-item">B</li>
-                                </ul>
-                                <ul class="tag-cloud list-inline">
-                                    <li class="list-inline-item">C</li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">1</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">2</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">3</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">4</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">5</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">6</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">7</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">8</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">9</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">10</button>
-                                    </li>
-                                    <li class="list-inline-item">C</li>
-                                </ul>
-                                <ul class="tag-cloud list-inline">
-                                    <li class="list-inline-item">D</li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">1</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">2</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">3</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">4</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">5</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">6</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">7</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">8</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">9</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">10</button>
-                                    </li>
-                                    <li class="list-inline-item">D</li>
-                                </ul>
-                                <ul class="tag-cloud list-inline">
-                                    <li class="list-inline-item">E</li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">1</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">2</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">3</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">4</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">5</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">6</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">7</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">8</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">9</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">10</button>
-                                    </li>
-                                    <li class="list-inline-item">E</li>
-                                </ul>
-                                <ul class="tag-cloud list-inline">
-                                    <li class="list-inline-item">F</li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">1</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">2</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">3</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">4</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">5</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">6</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">7</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">8</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">9</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">10</button>
-                                    </li>
-                                    <li class="list-inline-item">F</li>
-                                </ul>
-                                <ul class="tag-cloud list-inline">
-                                    <li class="list-inline-item">G</li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">1</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">2</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">3</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">4</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">5</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">6</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">7</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">8</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">9</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">10</button>
-                                    </li>
-                                    <li class="list-inline-item">G</li>
-                                </ul>
-                                <ul class="tag-cloud list-inline">
-                                    <li class="list-inline-item">H</li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">1</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">2</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">3</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">4</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">5</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">6</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">7</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">8</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">9</button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button type="button" class="btn btn-template-outlined-white">10</button>
-                                    </li>
-                                    <li class="list-inline-item">H</li>
-                                </ul>
-                            </div>
+            <div class="booking-details">
+                <ul class="book-left">
+                    <li>Số lượng</li>
+                    <li>Giá</li>
+                    <li>Ghế số:</li>
+                </ul>
+                <ul class="book-right">
+                    
+                    <li>:
+                        <span id="counter">0</span>
+                    </li>
+                    <li>:
+                        <b>
+                            <i>$</i>
+                            <span id="total">0</span>
+                        </b>
+                    </li>
+                </ul>
+                <div class="clear"></div>
+                <ul id="selected-seats" class="scrollbar scrollbar1"></ul>
 
 
-                        </div>
-                        <div class="box-footer d-flex justify-content-between align-items-center">
-                            <div class="left-col">
-                                <a href="index.html" class="btn btn-secondary mt-0">
-                                    <i class="fa fa-chevron-left"></i> Hủy bỏ giao dịch</a>
-                            </div>
-                            <div class="right-col">
-                                <button type="submit" class="btn btn-template-outlined" id="db_btn">Xác nhận
-                                    <i class="fa fa-chevron-right"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                <button class="checkout-button">Book Now</button>
+                <div id="legend"></div>
             </div>
-            <div class="col-lg-3">
-                <div id="order-summary" class="box mt-0 mb-4 p-0">
-                    <div class="box-header mt-0">
-                        <h3>
-                            <img src="img/basketsquare.jpg" alt="Black Blouse Armani" class="img-fluid">
-                        </h3>
-                    </div>
-                    <p class="text-muted" align="center">Tên phim</p>
-                    <div class="table-responsive">
-                        <table class="table">
-                            <tbody>
-                                <tr>
-                                    <td>Rạp:</td>
-                                    <th>Aeon Mall</th>
-                                </tr>
-                                <tr>
-                                    <td>Suất chiếu</td>
-                                    <th>Ngày | Giờ</th>
-                                </tr>
-                                <tr class="total">
-                                    <td>Total</td>
-                                    <th>460,000 VNĐ</th>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="box box mt-0 mb-4 p-0">
-                    <div class="box-header mt-0">
-                        <h4>Mã khuyến mãi</h4>
-                    </div>
-                    <p class="text-muted">Nhập mã khuyến mãi để nhận ưu đãi bất ngờ.</p>
-                    <form>
-                        <div class="input-group">
-                            <input type="text" class="form-control">
-                            <span class="input-group-btn">
-                                <button type="button" class="btn btn-template-main">
-                                    <i class="fa fa-gift"></i>
-                                </button>
-                            </span>
-                        </div>
-                    </form>
-                </div>
-            </div>
+            <div style="clear:both"></div>
         </div>
+
+        <script >
+            var price = 10; //price
+            $(document).ready(function ($) {
+                var $cart = $('#selected-seats'), //Sitting Area
+                    $counter = $('#counter'), //Votes
+                    $total = $('#total'); //Total money
+
+                var sc = $('#seat-map').seatCharts( {
+                    map: [ //Seating chart
+                        'aaaaaaaaaa',
+                        'aaaaaaaaaa',
+                        '__________',
+                        'aaaaaaaa__',
+                        'aaaaaaaaaa',
+                        'aaaaaaaaaa',
+                        'aaaaaaaaaa',
+                        'aaaaaaaaaa',
+                        'aaaaaaaaaa',
+                        '__aaaaaa__'
+                    ],
+                    naming: {
+                        top: false,
+                        getLabel: function (character, row, column) {
+                            return column;
+                        }
+                    },
+                    legend: { //Definition legend
+                        node: $('#legend'),
+                        items: [
+                            ['a', 'available', 'Available'],
+                            ['a', 'unavailable', 'Sold'],
+                            ['a', 'selected', 'Selected']
+                        ]
+                    },
+                    click: function () { //Click event
+                        if (this.status() == 'available') { //optional seat
+                            $('<li>Row' + (this.settings.row + 1) + ' Seat' + this.settings.label +
+                                    '</li>')
+                                .attr('id', 'cart-item-' + this.settings.id)
+                                .data('seatId', this.settings.id)
+                                .appendTo($cart);
+
+                            $counter.text(sc.find('selected').length + 1);
+                            $total.text(recalculateTotal(sc) + price);
+
+                            return 'selected';
+                        } else if (this.status() == 'selected') { //Checked
+                            //Update Number
+                            $counter.text(sc.find('selected').length - 1);
+                            //update totalnum
+                            $total.text(recalculateTotal(sc) - price);
+
+                            //Delete reservation
+                            $('#cart-item-' + this.settings.id).remove();
+                            //optional
+                            return 'available';
+                        } else if (this.status() == 'unavailable') { //sold
+                            return 'unavailable';
+                        } else {
+                            return this.style();
+                        }
+                    }
+                });
+                //sold seat
+                sc.get(['1_2', '4_4', '4_5', '6_6', '6_7', '8_5', '8_6', '8_7', '8_8', '10_1', '10_2']).status(
+                    'unavailable');
+
+            });
+            //sum total money
+            function recalculateTotal(sc) {
+                var total = 0;
+                sc.find('selected').each(function () {
+                    total += price;
+                });
+
+                return total;
+            }
+        </script>
     </div>
+    <p class="copy_rights">&copy; 2016 Movie Ticket Booking Widget. All Rights Reserved | Design by
+        <a href="http://w3layouts.com/" target="_blank">
+            W3layouts</a>
+    </p>
 </div>
-<script language="javascript">
-    document.ready(function() {
-    document.getElementById("content2").style.display = 'none';
-    document.getElementById("db_btn").onclick = function () {
-        document.getElementById("content1").style.display = 'none';
-        document.getElementById("content2").style.display = 'block';
-    };});
-</script>
+
+
+<script src="sources/js/jquery.nicescroll.js"></script>
+<script src="sources/js/scripts.js"></script>
 
 @endsection

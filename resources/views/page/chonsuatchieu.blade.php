@@ -46,6 +46,8 @@
                                     </h5>
                                 </div>
                                 <select hidden name="ngaychieu" ><option value="{{$ngay->first()->ngaychieu}}"></option> </select>
+                                <select hidden name="idphim" ><option value="{{$phimDaChon->first()->maphim}}"></option> </select>
+                                <select hidden name="idrap" ><option value="{{$rapDaChon->first()->marap}}"></option> </select>
                                 <div id="{{$ngay->first()->ngaychieu}}" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" class="collapse">
                                     <div id="suatchieu-btn" class="card-body portfolio row">
                                         @foreach($ngay as $gio)
