@@ -3,7 +3,6 @@
 <script src="sources/js/jssor.slider-27.1.0.min.js" type="text/javascript"></script>
 <script type="text/javascript">
   jssor_1_slider_init = function () {
-
     var jssor_1_SlideoTransitions = [
       [{
         b: -1,
@@ -56,7 +55,6 @@
         }
       }]
     ];
-
     var jssor_1_options = {
       $AutoPlay: 1,
       $SlideDuration: 800,
@@ -72,29 +70,20 @@
         $Class: $JssorBulletNavigator$
       }
     };
-
     var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
-
     /*#region responsive code begin*/
-
     var MAX_WIDTH = 3000;
-
     function ScaleSlider() {
       var containerElement = jssor_1_slider.$Elmt.parentNode;
       var containerWidth = containerElement.clientWidth;
-
       if (containerWidth) {
-
         var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
-
         jssor_1_slider.$ScaleWidth(expectedWidth);
       } else {
         window.setTimeout(ScaleSlider, 30);
       }
     }
-
     ScaleSlider();
-
     $Jssor$.$AddEvent(window, "load", ScaleSlider);
     $Jssor$.$AddEvent(window, "resize", ScaleSlider);
     $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
@@ -105,14 +94,12 @@
   rel="stylesheet" type="text/css" />
 <style>
   /*jssor slider loading skin spin css*/
-
   .jssorl-009-spin img {
     animation-name: jssorl-009-spin;
     animation-duration: 1.6s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
   }
-
   @keyframes jssorl-009-spin {
     from {
       transform: rotate(0deg);
@@ -121,18 +108,14 @@
       transform: rotate(360deg);
     }
   }
-
   /*jssor slider bullet skin 032 css*/
-
   .jssorb032 {
     position: absolute;
   }
-
   .jssorb032 .i {
     position: absolute;
     cursor: pointer;
   }
-
   .jssorb032 .i .b {
     fill: #fff;
     fill-opacity: 0.7;
@@ -141,48 +124,39 @@
     stroke-miterlimit: 10;
     stroke-opacity: 0.25;
   }
-
   .jssorb032 .i:hover .b {
     fill: #000;
     fill-opacity: .6;
     stroke: #fff;
     stroke-opacity: .35;
   }
-
   .jssorb032 .iav .b {
     fill: #000;
     fill-opacity: 1;
     stroke: #fff;
     stroke-opacity: .35;
   }
-
   .jssorb032 .i.idn {
     opacity: .3;
   }
-
   /*jssor slider arrow skin 051 css*/
-
   .jssora051 {
     display: block;
     position: absolute;
     cursor: pointer;
   }
-
   .jssora051 .a {
     fill: none;
     stroke: #fff;
     stroke-width: 360;
     stroke-miterlimit: 10;
   }
-
   .jssora051:hover {
     opacity: .8;
   }
-
   .jssora051.jssora051dn {
     opacity: .5;
   }
-
   .jssora051.jssora051ds {
     opacity: .3;
     pointer-events: none;
@@ -243,18 +217,17 @@
           <a id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false"
             class="nav-link ">PHIM SẮP CHIẾU</a>
         </li>
-
       </ul>
+
       <div id="pills-tabContent" class="tab-content"  >
         <div id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" class="tab-pane fade show active">
-
+         
           <div class="row portfolio text-center" >
             @foreach($new_phim as $new)
-
-            <div class="col-md-6">
+            <div class="col-md-3 item center">
               <div class="box-image">
                 <div class="image">
-                  <img src="{{$new->hinhanh}} " alt="" class="img-fluid" height="100" width="200">
+                  <img src="{{$new->hinhanh}} " alt="" class="img-fluid" height="50" width="200">
                   <div class="overlay d-flex align-items-center justify-content-center">
                     <div class="content">
                       <div class="name">
@@ -262,13 +235,16 @@
                           <a href="{{route('chi-tiet',$new->maphim)}}" class="color-white">{{$new->tenphim}} </a>
                         </h3>
                       </div>
-                      <div class="text">
-                        <p class="d-none d-sm-block"> </p>
-                        <p class="buttons">
+                       
+                        <form action="{{route('chon-phim')}}" method="post">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        
                           <a href="{{route('chi-tiet',$new->maphim)}}" class="btn btn-template-outlined-white">Chi tiết</a>
-                          <a href="{{route('chon-phim',$new->maphim)}}" class="btn btn-template-outlined-white">Chọn</a>
-                        </p>
-                      </div>
+                          <button name="idphim" type="submit" value="{{$new->maphim}}"  class="btn btn-template-outlined-white">Chọn</button>
+                          
+                        
+                        </form>
+                       
                     </div>
                   </div>
                 </div>
@@ -278,14 +254,15 @@
             @endforeach
           </div>
         </div>
+
         <div id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" class="tab-pane fade">
           <div class="row portfolio text-center">
             @foreach($pre_phim as $pr)
 
-            <div class="col-md-6">
-              <div class="box-image item">
+            <div class="col-md-3 item">
+              <div class="box-image">
                 <div class="image">
-                  <img src="{{$pr->hinhanh}} " alt="" class="img-fluid" height="100" width="200">
+                  <img src="{{$pr->hinhanh}} " alt="" class="img-fluid" height="50" width="200">
                   <div class="overlay d-flex align-items-center justify-content-center">
                     <div class="content">
                       <div class="name">
@@ -293,13 +270,14 @@
                           <a href="{{route('chi-tiet',$pr->maphim)}}" class="color-white">{{$pr->tenphim}} </a>
                         </h3>
                       </div>
-                      <div class="text">
-                        <p class="d-none d-sm-block"> </p>
-                        <p class="buttons">
+                      <form action="{{route('chon-phim')}}" method="post">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        
                           <a href="{{route('chi-tiet',$pr->maphim)}}" class="btn btn-template-outlined-white">Chi tiết</a>
-                          <a href="{{route('chon-phim',$pr->maphim)}}" class="btn btn-template-outlined-white">Chọn</a>
-                        </p>
-                      </div>
+                          <button name="idphim" type="submit" value="{{$pr->maphim}}"  class="btn btn-template-outlined-white">Chọn</button>
+                          
+                        
+                        </form>
                     </div>
                   </div>
                 </div>
@@ -317,7 +295,8 @@
 
 
 
-<section style="background: url('sources/img/fixed-background-2.jpg') center top no-repeat; background-size: cover;" class="bar no-mb color-white text-center bg-fixed relative-positioned">
+
+<section style="background: url('sources/img/ok.jpg') center top no-repeat; background-size: cover;" class="bar no-mb color-white text-center bg-fixed relative-positioned">
   <div class="dark-mask"></div>
   <div class="container">
     <div class="icon icon-outlined icon-lg">

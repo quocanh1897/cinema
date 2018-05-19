@@ -5,7 +5,7 @@
             <div class="col-md-7">
                 <h1 class="h2">Mua vé</h1>
             </div>
-             
+
         </div>
     </div>
 </div>
@@ -14,20 +14,21 @@
         <div class="row">
             <div id="checkout" class="col-lg-8">
                 <div class="box border-bottom-0">
-                    <form method="get" action="{{route('chon-rap',$phimDaChon->first()->maphim)}}">
+                    <form action="{{route('chon-rap')}}" method="post">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <ul class="nav nav-pills nav-fill">
                             <li class="nav-item">
-                                <a  class="nav-link active">
+                                <a class="nav-link active">
                                     <i class="fa fa-map-marker"></i>
                                     <br>Chọn phim</a>
                             </li>
                             <li class="nav-item">
-                                <a  class="nav-link disabled">
+                                <a class="nav-link disabled">
                                     <i class="fa fa-truck"></i>
                                     <br>Chọn rạp</a>
                             </li>
                             <li class="nav-item">
-                                <a  class="nav-link disabled">
+                                <a class="nav-link disabled">
                                     <i class="fa fa-money"></i>
                                     <br>Suất chiếu</a>
                             </li>
@@ -45,13 +46,13 @@
                                                             <a href="{{route('chi-tiet',$phimDaChon->first()->maphim)}}" class="color-white">{{$phimDaChon->first()->tenphim}} </a>
                                                         </h3>
                                                     </div>
-                                                    
+
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
                         <div class="box-footer d-flex flex-wrap align-items-center justify-content-between">
@@ -60,7 +61,8 @@
                                     <i class="fa fa-chevron-left"></i>Quay về trang chủ</a>
                             </div>
                             <div class="right-col">
-                                <button   type="submit" class="btn btn-template-main">Bước kế
+                                <button name="idphim" value="{{$phimDaChon->first()->maphim}}" type="submit" class="btn btn-template-main">
+                                    Bước kế
                                     <i class="fa fa-chevron-right"></i>
                                 </button>
                             </div>

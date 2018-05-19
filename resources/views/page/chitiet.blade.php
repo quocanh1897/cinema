@@ -18,7 +18,7 @@
         <p class="lead">
           <b>Nội dung phim: </b>{{$phim->first()->mota}} </p>
         <div id="productMain" class="row">
-          <div class="col-sm-4">
+          <div class="col-sm-2">
             <div>
               <br><br>
               <img src="{{$phim->first()->hinhanh}} " alt="" class="img-fluid">

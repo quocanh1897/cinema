@@ -14,7 +14,7 @@
         <div class="row">
             <div id="checkout" class="col-lg-9">
                 <div class="box border-bottom-0">
-                    <form method="get" action="shop-checkout2.html">
+                     
                         <ul class="nav nav-pills nav-fill">
                             <li class="nav-item">
                                 <a   class="nav-link disabled">
@@ -48,9 +48,16 @@
                                                     </div>
                                                     <div class="text">
                                                         <p class="d-none d-sm-block">{{$rap->daichi}} </p>
+                                                        <form action="{{route('chon-suat-chieu')}}" method="post">
+                                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                         <p class="buttons">
-                                                            <a href="chon-suat-chieu/{{$phimDaChon->first()->maphim}}/{{$rap->marap}}" class="btn btn-template-outlined-white">Chọn</a>
+                                                            <select hidden name="idrap"><option value="{{$rap->marap}}"></option> </select>
+                                                            <button type="submit" name="idphim" value="{{$phimDaChon->first()->maphim}}" class="btn btn-template-outlined-white">
+                                                                Chọn
+                                                            </button>
+                                                        
                                                         </p>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
@@ -63,8 +70,13 @@
                         </div>
                         <div class="box-footer d-flex flex-wrap align-items-center justify-content-between">
                             <div class="left-col">
-                                <a href="{{route('chon-phim',$phimDaChon->first()->maphim)}}" class="btn btn-secondary mt-0">
-                                    <i class="fa fa-chevron-left"></i>Quay lại</a>
+                                <form action="{{route('chon-phim')}}" method="post">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <button type="submit" name="idphim" value="{{$phimDaChon->first()->maphim}} " class="btn btn-secondary mt-0">
+                                    <i class="fa fa-chevron-left"></i>Quay lại
+                                </button>
+                                </form>
+
                             </div>
                             <div class="right-col">
                                 <button type="submit" class="btn btn-template-main" disabled>Bước kế
@@ -72,7 +84,7 @@
                                 </button>
                             </div>
                         </div>
-                    </form>
+                     
                 </div>
             </div>
             <div class="col-lg-3">
