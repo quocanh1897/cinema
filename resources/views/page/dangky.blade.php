@@ -33,9 +33,7 @@
         <div class="row">
             <div class="col-lg-2"></div>
             <div class="col-lg-9">
-                <div class="box">
-                     
-                     
+                <div class="box">   
                     <!-- Form đăng kí -->
                     <form action="{{route('dang-ky')}}" method="post">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -45,13 +43,13 @@
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <label for="email">Email (*)</label>
-                                    <input name="email" type="text" class="form-control">
+                                    <input name="email" type="text" class="form-control" placeholder="Dùng để đăng nhập vào hệ thống">
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="password">Mật khẩu (*)</label>
-                                    <input name="password" type="password" class="form-control">
+                                    <input name="password" type="password" class="form-control" placeholder="Độ dài hợp lệ từ 6 tới 20 kí tự">
                                 </div>
                             </div>
                             <div class="col-sm-6">
@@ -67,44 +65,44 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <label for="username">Họ và tên</label>
-                                    <input name="username" type="text" class="form-control">
+                                    <label for="name">Họ và tên</label>
+                                    <input name="name" type="text" id="name" class="form-control">
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="birthday">Ngày sinh</label>
-                                    <input name="birthday" type="date" class="form-control">
+                                    <label for="ngaysinh">Ngày sinh</label>
+                                    <input name="ngaysinh" type="date" id="ngaysinh" class="form-control">
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="gender">Giới tính</label>
-                                    <select name="gender" class="form-control">
-                                        <option value="null" hidden>--</option>
-                                        <option value="Nam">Nam</option>
-                                        <option value="Nữ">Nữ</option>
+                                    <label for="gioitinh">Giới tính</label>
+                                    <select name="gioitinh" id="gioitinh" class="form-control">
+                                        
+                                        <option value="1" selected>Nam</option>
+                                        <option value="0">Nữ</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="phone">Số điện thoại</label>
-                                    <input name="phone" type="number" class="form-control" placeholder="+84">
+                                    <label for="sodt">Số điện thoại</label>
+                                    <input name="sodt" type="tel" id="sodt" class="form-control" placeholder="+84">
                                 </div>
                             </div>
                             
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="cmnd">Chứng minh thư</label>
-                                    <input name="cmnd" type="number" class="form-control">
+                                    <input name="cmnd" id="cmnd" type="number" class="form-control" placeholder="Xin nhập đúng chứng minh thư">
                                 </div>
                             </div>
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <label for="agree">Chấp nhận điều khoản sử dụng dịch vụ</label>
                                     <br>
-                                    <input type="checkbox" name="agree" /> Tôi đã đọc, hiểu và đồng ý với các
+                                    <input type="checkbox" name="agree" id="argree" /> Tôi đã đọc, hiểu và đồng ý với các
                                     <strong>
                                         <a href="faq">điều khoản</a> và 
                                     </strong>

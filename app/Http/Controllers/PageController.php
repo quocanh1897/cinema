@@ -14,6 +14,8 @@ use App\dien_vien;
 use App\the_loai;
 use Auth;
 use Carbon;
+use Redirect;
+use Session;
 
 class PageController extends Controller
 {
@@ -166,26 +168,22 @@ class PageController extends Controller
         $this->validate($req, 
         [
             'email'=>'required|email',
-            'password'=>'required|min:6|max:20',
+            'password'=>'required',
         ],
         [
             'email.required'=>'Vui lòng điền email',
-            'password.required'=>'Vui lòng nhập mật khẩu! ',
-            'password.max'=>'Sai mật khẩu! ',
-            'password.min'=>'Sai mật khẩu! '
-
+            'password.required'=>'Vui lòng nhập mật khẩu! ',  
         ]);
         //$credentials = $req->only('email', 'password');
         $credentials = array('email'=>$req->email,'password'=>$req->password);
         if (Auth::attempt($credentials)) {
             $data = $req->session()->all();
             //return redirect()->route('dang-ky')->with(['flag'=>'success','mes'=>'Đăng nhập thành công']);
-            return redirect()->back()->with(['flag'=>'success','mes'=>'Đăng nhập thành công']);
-        }else{
-            return redirect()->back()->with(['flag'=>'danger','mes'=>'Đăng nhập thất bại']);
-        }
-        
 
+            return redirect()->back()->with('success','Đăng nhập thành công');
+        }else{
+            return redirect()->back()->with('error','Đăng nhập thất bại');
+        }       
     }
 
     public function postSignup(Request $req)
@@ -193,30 +191,48 @@ class PageController extends Controller
         $this->validate($req,
             [
                 'email'=>'required|email|unique:users,email',
-                'password'=>'required|min:6|max:20',
-                 
+                'password'=>'required|min:6|max:20',                
                 're_password'=>'required|same:password',
+
+                'name'=>'required|regex:/(^([a-zA-Z\sàáâãèéêìíòóôõùúăđĩũơưăạảấầẩẫậắằẳẵặẹẻẽềềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ]*)$)/|max:50',
+                'ngaysinh'=> 'after:"1950-01-01"',
+                'gioitinh'=>'required',
+                'sodt'=>'numeric|digits_between:10,11',
+                'cmnd'=>'numeric|digits:9|unique:users,cmnd',
                 'agree'=>'required'
             ],
             [
                 'email.required'=>'Vui lòng nhập email! ',
-                'email.email'=>'email không đúng! ',
-                'email.unique'=>'email đã được sử dụng! ',
-                 
+                'email.email'=>'Địa chỉ email vừa nhập không đúng! ',
+                'email.unique'=>'Địa chỉ email đã được sử dụng! ',                
                 'password.required'=>'Vui lòng nhập mật khẩu! ',
                 're_password.required'=>'Vui lòng nhập lại mật khẩu! ',
-                're_password.same'=>'Mật khẩu không khớp! ',
-                'password.max'=>'Mật khẩu tối đa 20 kí tự! ',
-                'password.min'=>'Mật khẩu cần ít nhất 6 kí tự! ',
-                'agree.required'=>'Bạn chưa đọc và đồng ý với các điều khoản.'
+                're_password.same'=>'Mật khẩu nhập lại không khớp! ',
+                'password.max'=>'Mật khẩu cần ít nhất 6 và tối đa 20 kí tự! ',
+                'password.min'=>'Mật khẩu cần ít nhất 6 và tối đa 20 kí tự! ',
+
+                'name.regex'=>'Tên không được chứa số hoặc ký tự đặc biệt',              
+                'name.max'=>'Tên không được vượt quá 50 ký tự',
+                'ngaysinh.after'=>'Ngày sinh không hợp lệ',
+                'sodt.numeric'=>'Số điện thoại không hợp lệ',
+                'sodt.digits_between'=>'Số điên thoại không hợp lệ',
+                'cmnd.numeric'=>'Chứng minh nhân dân vừa nhập không hợp lệ',
+                'cmnd.digits'=>'Chứng minh nhân dân vừa nhập không hợp lệ',
+                'cmnd.unique'=>'Chứng minh nhân dân này đã được sử dụng',
+                'agree.required'=>'Vui lòng đọc và đồng ý với các điều khoản sử dụng!'
             ]);
         
-        $user = new User();
-        $user->name = $req->name;
-        $user->email = $req->email;
-        $user->password = Hash::make($req->password);
-        $user->save();
-        return redirect()->back()->with('thanhcong','Tạo tài khoản thành công, hãy đăng nhập lại');
+        $obj_user = new User();
+        $obj_user->email = $req->email;
+        $obj_user->password = Hash::make($req->password);
+
+        $obj_user->name = $req['name'];
+        $obj_user->ngaysinh = $req['ngaysinh'];    
+        $obj_user->gioitinh = $req['gioitinh'];       
+        $obj_user->sodt = $req['sodt'];
+        $obj_user->cmnd = $req['cmnd'];
+        $obj_user->save();
+        return redirect()->back()->with('success','Tạo tài khoản thành công, vui lòng đăng nhập lại');
 
     }
 
@@ -276,7 +292,7 @@ class PageController extends Controller
 
         if (is_null($req['password']) && is_null($req['password_old']) && is_null($req['re_password'])) {
             $obj_user->save(); 
-            return redirect()->back()->with(['flag'=>'success','mes'=>'Thay đổi thông tin thành công']);
+            return redirect()->back()->with('success','Thay đổi thông tin thành công');
         } 
         else 
         {   
@@ -299,12 +315,12 @@ class PageController extends Controller
             {
                 $obj_user->password = Hash::make($req['password']);;
                 $obj_user->save(); 
-                return redirect()->back()->with(['flag'=>'success','mes'=>'Đổi mật khẩu/thông tin thành công']);
+                return redirect()->back()->with('success','Đổi mật khẩu/thông tin thành công');
             }
             else
             {
                 $obj_user->save();
-                return redirect()->back()->with(['flag'=>'danger','mes'=>'Mật khẩu hiện tại không đúng']);
+                return redirect()->back()->with('error','Mật khẩu hiện tại không đúng');
             }
         }      
     }

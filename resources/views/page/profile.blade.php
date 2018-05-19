@@ -21,6 +21,8 @@
 
 @endif
 
+
+
 @if(Session::has('flag'))
 <div role="alert" class="alert alert-{{Session::get('flag')}} alert-dismissible">
     <button type="button" data-dismiss="alert" class="close">
@@ -90,7 +92,7 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="sodt">Số điện thoại</label><br>
-                                    <input type="text" name="sodt" id="sodt" class="autocomplete form-control" value="{{Auth::user()->sodt}}" >
+                                    <input type="tel" name="sodt" id="sodt" class="autocomplete form-control" value="{{Auth::user()->sodt}}" >
 
                                 </div>
                             </div>
