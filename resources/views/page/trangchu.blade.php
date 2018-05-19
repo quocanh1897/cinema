@@ -254,7 +254,7 @@
             <div class="col-md-6">
               <div class="box-image">
                 <div class="image">
-                  <img src="{{$new->hinhanh}} " alt="" class="img-fluid" height="100" width="300">
+                  <img src="{{$new->hinhanh}} " alt="" class="img-fluid" height="100" width="200">
                   <div class="overlay d-flex align-items-center justify-content-center">
                     <div class="content">
                       <div class="name">
@@ -283,9 +283,9 @@
             @foreach($pre_phim as $pr)
 
             <div class="col-md-6">
-              <div class="box-image">
+              <div class="box-image item">
                 <div class="image">
-                  <img src="{{$pr->hinhanh}} " alt="" class="img-fluid" height="100" width="300">
+                  <img src="{{$pr->hinhanh}} " alt="" class="img-fluid" height="100" width="200">
                   <div class="overlay d-flex align-items-center justify-content-center">
                     <div class="content">
                       <div class="name">
