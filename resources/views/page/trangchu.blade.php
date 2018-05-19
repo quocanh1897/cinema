@@ -250,10 +250,10 @@
          
           <div class="row portfolio text-center" >
             @foreach($new_phim as $new)
-            <div class="col-md-auto item">
+            <div class="col-md-auto item center">
               <div class="box-image">
                 <div class="image">
-                  <img src="{{$new->hinhanh}} " alt="" class="img-fluid" height="50" width="250">
+                  <img src="{{$new->hinhanh}} " alt="" class="img-fluid" height="50" width="200">
                   <div class="overlay d-flex align-items-center justify-content-center">
                     <div class="content">
                       <div class="name">
@@ -288,7 +288,7 @@
             <div class="col-md-auto item">
               <div class="box-image">
                 <div class="image">
-                  <img src="{{$pr->hinhanh}} " alt="" class="img-fluid" height="50" width="250">
+                  <img src="{{$pr->hinhanh}} " alt="" class="img-fluid" height="50" width="200">
                   <div class="overlay d-flex align-items-center justify-content-center">
                     <div class="content">
                       <div class="name">
