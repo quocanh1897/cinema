@@ -243,18 +243,17 @@
           <a id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false"
             class="nav-link ">PHIM SẮP CHIẾU</a>
         </li>
-
       </ul>
+
       <div id="pills-tabContent" class="tab-content"  >
         <div id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" class="tab-pane fade show active">
-
+         
           <div class="row portfolio text-center" >
             @foreach($new_phim as $new)
-
-            <div class="col-md-6">
+            <div class="col-md-auto item">
               <div class="box-image">
                 <div class="image">
-                  <img src="{{$new->hinhanh}} " alt="" class="img-fluid" height="100" width="300">
+                  <img src="{{$new->hinhanh}} " alt="" class="img-fluid" height="50" width="250">
                   <div class="overlay d-flex align-items-center justify-content-center">
                     <div class="content">
                       <div class="name">
@@ -281,14 +280,15 @@
             @endforeach
           </div>
         </div>
+
         <div id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" class="tab-pane fade">
           <div class="row portfolio text-center">
             @foreach($pre_phim as $pr)
 
-            <div class="col-md-6">
+            <div class="col-md-auto item">
               <div class="box-image">
                 <div class="image">
-                  <img src="{{$pr->hinhanh}} " alt="" class="img-fluid" height="100" width="300">
+                  <img src="{{$pr->hinhanh}} " alt="" class="img-fluid" height="50" width="250">
                   <div class="overlay d-flex align-items-center justify-content-center">
                     <div class="content">
                       <div class="name">
@@ -321,7 +321,8 @@
 
 
 
-<section style="background: url('sources/img/fixed-background-2.jpg') center top no-repeat; background-size: cover;" class="bar no-mb color-white text-center bg-fixed relative-positioned">
+
+<section style="background: url('sources/img/ok.jpg') center top no-repeat; background-size: cover;" class="bar no-mb color-white text-center bg-fixed relative-positioned">
   <div class="dark-mask"></div>
   <div class="container">
     <div class="icon icon-outlined icon-lg">
@@ -334,5 +335,14 @@
     </p>
   </div>
 </section>
+
+
+  
+
+
+
+   
+  
+
 
 @endsection

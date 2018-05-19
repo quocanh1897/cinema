@@ -6,7 +6,14 @@
             <div class="col-md-7">
                 <h1 class="h2">Đăng kí tài khoản mới</h1>
             </div>
-
+            <div class="col-md-5">
+                <ul class="breadcrumb d-flex justify-content-end">
+                    <li class="breadcrumb-item">
+                        <a href="index.html">Trang chủ</a>
+                    </li>
+                    <li class="breadcrumb-item active">Đăng kí</li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>

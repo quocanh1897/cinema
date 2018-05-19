@@ -5,14 +5,14 @@
     <div class="container">
         <div class="row d-flex align-items-center flex-wrap">
             <div class="col-md-7">
-                <h1 class="h2">Liên lạc</h1>
+                <h1 class="h2">Liên hệ</h1>
             </div>
             <div class="col-md-5">
                 <ul class="breadcrumb d-flex justify-content-end">
                     <li class="breadcrumb-item">
-                        <a href="index">Về trang chủ</a>
+                        <a href="index">Trang chủ</a>
                     </li>
-                    <li class="breadcrumb-item active">Liên lạc</li>
+                    <li class="breadcrumb-item active">Liên hệ</li>
                 </ul>
             </div>
         </div>
@@ -24,13 +24,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="heading">
-                        <h2>We are here to help you</h2>
-                    </div>
-                    <p class="lead">Are you curious about something? Do you have some kind of problem with our products? As am hastily invited
-                        settled at limited civilly fortune me. Really spring in extent an by. Judge but built gay party world.
-                        Of so am he remember although required. Bachelor unpacked be advanced at. Confined in declared marianne
-                        is vicinity.</p>
-                    <p class="text-sm">Please feel free to contact us, our customer service center is working for you 24/7.</p>
+                        <h2>Mọi thắc mắc xin vui lòng liên hệ tại:</h2>
+                    </div>     
                 </div>
             </div>
         </section>
@@ -41,11 +36,9 @@
                         <div class="icon-outlined">
                             <i class="fa fa-map-marker"></i>
                         </div>
-                        <h3 class="h4">Address</h3>
-                        <p>13/25 New Avenue
-                            <br> New Heaven, 45Y 73J
-                            <br> England,
-                            <strong>Great Britain</strong>
+                        <h3 class="h4">địa chỉ</h3>
+                        <p>
+                            Nhà A3, trường Đại học Bách Khoa, đường Lý Thường Kiệt, quận 10, thành phố Hồ Chí Minh
                         </p>
                     </div>
                 </div>
@@ -54,11 +47,10 @@
                         <div class="icon-outlined">
                             <i class="fa fa-phone"></i>
                         </div>
-                        <h3 class="h4">Call center</h3>
-                        <p>This number is toll free if calling from Great Britain otherwise we advise you to use the electronic
-                            form of communication.</p>
-                        <p>
-                            <strong>+33 555 444 333</strong>
+                        <h3 class="h4">tổng đài</h3>
+                        <p>Tổng đài online 24/24<br>
+                        
+                            <strong>01639 876 888</strong>
                         </p>
                     </div>
                 </div>
@@ -67,19 +59,12 @@
                         <div class="icon-outlined">
                             <i class="fa fa-envelope"></i>
                         </div>
-                        <h3 class="h4">Electronic support</h3>
-                        <p>Please feel free to write an email to us or to use our electronic ticketing system.</p>
-                        <ul class="list-unstyled text-sm">
-                            <li>
-                                <strong>
-                                    <a href="mailto:">info@fakeemail.com</a>
-                                </strong>
-                            </li>
-                            <li>
-                                <strong>
-                                    <a href="404">Ticketio</a>
-                                </strong> - our ticketing support platform</li>
-                        </ul>
+                        <h3 class="h4">Hộp thư</h3>
+                        <p>
+                            Hệ thống tiếp nhận phản hồi khách hàng<br>
+                            <a href="mailto:"><strong>bkCinema@gmail.com</strong></a>   
+                        </p>
+                        
                     </div>
                 </div>
             </div>

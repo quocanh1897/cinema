@@ -90,6 +90,11 @@ Route::get('faq',[
     'uses'=>'PageController@getFAQ'
 ]);
 
+Route::get('faqduy',[
+    'as'=>'faqduy',
+    'uses'=>'PageController@getFAQduy'
+]);
+
 Route::get('chi-tiet/{id}',[
     'as'=>'chi-tiet',
     'uses'=>'PageController@getChitiet'

@@ -9,3 +9,14 @@
 	z-index: 1000;
 	align-items: 
 }
+
+.col-md-duy{
+	position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    max-width: 20%;
+}
