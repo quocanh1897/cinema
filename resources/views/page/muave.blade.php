@@ -539,11 +539,12 @@
     </div>
 </div>
 <script language="javascript">
+    document.ready(function() {
     document.getElementById("content2").style.display = 'none';
     document.getElementById("db_btn").onclick = function () {
         document.getElementById("content1").style.display = 'none';
         document.getElementById("content2").style.display = 'block';
-    };
+    };});
 </script>
 
 @endsection

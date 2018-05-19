@@ -3,7 +3,6 @@
 <script src="sources/js/jssor.slider-27.1.0.min.js" type="text/javascript"></script>
 <script type="text/javascript">
   jssor_1_slider_init = function () {
-
     var jssor_1_SlideoTransitions = [
     [{
       b: -1,
@@ -56,7 +55,6 @@
       }
     }]
     ];
-
     var jssor_1_options = {
       $AutoPlay: 1,
       $SlideDuration: 800,
@@ -72,29 +70,20 @@
         $Class: $JssorBulletNavigator$
       }
     };
-
     var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
-
     /*#region responsive code begin*/
-
     var MAX_WIDTH = 3000;
-
     function ScaleSlider() {
       var containerElement = jssor_1_slider.$Elmt.parentNode;
       var containerWidth = containerElement.clientWidth;
-
       if (containerWidth) {
-
         var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
-
         jssor_1_slider.$ScaleWidth(expectedWidth);
       } else {
         window.setTimeout(ScaleSlider, 30);
       }
     }
-
     ScaleSlider();
-
     $Jssor$.$AddEvent(window, "load", ScaleSlider);
     $Jssor$.$AddEvent(window, "resize", ScaleSlider);
     $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
@@ -104,6 +93,75 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300italic,regular,italic,700,700italic&subset=latin-ext,greek-ext,cyrillic-ext,greek,vietnamese,latin,cyrillic"
 rel="stylesheet" type="text/css" />
 <style>
+<<<<<<< HEAD
+  /*jssor slider loading skin spin css*/
+  .jssorl-009-spin img {
+    animation-name: jssorl-009-spin;
+    animation-duration: 1.6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  @keyframes jssorl-009-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  /*jssor slider bullet skin 032 css*/
+  .jssorb032 {
+    position: absolute;
+  }
+  .jssorb032 .i {
+    position: absolute;
+    cursor: pointer;
+  }
+  .jssorb032 .i .b {
+    fill: #fff;
+    fill-opacity: 0.7;
+    stroke: #000;
+    stroke-width: 1200;
+    stroke-miterlimit: 10;
+    stroke-opacity: 0.25;
+  }
+  .jssorb032 .i:hover .b {
+    fill: #000;
+    fill-opacity: .6;
+    stroke: #fff;
+    stroke-opacity: .35;
+  }
+  .jssorb032 .iav .b {
+    fill: #000;
+    fill-opacity: 1;
+    stroke: #fff;
+    stroke-opacity: .35;
+  }
+  .jssorb032 .i.idn {
+    opacity: .3;
+  }
+  /*jssor slider arrow skin 051 css*/
+  .jssora051 {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+  }
+  .jssora051 .a {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 360;
+    stroke-miterlimit: 10;
+  }
+  .jssora051:hover {
+    opacity: .8;
+  }
+  .jssora051.jssora051dn {
+    opacity: .5;
+  }
+  .jssora051.jssora051ds {
+    opacity: .3;
+    pointer-events: none;
+=======
 /*jssor slider loading skin spin css*/
 
 .jssorl-009-spin img {
@@ -119,6 +177,7 @@ rel="stylesheet" type="text/css" />
   }
   to {
     transform: rotate(360deg);
+>>>>>>> duy2
   }
 }
 
@@ -230,6 +289,31 @@ data-scale-right="0.75">
 </script>
 <!-- END SLIDER -->
 
+<<<<<<< HEAD
+
+<div>
+  <section class="bar bg-gray no-mb text-md-center">
+    <div class="container" >
+      <ul id="pills-tab" role="tablist" class="nav nav-pills nav-justified" >
+        <li class="nav-item">
+          <a id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true" 
+          class="nav-link active">PHIM ĐANG CHIẾU</a>
+        </li>
+        <li class="nav-item">
+          <a id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false"
+            class="nav-link ">PHIM SẮP CHIẾU</a>
+        </li>
+      </ul>
+
+      <div id="pills-tabContent" class="tab-content"  >
+        <div id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" class="tab-pane fade show active">
+         
+          <div class="row portfolio text-center" >
+            @foreach($new_phim as $new)
+
+            <div class="col-md-3 item center">
+
+=======
 <section class="background-pentagon mb-0">
   <div class="container">
     <div class="row">
@@ -250,6 +334,7 @@ data-scale-right="0.75">
           @foreach($new_phim as $new)
           <li class="item" >
             <div class="col-md-auto item center">
+>>>>>>> duy2
               <div class="box-image">
                 <div class="image">
                   <img src="{{$new->hinhanh}} " alt="" class="img-fluid" height="50" width="200">
@@ -269,6 +354,21 @@ data-scale-right="0.75">
                   </div>
                 </div>
               </div>
+<<<<<<< HEAD
+            </div>
+
+            @endforeach
+          </div>
+        </div>
+
+        <div id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" class="tab-pane fade">
+          <div class="row portfolio text-center">
+            @foreach($pre_phim as $pr)
+
+
+            <div class="col-md-3 item">
+
+=======
             </div>                      
           </li>
           @endforeach              
@@ -279,6 +379,7 @@ data-scale-right="0.75">
           @foreach($pre_phim as $pr)
           <li class="item">
             <div class="col-md-auto item">
+>>>>>>> duy2
               <div class="box-image">
                 <div class="image">
                   <img src="{{$pr->hinhanh}} " alt="" class="img-fluid" height="50" width="200">

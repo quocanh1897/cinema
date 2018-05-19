@@ -48,9 +48,16 @@
                                                     </div>
                                                     <div class="text">
                                                         <p class="d-none d-sm-block">{{$rap->daichi}} </p>
+                                                        <form action="{{route('chon-suat-chieu')}}" method="post">
+                                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                         <p class="buttons">
-                                                            <a href="chon-suat-chieu/{{$phimDaChon->first()->maphim}}/{{$rap->marap}}" class="btn btn-template-outlined-white">Chọn</a>
+                                                            <select hidden name="idrap"><option value="{{$rap->marap}}"></option> </select>
+                                                            <button type="submit" name="idphim" value="{{$phimDaChon->first()->maphim}}" class="btn btn-template-outlined-white">
+                                                                Chọn
+                                                            </button>
+                                                        
                                                         </p>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
