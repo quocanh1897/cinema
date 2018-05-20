@@ -64,13 +64,23 @@ class PageController extends Controller
         $currentDate = Carbon\Carbon::now()->toDateString();
         $phim = phim::where('batdau','<',$currentDate)->get();
         return view('page.phimdangchieu',compact('phim'));
-    }
+    }   
 
     public function phimSapChieu()
     {
         $currentDate = Carbon\Carbon::now()->toDateString();
         $phim = phim::where('batdau','>',$currentDate)->get();
         return view('page.phimsapchieu',compact('phim'));
+    }
+
+    public function getChitiet($idPhim)
+    {
+        
+        $phim = phim::where('maphim',$idPhim)->get();
+        $dienvien = dien_vien::where('maphim',$idPhim)->get();
+        $theloai = the_loai::where('maphim',$idPhim)->get();
+         
+        return view('page.chitiet',compact('phim','dienvien','theloai'));
     }
 
     public function getMuaVe()
@@ -82,6 +92,12 @@ class PageController extends Controller
     {
         $rap = rap_chieu::all();
         return view('page.hethongrap',compact('rap'));
+    }
+
+    public function getRap($idRap)
+    {
+        $rap = rap_chieu::where('marap',$idRap)->get();
+        return view('page.rap',compact('rap'));
     }
 
     public function contact()
@@ -102,16 +118,6 @@ class PageController extends Controller
     public function getFAQduy()
     {
         return view('page.faqduy');
-    }
-
-    public function getChitiet($idPhim)
-    {
-        
-        $phim = phim::where('maphim',$idPhim)->get();
-        $dienvien = dien_vien::where('maphim',$idPhim)->get();
-        $theloai = the_loai::where('maphim',$idPhim)->get();
-         
-        return view('page.chitiet',compact('phim','dienvien','theloai'));
     }
 
     public function postChonPhim(Request $req)

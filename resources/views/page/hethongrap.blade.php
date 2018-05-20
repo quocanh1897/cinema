@@ -8,7 +8,14 @@
             <div class="col-md-7">
                 <h1 class="h2">HỆ THỐNG RẠP</h1>
             </div>
-            
+            <div class="col-md-5">
+                <ul class="breadcrumb d-flex justify-content-end">
+                    <li class="breadcrumb-item">
+                        <a href="#">Trang chủ</a>
+                    </li>
+                    <li class="breadcrumb-item active">Rạp</li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
@@ -26,14 +33,14 @@
                         <div class="col-lg-3 col-md-4">
                             <div class="product">
                                 <div class="image">
-                                    <a href="shop-detail.html">
-                                        <img src="sources/img/rapchieu.jpg" alt="" class="img-fluid image1">
+                                    <a href="{{route('rap',$rap->marap)}}" class="mytheatre">
+                                        <img src="sources/img/rapchieu.jpg" alt="" class="img-fluid">
                                     </a>
                                 </div>
                                 <div class="text">
-                                    <h3 class="h5">
-                                        <a href="shop-detail.html">{{$rap->tenrap}} </a>
-                                    </h3>
+                                    <h4 class="h5">
+                                        <a href="{{route('rap',$rap->marap)}}">{{$rap->tenrap}} </a>
+                                    </h4>
                                         <p>{{$rap->daichi}} </p>
                                 </div>
                             </div>

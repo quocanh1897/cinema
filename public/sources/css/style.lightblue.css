@@ -1727,7 +1727,7 @@ header.nav-holder.sticky {
 
 .product .image {
   overflow: hidden;
-  max-height: 190px;
+  max-height: 170px;
 }
 
 .product .image a {
@@ -1735,12 +1735,12 @@ header.nav-holder.sticky {
 }
 
 .product .text {
-  padding: 10px;
+  padding: -5px;
   border-bottom: 1px solid #ddd;
 }
 
 .product .text h3 {
-  min-height: 63px;
+  min-height: 43px;
 }
 
 .product .price {

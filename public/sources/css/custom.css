@@ -49,5 +49,21 @@ p.lead-duy {
     max-height:370px;
     width: auto;
     height: auto;
-
 }
+
+.mytheatre img {
+    display: block;
+    max-width:250px;
+    max-height:270px;
+    width: auto;
+    height: auto;
+}
+
+.myprice img {
+    display: block;
+    max-width:500px;
+    max-height:750px;
+    width: auto;
+    height: auto;
+}
+

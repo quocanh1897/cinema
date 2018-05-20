@@ -70,6 +70,11 @@ Route::get('he-thong-rap',[
     'uses'=>'PageController@heThongRap'
 ]);
 
+Route::get('rap/{id}',[
+    'as'=>'rap',
+    'uses'=>'PageController@getRap'
+]);
+
 Route::get('dang-ky',[
     'as'=>'dang-ky',
     'uses'=>'PageController@getDangKy'
