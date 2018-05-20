@@ -12,7 +12,7 @@
 <div id="content">
     <div class="container">
         <div class="row">
-            <div id="checkout" class="col-lg-9">
+            <div id="checkout" class="col-lg-8">
                 <div class="box border-bottom-0">
                      
                         <ul class="nav nav-pills nav-fill">
@@ -87,7 +87,7 @@
                      
                 </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-4">
                 <div id="order-summary" class="box mb-4 p-0">
                     <div class="box-header mt-0">
                         <h4>Thông tin vé</h4>

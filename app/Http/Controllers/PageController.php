@@ -11,6 +11,7 @@ use App\rap_chieu;
 use App\suat_chieu;
 use App\khung_gio;
 use App\dien_vien;
+use App\dich_vu;
 use App\the_loai;
 use Auth;
 use Carbon;
@@ -167,11 +168,12 @@ class PageController extends Controller
 
     public function postMuaVe(Request $req)
     {
+        $dichvu = dich_vu::all();
         $phimDaChon = phim::where('maphim',$req['idphim'])->get();
         $rapDaChon = rap_chieu::where('marap',$req['idrap'])->get();
         $ngay = $req['ngaychieu'];
         $gio = $req['giochieu'];
-        return view('page.muave',compact('phimDaChon','rapDaChon','ngay','gio') );
+        return view('page.muave',compact('phimDaChon','rapDaChon','ngay','gio','dichvu') );
 
     }
 

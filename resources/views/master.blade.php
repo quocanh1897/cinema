@@ -87,7 +87,7 @@
   <script src="sources/js/front.js"></script>
   <!-- Button back-to-top -->
   <script type="text/javascript">
-    $(function(){
+    $(document).ready (function (){
       $(window).scroll(function () {
         if ($(this).scrollTop() > 100) $('#goTop').fadeIn();
         else $('#goTop').fadeOut();
@@ -96,6 +96,7 @@
         $('body,html').animate({scrollTop: 0}, 'slow');
       });
     });
+  
   </script>
 
   

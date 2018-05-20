@@ -1,4 +1,5 @@
 @extends('master') @section('content')
+ 
 <div id="heading-breadcrumbs">
     <div class="container">
         <div class="row d-flex align-items-center flex-wrap">
@@ -15,120 +16,102 @@
 
             <div id="basket" class="col-lg-9">
                 <div class="box mt-0 pb-0 no-horizontal-padding">
-                    <form method="get">
+                     
                         <div class="table-responsive">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th colspan="2">Loại ghế</th>
-                                        <th>Số lượng</th>
-                                        <th>Đơn giá</th>
-                                        <th colspan="2">Tổng</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <a href="#">
-                                                <img src="sources/img/detailsquare.jpg" alt="White Blouse Armani" class="img-fluid">
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <a href="#">Ghế loại 1</a>
-                                        </td>
-                                        <td>
-                                            <input type="number" value="2" class="form-control">
-                                        </td>
-                                        <td>75,000 VNĐ</td>
-                                        <td>150,000 VNĐ</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a href="#">
-                                                <img src="sources/img/basketsquare.jpg" alt="Black Blouse Armani" class="img-fluid">
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <a href="#">Ghế loại 2</a>
-                                        </td>
-                                        <td>
-                                            <input type="number" value="1" class="form-control">
-                                        </td>
-                                        <td>50,000 VNĐ</td>
-                                        <td>50,000 VNĐ</td>
-                                    </tr>
-                                </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th colspan="4">Tổng cộng</th>
-                                        <th colspan="2">200,000 VNĐ</th>
-                                    </tr>
-                                </tfoot>
-                            </table>
-                            <table class="table">
+
+                            <table id="table1" class="table">
                                 <thead>
                                     <tr>
                                         <th colspan="2">Dịch vụ</th>
                                         <th>Số lượng</th>
                                         <th>Đơn giá</th>
-                                        <th colspan="2">Tổng</th>
+                                        <th colspan="2">Thành tiền</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <form id="forms"onsubmit="return false;">
+                                    @foreach($dichvu as $dv)
                                     <tr>
                                         <td>
-                                            <a href="#">
-                                                <img src="sources/img/detailsquare.jpg" alt="White Blouse Armani" class="img-fluid">
-                                            </a>
+                                            
+                                            <img src="{{$dv->hinhanh}} " alt="dichvu" class="img-fluid">
+                                            
                                         </td>
                                         <td>
-                                            <a href="#">Combo 1</a>
+                                            <a >{{$dv->tendv}} </a>
                                         </td>
                                         <td>
-                                            <input type="number" value="2" class="form-control">
+                                            <input id="soluong_{{$dv->madv}}" class="cacsl" type="number" value="0" step="1" min="0" max="10" style="font: 20pt Courier" >
                                         </td>
-                                        <td>75,000 VNĐ</td>
-                                        <td>150,000 VNĐ</td>
+                                        <td><input type="text" class="form-control" id="gia_{{$dv->madv}}" value="{{$dv->gia}}" disabled></td>
+                                        <td><input type="text" class="form-control" id="tong_{{$dv->madv}}" value="" disabled></td>
                                     </tr>
-                                    <tr>
-                                        <td>
-                                            <a href="#">
-                                                <img src="sources/img/basketsquare.jpg" alt="Black Blouse Armani" class="img-fluid">
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <a href="#">Combo 2</a>
-                                        </td>
-                                        <td>
-                                            <input type="number" value="1" class="form-control">
-                                        </td>
-                                        <td>50,000 VNĐ</td>
-                                        <td>50,000 VNĐ</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a href="#">
-                                                <img src="sources/img/basketsquare.jpg" alt="Black Blouse Armani" class="img-fluid">
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <a href="#">Combo 3</a>
-                                        </td>
-                                        <td>
-                                            <input type="number" value="1" class="form-control">
-                                        </td>
-                                        <td>60,000 VNĐ</td>
-                                        <td>60,000 VNĐ</td>
-                                    </tr>
+                                    @endforeach
+                                    </form>                                    
+
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th colspan="4">Tổng cộng</th>
-                                        <th colspan="2">260,000 VNĐ</th>
+                                        <th colspan="4">Tổng</th>
+                                        <th colspan="2" ><input id="tong" type="text" class="form-control" value="" disabled></th>
                                     </tr>
                                 </tfoot>
                             </table>
+
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th colspan="2">Chọn ghế</th>
+
+                                    </tr>
+                                </thead>
+
+                            </table>
                         </div>
+
+                        <!-- SELECT SEATS -->
+                         
+                            <div id="selectseat" class="main">
+                                <div class="demo col-lg-12">
+                                    <div id="seat-map">
+                                        <div class="front">MÀN HÌNH</div>
+                                    </div>
+                                    <div class="booking-details">
+                                        <ul class="book-left">
+                                            <li>Số lượng</li>
+                                            <li>Thành tiền:</li>
+                                            <li>Ghế số:</li>
+                                        </ul>
+                                        <ul class="book-right">
+
+                                            <li>:
+                                                <span id="counter">0</span>
+                                            </li>
+                                            <li>:
+                                                <b>
+                                                    
+                                                    <span id="total">0</span>
+                                                    <i>VNĐ</i>
+                                                </b>
+                                            </li>
+                                        </ul>
+                                        <div class="clear"></div>
+                                        <ul id="selected-seats" ></ul>
+
+
+                                        
+                                        <div id="legend"></div>
+                                    </div>
+                                    <div style="clear:both"></div>
+                                </div>
+
+
+                            </div>
+
+                         
+
+
+
                         <div class="box-footer d-flex justify-content-between align-items-center">
                             <div class="left-col">
                                 <a href="index" class="btn btn-secondary mt-0">
@@ -140,31 +123,31 @@
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    
                 </div>
             </div>
             <div class="col-lg-3">
                 <div id="order-summary" class="box mt-0 mb-4 p-0">
-                    <div class="box-header mt-0">
+                    <div class="box-header mt-0"  align="center">
                         <h3>
-                            <img src="sources/img/basketsquare.jpg" alt="Black Blouse Armani" class="img-fluid">
+                            <img src="{{$phimDaChon->first()->hinhanh}} " alt="phim" class="img-fluid">
                         </h3>
                     </div>
-                    <p class="text-muted" align="center">Tên phim</p>
+                    <p class="text-muted" align="center">{{$phimDaChon->first()->tenphim}} </p>
                     <div class="table-responsive">
                         <table class="table">
                             <tbody>
                                 <tr>
                                     <td>Rạp:</td>
-                                    <th>Aeon Mall</th>
+                                    <th>{{$rapDaChon->first()->tenrap}} </th>
                                 </tr>
                                 <tr>
                                     <td>Suất chiếu</td>
-                                    <th>Ngày | Giờ</th>
+                                    <th>{{$ngay}} | {{$gio}} </th>
                                 </tr>
                                 <tr class="total">
-                                    <td>Total</td>
-                                    <th>460,000 VNĐ</th>
+                                    <td colspan="3"><input type="text" id="tongcong" class="form-control" value="" disabled></td> 
+                                     
                                 </tr>
                             </tbody>
                         </table>
@@ -175,7 +158,7 @@
                         <h4>Mã khuyến mãi</h4>
                     </div>
                     <p class="text-muted">Nhập mã khuyến mãi để nhận ưu đãi bất ngờ.</p>
-                    <form>
+                     
                         <div class="input-group">
                             <input type="text" class="form-control">
                             <span class="input-group-btn">
@@ -184,56 +167,33 @@
                                 </button>
                             </span>
                         </div>
-                    </form>
+                     
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- SELECT SEATS -->
-<div>
 
-    <div class="main">
+<style>
+#selectseat {
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+    width: auto !important;  
+    width: 100%;
+    max-width: 100%;
+}
 
-         
-            <div id="seat-map">
-                <div class="front">MÀN HÌNH</div>
-            </div>
-            <div class="booking-details">
-                <ul class="book-left">
-                    <li>Số lượng</li>
-                    <li>Giá</li>
-                    <li>Ghế số:</li>
-                </ul>
-                <ul class="book-right">
-
-                    <li>:
-                        <span id="counter">0</span>
-                    </li>
-                    <li>:
-                        <b>
-                            <i>$</i>
-                            <span id="total">0</span>
-                        </b>
-                    </li>
-                </ul>
-                <div class="clear"></div>
-                <ul id="selected-seats" class="scrollbar scrollbar1"></ul>
-
-
-                <button class="checkout-button">Book Now</button>
-                <div id="legend"></div>
-            </div>
-            <div style="clear:both"></div>
-        
-
-
-    </div>
-    
-</div>
+</style>
 
 <script>
+    //khong cho nhap vao o so luong
+    $("[type='number']").keypress(function (evt) {
+    evt.preventDefault();
+    });
+
+    //tinh toan gia ghe
     var price = 10; //price
     $(document).ready(function ($) {
         var $cart = $('#selected-seats'), //Sitting Area
@@ -310,8 +270,49 @@
 
         return total;
     }
+
+    //CALCULATE TOTAL BILL
+
+    var cacsl = document.getElementsByClassName("cacsl");
+    var num = cacsl.length;
+    var soluong = [];
+    for (i = 1; i <= num; i++) {
+        soluong.push('#soluong_' + i);
+    }
+
+    var getTotal = function () {
+        var tong=[];
+        document.getElementById("tong").value = 0;
+        for (i = 1; i <= num; i++) {
+            
+            var soluong = document.getElementById("soluong_" + i).value;
+            
+            var dongia = document.getElementById("gia_" + i).value;
+            tong.push(soluong*dongia);
+            var thanhtien = document.getElementById("tong_" + i).value = soluong * dongia + " VNĐ";
+            
+           
+        }
+        const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+        document.getElementById("tong").value = tong.reduce(reducer) + " VNĐ";
+    }
+
+    
+
+    var calculate = function () {
+        var temp, i = 1;
+        do {
+            temp = document.getElementById("soluong_" + i).onchange = getTotal;
+            i++;
+
+        } while (temp);
+        calculate();
+
+    };
+
+    window.onload = calculate;
 </script>
-<script src="sources/js/jquery.nicescroll.js"></script>
-<script src="sources/js/scripts.js"></script>
+
 
 @endsection
