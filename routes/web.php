@@ -11,33 +11,24 @@
 |
 */
 
+// Trang chủ 
+
 Route::get('/', [
     'uses'=>'PageController@getIndex'
 ]);
 
-Route::get('404',[
-    'as'=>'404',
-    'uses'=>'PageController@get404'
+Route::get('index',[
+    'as'=>'trang-chu',
+    'uses'=>'PageController@getIndex'
 ]);
+
+// End trang chủ ============================================================
+
+// Nhóm trang thông tin khách hàng
 
 Route::get('profile',[
     'as'=>'profile',
     'uses'=>'PageController@getProfile'
-]);
-
-Route::post('changepass',[
-    'as'=>'changepass',
-    'uses'=>'PageController@postChangePass'
-]);
-
-Route::post('changePersonalData',[
-    'as'=>'changePersonalData',
-    'uses'=>'PageController@postchangePersonalData'
-]);
-
-Route::get('about',[
-    'as'=>'about',
-    'uses'=>'PageController@getAbout'
 ]);
 
 Route::get('lich-su',[
@@ -55,25 +46,23 @@ Route::get('phim-da-xem',[
     'uses'=>'PageController@getPhimDaXem'
 ]);
 
-Route::get('phim-dang-chieu',[
-    'as'=>'phim-dang-chieu',
-    'uses'=>'PageController@phimDangChieu'
+Route::post('changePersonalData',[
+    'as'=>'changePersonalData',
+    'uses'=>'PageController@postchangePersonalData'
 ]);
 
-Route::get('phim-sap-chieu',[
-    'as'=>'phim-sap-chieu',
-    'uses'=>'PageController@phimSapChieu'
+// End Nhóm trang thông tin người dùng =============================================
+
+// Trang thông báo lỗi
+
+Route::get('404',[
+    'as'=>'404',
+    'uses'=>'PageController@get404'
 ]);
 
-Route::get('he-thong-rap',[
-    'as'=>'he-thong-rap',
-    'uses'=>'PageController@heThongRap'
-]);
+// End trang thông báo lỗi ============================================================
 
-Route::get('rap/{id}',[
-    'as'=>'rap',
-    'uses'=>'PageController@getRap'
-]);
+// Nhóm trang đăng nhập/ đăng kí/ đăng xuất
 
 Route::get('dang-ky',[
     'as'=>'dang-ky',
@@ -90,6 +79,25 @@ Route::post('dang-nhap',[
     'uses'=>'PageController@postSignin'
 ]);
 
+Route::get('dang-xuat',[
+    'as'=>'dang-xuat',
+    'uses'=>'PageController@getDangxuat'
+]);
+
+// End nhóm trang đăng nhập/ đăng kí/ đăng xuất ===============================================================
+
+// Nhóm trang thuộc vùng footer
+
+Route::get('about',[
+    'as'=>'about',
+    'uses'=>'PageController@getAbout'
+]);
+
+Route::get('contact',[
+    'as'=>'contact',
+    'uses'=>'PageController@contact'
+]);
+
 Route::get('faq',[
     'as'=>'faq',
     'uses'=>'PageController@getFAQ'
@@ -100,30 +108,51 @@ Route::get('faqduy',[
     'uses'=>'PageController@getFAQduy'
 ]);
 
+// End nhóm trang thuộc vùng footer ===============================================================
+
+// Nhóm trang thuộc menu Hệ thống rạp
+
+Route::get('he-thong-rap',[
+    'as'=>'he-thong-rap',
+    'uses'=>'PageController@heThongRap'
+]);
+
+Route::get('rap/{id}',[
+    'as'=>'rap',
+    'uses'=>'PageController@getRap'
+]);
+
+// End nhóm trang thuộc menu Hệ thông rạp ===============================================================
+
+// Nhóm trang thuộc menu Lịch chiếu
+
+Route::get('phim-dang-chieu',[
+    'as'=>'phim-dang-chieu',
+    'uses'=>'PageController@phimDangChieu'
+]);
+
+Route::get('phim-sap-chieu',[
+    'as'=>'phim-sap-chieu',
+    'uses'=>'PageController@phimSapChieu'
+]);
+
 Route::get('chi-tiet/{id}',[
     'as'=>'chi-tiet',
     'uses'=>'PageController@getChitiet'
 ]);
 
-Route::get('contact',[
-    'as'=>'contact',
-    'uses'=>'PageController@contact'
-]);
+// End nhóm trang thuộc menu Lịch chiếu ===============================================================
 
-Route::get('index',[
-    'as'=>'trang-chu',
-    'uses'=>'PageController@getIndex'
-]);
- 
-Route::get('dang-xuat',[
-    'as'=>'dang-xuat',
-    'uses'=>'PageController@getDangxuat'
-]);
+// Nhóm trang thuộc menu Mua vé
 
 Route::get('mua-ve',[
     'as'=>'mua-ve',
     'uses'=>'PageController@getMuaVe'
 ]);
+
+// End nhóm trang thuộc menu Mua vé ============================================================
+
+
 
 Route::post('chon-phim',[
     'as'=>'chon-phim',
@@ -140,10 +169,10 @@ Route::post('chon-suat-chieu',[
     'uses'=>'PageController@postChonSuatChieu'
 ]);
 
-Route::post('mua-ve',[
-    'as'=>'mua-ve',
-    'uses'=>'PageController@postMuaVe'
-]);
+// Route::post('mua-ve/{phim}',[
+//     'as'=>'mua-ve',
+//     'uses'=>'PageController@postMuaVe'
+// ]);
 
 Auth::routes();
 

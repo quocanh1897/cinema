@@ -7,12 +7,20 @@
         <img src="sources/img/db-logo-small.png" alt="Universal logo" class="d-inline-block d-md-none">
         <span class="sr-only">Welcome to BK Cinema</span>
       </a>
-      <button type="button" data-toggle="collapse" data-target="#navigation" class="navbar-toggler btn-template-outlined">
+      <!-- <button type="button" data-toggle="collapse" data-target="#navigation" class="navbar-toggler btn-template-outlined">
         <span class="sr-only">Toggle navigation</span>
         <i class="fa fa-align-justify"></i>
-      </button>
+      </button> -->
       <div id="navigation" class="navbar-collapse collapse">
         <ul class="nav navbar-nav ml-auto">
+          <!-- MUA VE -->
+          <li class="nav-item">
+            <a href="mua-ve">Mua vé
+              <b class="caret"></b>
+            </a>
+          </li>
+          <!-- END MUA VE -->
+
           <!-- LICH CHIEU -->
           <li class="nav-item dropdown menu-large">
             <a href="404" data-toggle="dropdown" class="dropdown-toggle">LỊCH CHIẾU
@@ -33,86 +41,82 @@
                       <li class="nav-item">
                         <a href="phim-sap-chieu" class="nav-link">Phim sắp chiếu</a>
                       </li>
-
                     </ul>
                   </div>
                   <div class="col-lg-3 col-md-6">
                     <h5>XEM THEO RẠP</h5>
                     <ul class="list-unstyled mb-3">
-                      <a href="404" class="nav-link">Tp. Hồ Chí Minh</a>
-
+                      <li>
+                        <a href="404" class="nav-link">Tp. Hồ Chí Minh</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="404" class="nav-link">Hà Nội</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="404" class="nav-link">Xem tất cả</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </li>
-              <li class="nav-item">
-                <a href="404" class="nav-link">Hà Nội</a>
+            </ul>
+          </li>
+          <!-- END LICH CHIEU -->
+
+          <!-- HE THONG RAP -->
+          <li class="nav-item ">
+            <a href="he-thong-rap">Hệ thống rạp
+              <b class="caret"></b>
+            </a>
+          </li>
+          <!-- END HE THONG RAP -->
+
+          <!-- KHUYEN MAI -->
+          <li class="nav-item dropdown menu-large">
+            <a href="404" data-toggle="dropdown" class="dropdown-toggle">KHUYẾN MÃI
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu megamenu">
+              <li>
+                <div class="row">
+                  <div class="col-lg-3">
+                    <a href="404">
+                      <img src="sources/img/template-easy-customize.png" alt="" class="img-fluid d-none d-lg-block">
+                    </a>
+
+                  </div>
+                  <div class="col-lg-3">
+                    <a href="404">
+                      <img src="sources/img/template-easy-customize.png" alt="" class="img-fluid d-none d-lg-block">
+                    </a>
+                  </div>
+                  <div class="col-lg-3">
+                    <a href="404">
+                      <img src="sources/img/template-easy-customize.png" alt="" class="img-fluid d-none d-lg-block">
+                    </a>
+                  </div>
+                  <div class="col-lg-3">
+                    <a href="404">
+                      <img src="sources/img/template-easy-customize.png" alt="" class="img-fluid d-none d-lg-block">
+                    </a>
+                  </div>
+                  <div class="col-lg-3 col-md-1 nav-link">
+                    <a href="404" class="nav-link">XEM TẤT CẢ</a>
+                  </div>
+                </div>
               </li>
-              <li class="nav-item">
-                <a href="404" class="nav-link">Xem tất cả</a>
-              </li>
-              </ul>
-              </div>
- 
-              </div>
-            </li>
-          </ul>
-        </li>
-        <!-- END LICH CHIEU -->
+            </ul>
+          </li>
+          <!-- END KHUYEN MAI -->
 
-        <!-- HE THONG RAP -->
-        <li class="nav-item ">
-          <a href="he-thong-rap">Hệ thống rạp
-            <b class="caret"></b>
-          </a>
-        </li>
-        <!-- END HE THONG RAP -->
- 
-        <!-- KHUYEN MAI -->
-        <!-- TODO get chuong trinh khuyen mai hien co vao src-->
-        <li class="nav-item dropdown menu-large">
-          <a href="404" data-toggle="dropdown" class="dropdown-toggle">KHUYẾN MÃI
-            <b class="caret"></b>
-          </a>
-          <ul class="dropdown-menu megamenu">
-            <li>
-              <div class="row">
-                <div class="col-lg-3">
-                  <a href="404">
-                    <img src="sources/img/template-easy-customize.png" alt="" class="img-fluid d-none d-lg-block">
-                  </a>
-
-                </div>
-                <div class="col-lg-3">
-                  <a href="404">
-                    <img src="sources/img/template-easy-customize.png" alt="" class="img-fluid d-none d-lg-block">
-                  </a>
-                </div>
-                <div class="col-lg-3">
-                  <a href="404">
-                    <img src="sources/img/template-easy-customize.png" alt="" class="img-fluid d-none d-lg-block">
-                  </a>
-                </div>
-                <div class="col-lg-3">
-                  <a href="404">
-                    <img src="sources/img/template-easy-customize.png" alt="" class="img-fluid d-none d-lg-block">
-                  </a>
-                </div>
-                <div class="col-lg-3 col-md-1 nav-link">
-                  <a href="404" class="nav-link">XEM TẤT CẢ</a>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </li>
-        <!-- END KHUYEN MAI -->
-
-
-          <!-- GIOI THIEU 
+          <!-- GIOI THIEU  -->
           <li class="nav-item ">
             <a href="about">Giới thiệu</a>
           </li>
-          END GIOI THIEU -->
+          <!-- END GIOI THIEU -->
         </ul>
       </div>
-      <div id="search" class="collapse clearfix">
+      <!-- <div id="search" class="collapse clearfix">
         <form role="search" class="navbar-form">
           <div class="input-group">
             <input type="text" placeholder="Search" class="form-control">
@@ -123,7 +127,7 @@
             </span>
           </div>
         </form>
-      </div>
+      </div> -->
     </div>
   </div>
 </header>

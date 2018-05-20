@@ -67,3 +67,22 @@ p.lead-duy {
     height: auto;
 }
 
+.mycolumn {
+	box-sizing: border-box;
+	border-spacing: 150px;
+    float: left;
+    width: 1*;
+    padding: 10px;
+    margin: 1;
+     /* Should be removed. Only for demonstration */
+}
+
+
+.duyduy{
+	
+}
+                                    
+
+
+
+
