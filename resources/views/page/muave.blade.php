@@ -192,9 +192,9 @@
     $("[type='number']").keypress(function (evt) {
     evt.preventDefault();
     });
-
+    var globalt = 0;
     //tinh toan gia ghe
-    var price = 10; //price
+    var price = 45000; //price
     $(document).ready(function ($) {
         var $cart = $('#selected-seats'), //Sitting Area
             $counter = $('#counter'), //Votes
@@ -202,16 +202,15 @@
 
         var sc = $('#seat-map').seatCharts({
             map: [ //Seating chart
-                'aaaaaaaaaa',
-                'aaaaaaaaaa',
-                '__________',
-                'aaaaaaaa__',
-                'aaaaaaaaaa',
+                'Aaaaaaaaaa',
+                'Baaaaaaaaa',
                 'aaaaaaaaaa',
                 'aaaaaaaaaa',
                 'aaaaaaaaaa',
                 'aaaaaaaaaa',
-                '__aaaaaa__'
+                'aaaaaaaaaa',
+                'aaaaaaaaaa',
+                
             ],
             naming: {
                 top: false,
@@ -222,9 +221,10 @@
             legend: { //Definition legend
                 node: $('#legend'),
                 items: [
-                    ['a', 'available', 'Available'],
-                    ['a', 'unavailable', 'Sold'],
-                    ['a', 'selected', 'Selected']
+                    ['a', 'available', 'Ghế trống'],
+                    ['a', 'unavailable', 'Có người'],
+                    ['a', 'selected', 'Chọn'],
+                    ['a', '4dx', "4DX"]
                 ]
             },
             click: function () { //Click event
@@ -267,7 +267,7 @@
         sc.find('selected').each(function () {
             total += price;
         });
-
+        globalt = total;
         return total;
     }
 
@@ -296,6 +296,8 @@
         const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
         document.getElementById("tong").value = tong.reduce(reducer) + " VNĐ";
+        console.log(globalt);
+        document.getElementById("tongcong").value = parseFloat(tong.reduce(reducer) + globalt)+ " VNĐ" ;
     }
 
     

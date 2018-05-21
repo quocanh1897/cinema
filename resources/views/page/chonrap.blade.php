@@ -38,7 +38,7 @@
                                 <div class="col-md-6">
                                     <div class="box-image">
                                         <div class="image">
-                                            <img src="sources/img/rapchieu.jpg" alt="" class="img-fluid">
+                                            <img src="{{$rap->hinh_anh}} " alt="" class="img-fluid">
                                             <div class="overlay d-flex align-items-center justify-content-center">
                                                 <div class="content">
                                                     <div class="name">
