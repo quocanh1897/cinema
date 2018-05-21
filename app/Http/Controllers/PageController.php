@@ -289,7 +289,9 @@ class PageController extends Controller
     {
         $currentDate = Carbon\Carbon::now()->toDateString();
         $phim = phim::where('batdau','<',$currentDate)->get();
-        return view('page.muave',compact('phim'));
+        $rap = rap_chieu::all();
+        $khung_gio = khung_gio::all();
+        return view('page.muave',compact('phim','rap','khung_gio'));
     }
 
     // End nhóm trang thuộc menu Mua vé ============================================================
