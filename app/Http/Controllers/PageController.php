@@ -165,6 +165,71 @@ class PageController extends Controller
         return view('page.dieuchinhkhuyenmai',compact('khuyenmai'));
     }
 
+    public function postThemKhuyenmai(Request $req)
+    {
+        $this->validate($req,
+            [
+                'tenkm'=>'required',
+                'batdau'=>'required|date_format:Y-m-d|after:today',                
+                'ketthuc'=>'required|date_format:Y-m-d|after:tomorrow',
+                'hinhanh'=>'required|url' 
+            ],
+            [
+                'tenkm.required'=>'Vui lòng nhập tên khuyến mãi! ',                           
+                'batdau.required'=>'Vui lòng nhập ngày bắt đầu! ',
+                'batdau.data_format'=>"Định dạng sai",
+                'batdau.after'=>"Ngày bắt đầu phải sau hôm nay",
+                'ketthuc.required'=>'Vui lòng nhập ngày kết thúc! ',
+                'ketthuc.data_format'=>"Định dạng sai",
+                'ketthuc.after'=>"Ngày kết thúc phải sau ngày mai",
+                'hinhanh.required'=>'Vui lòng nhập đường dẫn tới một ảnh mô tả!',
+                'hinhanh.url'=>'Định dạng link hình ảnh không đúng'    
+            ]);
+        
+        $obj_user = new khuyen_mai();
+        $obj_user->tenkm = $req['tenkm'];
+        $obj_user->batdau = $req['batdau'];
+        $obj_user->ketthuc = $req['ketthuc'];    
+        $obj_user->hinhanh = $req['hinhanh'];       
+        $obj_user->mota = $req['mota'];
+        $obj_user->save();
+
+        return redirect()->back()->with('success','Thêm thành công');
+    }
+
+    public function postSuaKhuyenmai(Request $req)
+    {
+        $this->validate($req,
+            [
+                'mtenkm'=>'required',
+                'mbatdau'=>'required|date_format:Y-m-d|after:today',                
+                'mketthuc'=>'required|date_format:Y-m-d|after:tomorrow',
+                'mhinhanh'=>'required|url' 
+            ],
+            [
+                'mtenkm.required'=>'Vui lòng nhập tên khuyến mãi! ',                           
+                'mbatdau.required'=>'Vui lòng nhập ngày bắt đầu! ',
+                'mbatdau.data_format'=>"Định dạng sai",
+                'mbatdau.after'=>"Ngày bắt đầu phải sau hôm nay",
+                'mketthuc.required'=>'Vui lòng nhập ngày kết thúc! ',
+                'mketthuc.data_format'=>"Định dạng sai",
+                'mketthuc.after'=>"Ngày kết thúc phải sau ngày mai",
+                'mhinhanh.required'=>'Vui lòng nhập đường dẫn tới một ảnh mô tả!',
+                'mhinhanh.url'=>'Định dạng link hình ảnh không đúng'    
+            ]);
+
+        $obj_user = khuyen_mai::find($req['mmakm']);
+
+        $obj_user->tenkm = $req['mtenkm'];
+        $obj_user->batdau = $req['mbatdau'];
+        $obj_user->ketthuc = $req['mketthuc'];    
+        $obj_user->hinhanh = $req['mhinhanh'];       
+        $obj_user->mota = $req['mmota'];
+        $obj_user->save();
+
+        return redirect()->back()->with('success','Thêm thành công');
+    }
+
     // End Nhóm trang nhân viên
 
     // Trang thông báo lỗi

@@ -70,6 +70,16 @@ Route::get('dieuchinhkhuyenmai',[
     'uses'=>'PageController@getDieuchinhKhuyenmai'
 ]);
 
+Route::post('themKhuyenmai',[
+    'as'=>'themKhuyenmai',
+    'uses'=>'PageController@postThemKhuyenmai'
+]);
+
+Route::post('suaKhuyenmai',[
+    'as'=>'suaKhuyenmai',
+    'uses'=>'PageController@postSuaKhuyenmai'
+]);
+
 // End Nhóm trang nhân viên
 
 // Trang thông báo lỗi

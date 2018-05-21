@@ -35,104 +35,206 @@
 <div id="content">
 	<div class="container">
 		<div class="row bar">
-			<div class="col-lg-9">
-				<div class="heading">
-					<h3 class="text-uppercase">Thông tin khuyến mãi</h3>
-				</div>
-				<div id="accordion" role="tablist" class="mb-5">
-					@foreach($khuyenmai as $khuyen_mai)
-					<div class="card">
-						<div id="heading1" role="tab" class="card-header">
-							<h5 class="mb-0"><a data-toggle="collapse" href="#collapse1" aria-expanded="true" aria-controls="collapse1">{{$khuyen_mai->tenkm}}</a></h5>
-						</div>
-						<div id="collapse1" role="tabpanel" aria-labelledby="heading1" data-parent="#accordion" class="collapse show">
-							<div class="card-body">
-								<div class="row">
-									<div class="col-md-4"><img src="{{$khuyen_mai->hinhanh}}" alt="" class="img-fluid"></div>
-									<div class="col-md-8">
-										<p>{{$khuyen_mai->mota}}</p>
-										<p>Thời gian: {{$khuyen_mai->batdau}} - {{$khuyen_mai->ketthuc}}</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					@endforeach
-					<script type="text/javascript">
-						$(document).ready(function(){
-							$("[id=heading1]").each(function(index) {
-								$(this).attr("id","heading"+index);
-							});
-							$("[href=#collapse1]").each(function(index) {
-								$(this).attr("href","#collapse"+index);
-								$(this).attr("aria-controls","collapse"+index);
-							});
-							$("[role=tabpane]").each(function(index) {
-								$(this).attr("id","collapse"+index);
-								$(this).attr("aria-labelledby","heading"+index);
-							});
-						});
-					</script>
-				</div>
-				<!-- <div class="row">
-					<div class="col-lg-6">
-						<div id="accordionTwo" role="tablist">
-							<div class="card">
-								<div id="headingFour" role="tab" class="card-header">
-									<h5 class="mb-0"><a data-toggle="collapse" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">Collapsible group 1</a></h5>
-								</div>
-								<div id="collapseFour" role="tabpanel" aria-labelledby="headingFour" data-parent="#accordionTwo" class="collapse show">
-									<div class="card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-								</div>
-							</div>
-							<div class="card">
-								<div id="headingFive" role="tab" class="card-header">
-									<h5 class="mb-0"><a data-toggle="collapse" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive" class="collapsed">Collapsible group 1</a></h5>
-								</div>
-								<div id="collapseFive" role="tabpanel" aria-labelledby="headingFive" data-parent="#accordionTwo" class="collapse">
-									<div class="card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-								</div>
-							</div>
-							<div class="card">
-								<div id="headingSix" role="tab" class="card-header">
-									<h5 class="mb-0"><a data-toggle="collapse" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix" class="collapsed">Collapsible group 1</a></h5>
-								</div>
-								<div id="collapseSix" role="tabpanel" aria-labelledby="headingSix" data-parent="#accordionTwo" class="collapse">
-									<div class="card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6">
-						<div id="accordionThree" role="tablist">
-							<div class="card">
-								<div id="headingSeven" role="tab" class="card-header">
-									<h5 class="mb-0"><a data-toggle="collapse" href="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">Collapsible group 1</a></h5>
-								</div>
-								<div id="collapseSeven" role="tabpanel" aria-labelledby="headingSeven" data-parent="#accordionThree" class="collapse show">
-									<div class="card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-								</div>
-							</div>
-							<div class="card">
-								<div id="headingEight" role="tab" class="card-header">
-									<h5 class="mb-0"><a data-toggle="collapse" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight" class="collapsed">Collapsible group 1</a></h5>
-								</div>
-								<div id="collapseEight" role="tabpanel" aria-labelledby="headingEight" data-parent="#accordionThree" class="collapse">
-									<div class="card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-								</div>
-							</div>
-							<div class="card">
-								<div id="headingNine" role="tab" class="card-header">
-									<h5 class="mb-0"><a data-toggle="collapse" href="#collapseNine" aria-expanded="false" aria-controls="collapseNine" class="collapsed">Collapsible group 1</a></h5>
-								</div>
-								<div id="collapseNine" role="tabpanel" aria-labelledby="headingNine" data-parent="#accordionThree" class="collapse">
-									<div class="card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div> -->
-			</div>
+			<div id="customer-account" class="col-lg-9 clearfix">
+				
+                <div class="bo3">
+                    <!-- THONG TIN CA NHAN -->
+                    <div class="heading">
+                    	<h3 class="text-uppercase">Danh sách khuyến mãi</h3>
+                    	<div style=" position: absolute;right: 0; top: 0">
+                    		<button type="button" class="btn btn-sm btn-success" onclick="add()">Thêm</button>
+                    		<button type="button" class="btn btn-sm btn-info" onclick="modify()">Sửa</button>
+                    		<button type="button" class="btn btn-sm btn-danger" onclick="remove()">Xóa</button>
+                    	</div> 	
+                    </div>
+                    <div class="table-responsive" id="bangchon1">
+                    	<table class="table">
+                    		<thead>
+                    			<tr>
+                    				<th>Hình ảnh</th>
+                    				<th style="max-width: 170px">Tên</th>
+                    				<th style="max-width: 300px">Mô tả</th>
+                    				<th>Bắt đầu</th>
+                    				<th>Kết thúc</th>
+                    				<th>Nháy đúp</th>
+                    			</tr>
+                    		</thead>
+                    		<tbody id="bangKm">
+                    			@foreach($khuyenmai as $khuyenmai)
+                    			<tr class="active">
+                    				<td><img src="{{$khuyenmai->hinhanh}}" alt="Poster phim"></td>
+                    				<td style="max-width: 170px"><b>{{$khuyenmai->tenkm}}</b></td>
+                    				<td style="max-width: 280px">{{$khuyenmai->mota}}</td>
+                    				<td>{{$khuyenmai->batdau}}</td>
+                    				<td>{{$khuyenmai->ketthuc}}</td> 
+                    				<td><a href="javascript:void(null);" onclick="myFunc1()"><b>Chọn</b></a></td>
+                    				<td hidden>{{$khuyenmai->makm}}</td>                  			
+                    			</tr>
+                    			@endforeach
+                    		</tbody>
+                    	</table>
+                    </div>
+
+                    <script type="text/javascript">
+                    	function myFunc1() {
+                    		$('#bangKm tr').click(function(e) {
+                    			$(this).toggleClass('duyduy1');
+                    			if ($(this).hasClass('duyduy1')) {
+                    				$(this).css('background-color','#eaebef');
+                    			} 
+                    			else {
+                    				$(this).css('background-color','transparent');
+                    			}
+                    		});
+                    	}
+
+                    	function add() {
+                    		var x = document.getElementById("addKm");
+                    		x.style.display="block";
+                    		$(":button.btn-info").prop("disabled",true);
+                    		$(":button.btn-danger").prop("disabled",true);
+                    	}
+
+                    	function cancalAdd() {
+                    		var x = document.getElementById("addKm");
+                    		x.style.display="none";
+                    		$(":button.btn-info").prop("disabled",false);
+                    		$(":button.btn-danger").prop("disabled",false);
+                    	}
+
+                    	function modify() {
+                    		var x = $("#bangKm tr.duyduy1").length;
+                    		if (x < 1) {
+                    			alert('Chưa chọn mục cần chỉnh sửa. Vui lòng thử lại!');
+                    		} 
+                    		else if (x > 1) {
+                    			alert('Chỉ được chỉnh sửa 1 mục/lần. Vui lòng thử lại');
+                    		}
+                    		else {
+                    			var x = document.getElementById("modifyKm");
+                    			x.style.display="block";
+                    			$(":button.btn-success").prop("disabled",true);
+                    			$(":button.btn-danger").prop("disabled",true);
+                    			$("#mhinhanh").attr("value",$("#bangKm tr.duyduy1 td:eq(0) img").attr("src"));
+                    			$("#mtenkm").attr("value",$("#bangKm tr.duyduy1 td:eq(1)").text());
+                    			$("#mmota").attr("value",$("#bangKm tr.duyduy1 td:eq(2)").text());
+                    			$("#mbatdau").attr("value",$("#bangKm tr.duyduy1 td:eq(3)").text());
+                    			$("#mketthuc").attr("value",$("#bangKm tr.duyduy1 td:eq(4)").text());
+                    			$("#mmakm").attr("value",$("#bangKm tr.duyduy1 td:eq(5)").text());
+                    		}
+                    	}
+
+                    	function cancelModify() {
+                    		var x = document.getElementById("modifyKm");
+                    		x.style.display="none";
+                    		$(":button.btn-success").prop("disabled",);
+                    		$(":button.btn-danger").prop("disabled",false);
+                    	}
+                    </script>
+					
+					<!-- Form thêm khuyến mãi -->					
+                    <div style="display: none" id="addKm">
+                    	<hr>
+                    	<form action="{{route('themKhuyenmai')}}" method="post" id="kmform">
+							<input type="hidden" name="_token" value="{{ csrf_token() }}"> 
+                    		<div class="row">
+                    			<div class="col-md-6">
+                    				<div class="form-group">
+                    					<label for="tenkm">Tên khuyến mãi</label>
+                    					<input name="tenkm" id="tenkm" type="text" class="form-control">
+                    				</div>
+                    			</div>
+                    			<div class="col-md-3">
+                    				<div class="form-group">
+                    					<label for="batdau">Ngày bắt đầu</label><br>
+                    					<input type="date" name="batdau" id="batdau" class="form-control">
+
+                    				</div>
+                    			</div>
+                    			<div class="col-md-3">
+                    				<div class="form-group">
+                    					<label for="ketthuc">Ngày kết thúc</label>
+                    					<input name="ketthuc" id="ketthuc" type="date" class="form-control">
+                    				</div>
+                    			</div>                                                       
+                    		</div>
+                    		<div class="row">
+                    			<div class="col-md-6">
+                    				<div class="form-group">
+                    					<label for="mota">Mô tả</label><br>
+                    					<textarea rows=3 cols=47 name="mota" form="kmform" id="mota" placeholder="Nhập mô tả chi tiết..."></textarea>                                      
+                    				</div>
+                    			</div>
+                    			<div class="col-md-6">
+                    				<div class="form-group">
+                    					<label for="hinhanh">Hình ảnh minh họa</label><br>
+                    					<input type="url" name="hinhanh" id"hinhanh"><br>
+                    				</div>
+                    			</div>
+                    		</div>
+
+                    		<div class="col-md-12 text-center">
+                    			<button type="submit" class="btn btn-template-outlined"><i class="fa fa-save"></i> Lưu thay đổi</button>
+                    			<input type="button" class="btn btn-template-outlined" name="cancel" onclick="cancalAdd()" value="Hủy bỏ">
+                    		</div>
+
+                    	</form>
+                    </div>
+
+                    <!-- Form chỉnh sửa khuyến mãi -->                    
+                    <div style="display: none" id="modifyKm">
+                    	<hr>
+                    	<form action="{{route('suaKhuyenmai')}}" method="post" id="kmformsua">
+							<input type="hidden" name="_token" value="{{ csrf_token() }}">
+							<input type="hidden" name="mmakm"> 
+                    		<div class="row">
+                    			<div class="col-md-6">
+                    				<div class="form-group">
+                    					<label for="mtenkm">Tên khuyến mãi</label>
+                    					<input name="tenkm" id="mtenkm" type="text" class="form-control">
+                    				</div>
+                    			</div>
+                    			<div class="col-md-3">
+                    				<div class="form-group">
+                    					<label for="mbatdau">Ngày bắt đầu</label><br>
+                    					<input type="date" name="mbatdau" id="batdau" class="form-control">
+
+                    				</div>
+                    			</div>
+                    			<div class="col-md-3">
+                    				<div class="form-group">
+                    					<label for="mketthuc">Ngày kết thúc</label>
+                    					<input name="ketthuc" id="mketthuc" type="date" class="form-control">
+                    				</div>
+                    			</div>                                                       
+                    		</div>
+                    		<div class="row">
+                    			<div class="col-md-6">
+                    				<div class="form-group">
+                    					<label for="mmota">Mô tả</label><br>
+                    					<textarea rows="3" cols="47" name="mota" form="kmform" id="mmota" placeholder="Nhập mô tả chi tiết..."></textarea>                                      
+                    				</div>
+                    			</div>
+                    			<div class="col-md-6">
+                    				<div class="form-group">
+                    					<label for="mhinhanh">Hình ảnh minh họa</label><br>
+                    					<input type="url" name="hinhanh" id="mhinhanh"><br>
+                    				</div>
+                    			</div>
+                    		</div>
+
+                    		<div class="col-md-12 text-center">
+                    			<button type="submit" class="btn btn-template-outlined"><i class="fa fa-save"></i> Lưu thay đổi</button>
+                    			<input type="button" class="btn btn-template-outlined" name="cancel" onclick="cancelModify()" value="Hủy bỏ">
+                    		</div>
+
+                    	</form>
+                    </div>
+                    
+                </div>
+
+            </div>
+			
 
 			<div class="col-lg-3 mt-4 mt-lg-0">
 				<!-- CUSTOMER MENU -->
