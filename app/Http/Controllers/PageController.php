@@ -11,6 +11,7 @@ use App\rap_chieu;
 use App\suat_chieu;
 use App\khung_gio;
 use App\dien_vien;
+use App\dich_vu;
 use App\the_loai;
 use Auth;
 use Carbon;
@@ -298,11 +299,6 @@ class PageController extends Controller
     // End nhóm trang thuộc menu Mua vé ============================================================
     
 
-    
-
-    
- 
-
     public function postChonPhim(Request $req)
     {
         $phimDaChon = phim::where('maphim',$req['idphim'])->get();
@@ -347,8 +343,22 @@ class PageController extends Controller
 
     public function postMuaVe(Request $req)
     {
-        $phim = phim::all();
-        return view('page.muave',compact('phim'));
-    }  
+        $dichvu = dich_vu::all();
+        $phimDaChon = phim::where('maphim',$req['idphim'])->get();
+        $rapDaChon = rap_chieu::where('marap',$req['idrap'])->get();
+        $ngay = $req['ngaychieu'];
+        $gio = $req['giochieu'];
+        return view('page.muave',compact('phimDaChon','rapDaChon','ngay','gio','dichvu') );
+
+    }
+
+    public function getMuaVeMenu()
+    {
+        $currentDate = Carbon\Carbon::now()->toDateString();
+        $phim = phim::where('batdau','<',$currentDate)->get();
+        $rap = rap_chieu::all();
+        $khung_gio = khung_gio::all();
+        return view('page.chonphimve',compact('phim','rap','khung_gio'));
+    }
 
 }

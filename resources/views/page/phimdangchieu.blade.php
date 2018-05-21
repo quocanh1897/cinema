@@ -30,7 +30,7 @@
           <div class="col-md-3">
             <div class="box-image">
               <div class="image">
-                <img src="{{$phim->hinhanh}} " alt="" class="img-fluid"  height="100" width="300">
+                <img src="{{$phim->hinhanh}} " alt="" class="img-fluid" height="100" width="300">
                 <div class="overlay d-flex align-items-center justify-content-center">
                   <div class="content">
                     <div class="name mb-small">
@@ -38,12 +38,12 @@
                         <a class="color-white">{{$phim->tenphim}} </a>
                       </h3>
                     </div>
-                    <div class="text">
-                      <p class="buttons">
-                        <a href="{{route('chi-tiet',$phim->maphim)}}" class="btn btn-template-outlined-white">CHI TIẾT</a>
-                        <a href="{{route('chon-phim',$phim->maphim)}} " class="btn btn-template-outlined-white">Chọn</a>
-                      </p>
-                    </div>
+                    <form action="{{route('chon-phim')}}" method="post">
+                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                      <a href="{{route('chi-tiet',$phim->maphim)}}" class="btn btn-template-outlined-white">Chi tiết</a>
+                      <button name="idphim" type="submit" value="{{$phim->maphim}}" class="btn btn-template-outlined-white">Chọn</button>
+                    </form>
+
                   </div>
                 </div>
               </div>

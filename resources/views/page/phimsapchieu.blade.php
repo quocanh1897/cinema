@@ -1,8 +1,7 @@
-@extends('master') 
-@section('content')
+@extends('master') @section('content')
 
-    <!-- PHIM DANG CHIEU -->
-    <div id="heading-breadcrumbs">
+<!-- PHIM DANG CHIEU -->
+<div id="heading-breadcrumbs">
     <div class="container">
         <div class="row d-flex align-items-center flex-wrap">
             <div class="col-md-7">
@@ -25,40 +24,39 @@
     <div class="container">
         <div class="row bar">
             <div class="col-md-12">
-                
-                    <div class="row portfolio text-center">
-                        @foreach($phim as $phim)
-          <div class="col-md-3">
-            <div class="box-image">
-              <div class="image">
-                <img src="{{$phim->hinhanh}} " alt="" class="img-fluid"  height="100" width="300">
-                <div class="overlay d-flex align-items-center justify-content-center">
-                  <div class="content">
-                    <div class="name mb-small">
-                      <h3>
-                        <a class="color-white">{{$phim->tenphim}} </a>
-                      </h3>
+
+                <div class="row portfolio text-center">
+                    @foreach($phim as $phim)
+                    <div class="col-md-3">
+                        <div class="box-image">
+                            <div class="image">
+                                <img src="{{$phim->hinhanh}} " alt="" class="img-fluid" height="100" width="300">
+                                <div class="overlay d-flex align-items-center justify-content-center">
+                                    <div class="content">
+                                        <div class="name mb-small">
+                                            <h3>
+                                                <a class="color-white">{{$phim->tenphim}} </a>
+                                            </h3>
+                                        </div>
+                                        <form action="{{route('chon-phim')}}" method="post">
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                            <a href="{{route('chi-tiet',$phim->maphim)}}" class="btn btn-template-outlined-white">Chi tiết</a>
+                                            <button name="idphim" type="submit" value="{{$phim->maphim}}" class="btn btn-template-outlined-white">Chọn</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ribbon-holder">
+                                <div class="ribbon sale">KM</div>
+                                <div class="ribbon new">HOT</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="text">
-                      <p class="buttons">
-                        <a href="{{route('chi-tiet',$phim->maphim)}}" class="btn btn-template-outlined-white">CHI TIẾT</a>
-                        <a href="{{route('chon-phim',$phim->maphim)}} " class="btn btn-template-outlined-white">Chọn</a>
-                      </p>
-                    </div>
-                  </div>
+                    @endforeach
+
                 </div>
-              </div>
-              <div class="ribbon-holder">
-                <div class="ribbon sale">KM</div>
-                <div class="ribbon new">HOT</div>
-              </div>
-            </div>
-          </div>
-          @endforeach
-                        
-                    </div>
-                
-                 
+
+
                 <div class="pages">
                     <p class="loadMore text-center">
                         <a href="#" class="btn btn-template-outlined">

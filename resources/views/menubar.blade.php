@@ -15,7 +15,7 @@
         <ul class="nav navbar-nav ml-auto">
           <!-- MUA VE -->
           <li class="nav-item">
-            <a href="mua-ve">Mua vé
+            <a href="{{route('mua-ve-menu')}}">Mua vé
               <b class="caret"></b>
             </a>
           </li>
