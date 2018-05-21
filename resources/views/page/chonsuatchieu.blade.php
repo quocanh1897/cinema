@@ -12,7 +12,7 @@
 <div id="content">
     <div class="container">
         <div class="row">
-            <div id="checkout" class="col-lg-9">
+            <div id="checkout" class="col-lg-8">
                 <div class="box border-bottom-0">
                     <ul class="nav nav-pills nav-fill">
                         <li class="nav-item">
@@ -46,6 +46,8 @@
                                     </h5>
                                 </div>
                                 <select hidden name="ngaychieu" ><option value="{{$ngay->first()->ngaychieu}}"></option> </select>
+                                <select hidden name="idphim" ><option value="{{$phimDaChon->first()->maphim}}"></option> </select>
+                                <select hidden name="idrap" ><option value="{{$rapDaChon->first()->marap}}"></option> </select>
                                 <div id="{{$ngay->first()->ngaychieu}}" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" class="collapse">
                                     <div id="suatchieu-btn" class="card-body portfolio row">
                                         @foreach($ngay as $gio)
@@ -82,7 +84,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-4">
                 <div id="order-summary" class="box mb-4 p-0">
                     <div class="box-header mt-0">
                         <h4>Thông tin vé</h4>

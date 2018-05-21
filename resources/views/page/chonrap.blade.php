@@ -12,7 +12,7 @@
 <div id="content">
     <div class="container">
         <div class="row">
-            <div id="checkout" class="col-lg-9">
+            <div id="checkout" class="col-lg-8">
                 <div class="box border-bottom-0">
                      
                         <ul class="nav nav-pills nav-fill">
@@ -38,16 +38,17 @@
                                 <div class="col-md-6">
                                     <div class="box-image">
                                         <div class="image">
-                                            <img src="sources/img/rapchieu.jpg" alt="" class="img-fluid">
+                                            <img src="{{$rap->hinh_anh}} " alt="" class="img-fluid">
                                             <div class="overlay d-flex align-items-center justify-content-center">
                                                 <div class="content">
                                                     <div class="name">
-                                                        <h3>
-                                                            <a class="color-Black">{{$rap->tenrap}} </a>
-                                                        </h3>
+                                                        <h4>
+                                                            <a href="{{route('rap',$rap->marap)}}" target="_blank"><b>{{$rap->tenrap}}</b></a>
+                                                           
+                                                        </h4>
                                                     </div>
                                                     <div class="text">
-                                                        <p class="d-none d-sm-block">{{$rap->daichi}} </p>
+                                                        
                                                         <form action="{{route('chon-suat-chieu')}}" method="post">
                                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                         <p class="buttons">
@@ -87,7 +88,7 @@
                      
                 </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-4">
                 <div id="order-summary" class="box mb-4 p-0">
                     <div class="box-header mt-0">
                         <h4>Thông tin vé</h4>
@@ -120,4 +121,15 @@
         </div>
     </div>
 </div>
+<style>
+.img-fluid {
+    width: 300px;
+    min-height: 250px;
+    max-height: 250px;
+    float: left;
+    margin:0px;
+    padding: 10px;
+}
+
+</style>
 @endsection

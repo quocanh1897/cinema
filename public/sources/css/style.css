@@ -1,0 +1,96 @@
+tableS,td {
+    margin: 0;
+    padding: 10px;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+input[type=checkbox] {
+    width: 15px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+input[type=checkbox]:before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #ff9800;
+    box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+    -moz-box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+    -webkit-box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+    background-color: #ffffff;
+}
+
+input[type=checkbox]:checked:before {
+    background-color: Green;
+    font-size: 15px;
+}
+h2.wthree {
+	text-align: center;
+    padding: 0.8em;
+    font-size: 1.2em;
+	color: black;
+	background-color: tomato;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 7px;
+    word-spacing: 10px;
+}
+
+.tableS {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 10px;
+    border-color: grey;
+}
+
+.seats {
+    border: 1px solid red;
+    background: yellow;
+}
+
+
+.redBox:checked:before {
+	background-color: Red !important;
+	font-size: 15px;
+}
+
+.seatGap {
+    width: 40px;
+}
+
+.displayerBoxes {
+    margin-top: 2em;
+}
+.seatVGap {
+    height: 40px;
+}
+
+.Displaytable td,
+.Displaytable th {
+    width: 100%;
+    padding: 7px 10px;
+    color: #000;
+    font-weight: 600;
+}
+
+table.Displaytable tr {
+    background: #fff;
+    color: #fff;
+}
+
+td {
+    width: 40px;
+    font-weight: 600;
+    font-size: 1em;
+    padding-top: 7px;
+    height: 24px;
+    color: rgb(0, 0, 0);
+}
+

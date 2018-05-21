@@ -145,9 +145,14 @@ Route::get('chi-tiet/{id}',[
 
 // Nhóm trang thuộc menu Mua vé
 
-Route::get('mua-ve',[
+Route::post('mua-ve',[
     'as'=>'mua-ve',
-    'uses'=>'PageController@getMuaVe'
+    'uses'=>'PageController@postMuaVe'
+]);
+
+Route::get('mua-ve-menu',[
+    'as'=>'mua-ve-menu',
+    'uses'=>'PageController@getMuaVeMenu'
 ]);
 
 // End nhóm trang thuộc menu Mua vé ============================================================
