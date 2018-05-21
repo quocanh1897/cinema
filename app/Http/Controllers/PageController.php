@@ -118,6 +118,55 @@ class PageController extends Controller
 
     // End Nhóm trang thông tin người dùng =============================================
 
+    // Nhóm trang nhân viên
+
+    public function getProfileNhanvien()
+    {        
+        return view('page.profilenhanvien');
+    }
+
+    public function postchangePassNhanvien(Request $req)
+    {
+        $user_id = Auth::user()->id;                       
+        $obj_user = User::find($user_id);
+
+        $this->validate($req,
+            [
+                'password_old'=>'required',
+                'password'=>'required|min:6|max:20',
+                're_password'=>'required|same:password'
+            ],
+            [      
+                'password_old.required'=>'Vui lòng nhập mật khẩu hiện tại! ',
+                'password.required'=>'Vui lòng nhập mật khẩu mới! ',
+                're_password.required'=>'Vui lòng nhập lại mật khẩu mới! ',
+                're_password.same'=>'Mật khẩu mới không trùng khớp! Vui lòng thử lại ',
+                'password.max'=>'Mật khẩu tối đa 20 kí tự! ',
+                'password.min'=>'Mật khẩu cần ít nhất 6 kí tự! '
+            ]
+        );
+
+        if(Hash::check($req['password_old'], Auth::user()->password))
+        {
+            $obj_user->password = Hash::make($req['password']);
+            $obj_user->save(); 
+            return redirect()->back()->with('success','Đổi mật khẩu/thông tin thành công');
+        }
+        else
+        {
+            $obj_user->save();
+            return redirect()->back()->with('error','Mật khẩu hiện tại không đúng');
+        }
+    }
+
+    public function getDieuchinhKhuyenmai()
+    {
+        $khuyenmai = khuyen_mai::all();     
+        return view('page.dieuchinhkhuyenmai',compact('khuyenmai'));
+    }
+
+    // End Nhóm trang nhân viên
+
     // Trang thông báo lỗi
 
     public function get404()

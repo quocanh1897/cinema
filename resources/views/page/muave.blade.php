@@ -101,25 +101,7 @@
                             </table>
                         </div>
                         <!-- Bảng chọn ghế -->
-                        <div class="table-responsive" id="bangchon3" hidden>
-                            
-                            <table class="table">
-                                <thead>
-                                    <tr>                                        
-                                        <th>Suất chiếu</th>                                       
-                                        <th>Lựa chọn</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="bangSuat">
-                                    @foreach($khung_gio as $khung_gio)
-                                    <tr class="active">
-                                        <td>{{$khung_gio->batdau}}</td>                                       
-                                        <td><a href="javascript:void(null);" onclick="myFunc3()"><b>Chọn</b></a></td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

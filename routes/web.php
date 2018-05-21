@@ -53,6 +53,25 @@ Route::post('changePersonalData',[
 
 // End Nhóm trang thông tin người dùng =============================================
 
+// Nhóm trang nhân viên
+
+Route::get('profilenhanvien',[
+    'as'=>'profilenhanvien',
+    'uses'=>'PageController@getProfileNhanvien'
+]);
+
+Route::post('changePassNhanvien',[
+    'as'=>'changePassNhanvien',
+    'uses'=>'PageController@postchangePassNhanvien'
+]);
+
+Route::get('dieuchinhkhuyenmai',[
+    'as'=>'dieuchinhkhuyenmai',
+    'uses'=>'PageController@getDieuchinhKhuyenmai'
+]);
+
+// End Nhóm trang nhân viên
+
 // Trang thông báo lỗi
 
 Route::get('404',[
