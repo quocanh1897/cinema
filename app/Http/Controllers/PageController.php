@@ -291,6 +291,7 @@ class PageController extends Controller
         $phim = phim::where('batdau','<',$currentDate)->get();
         $rap = rap_chieu::all();
         $khung_gio = khung_gio::all();
+        //dd($khung_gio);
         return view('page.muave',compact('phim','rap','khung_gio'));
     }
 

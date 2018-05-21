@@ -91,9 +91,9 @@
                                     </tr>
                                 </thead>
                                 <tbody id="bangSuat">
-                                    @foreach($khung_gio as $khung_gio)
+                                    @foreach($khung_gio as $kg)
                                     <tr class="active">
-                                        <td>{{$khung_gio->batdau}}</td>                                       
+                                        <td>{{$kg->batdau}}</td>                                       
                                         <td><a href="javascript:void(null);" onclick="myFunc3()"><b>Chọn</b></a></td>
                                     </tr>
                                     @endforeach
@@ -111,9 +111,9 @@
                                     </tr>
                                 </thead>
                                 <tbody id="bangSuat">
-                                    @foreach($khung_gio as $khung_gio)
+                                    @foreach($khung_gio as $kg)
                                     <tr class="active">
-                                        <td>{{$khung_gio->batdau}}</td>                                       
+                                        <td>{{$kg->batdau}}</td>                                       
                                         <td><a href="javascript:void(null);" onclick="myFunc3()"><b>Chọn</b></a></td>
                                     </tr>
                                     @endforeach
