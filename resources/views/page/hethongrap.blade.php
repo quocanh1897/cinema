@@ -34,7 +34,7 @@
                             <div class="product">
                                 <div class="image">
                                     <a href="{{route('rap',$rap->marap)}}" class="mytheatre">
-                                        <img src="sources/img/rapchieu.jpg" alt="" class="img-fluid">
+                                        <img src="{{$rap->hinh_anh}} " style="height:200px; width:200px"alt="" class="img-fluid">
                                     </a>
                                 </div>
                                 <div class="text">
@@ -49,7 +49,7 @@
                         
                     </div>
                 </div>
-                
+                <!--
                 <div class="pages">
                     <p class="loadMore text-center">
                         <a href="#" class="btn btn-template-outlined">
@@ -85,6 +85,7 @@
                         </ul>
                     </nav>
                 </div>
+            -->
             </div>
         </div>
     </div>

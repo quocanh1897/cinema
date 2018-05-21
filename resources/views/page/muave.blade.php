@@ -160,7 +160,7 @@
                                     <tr>
                                         <td>B</td>
                                         <td>
-                                            <input type="checkbox" checked class="seats redBox" value="B1" disabled>
+                                            <input type="checkbox" checked class="redBox" value="B1" disabled>
                                         </td>
                                         <td>
                                             <input type="checkbox" class="seats" value="B2">
@@ -532,7 +532,8 @@
 
                                 <div class="row">
                                     <div class="col-md-4"><button class="btn btn-template-outlined" onclick="updateTextArea()">Xác nhận chọn ghế</button></div>
-                                    <div class="col-md-8"><input type="text" id="seatsDisplay" value="" disabled></input></div>
+                                    <div class="col-md-4"><input type="text" id="seatsDisplay" value="" disabled></input></div>
+                                    <div class="col-md-4"><input type="text" id="seatsDisplayBill" value="" disabled></input></div>
                                 </div>
                                 
                                 
@@ -638,18 +639,20 @@
 
 
     function updateTextArea() {
-
-        if ($("input:checked").length) {
+        console.log( $("input.seats:checked"));
+        
+        //console.log(selectedSeats);
+        if ($("input.seats:checked").length) {
             $(".seatStructure *").prop("disabled", true);
 
             var allSeatsVals = [];
             
-            $('#seatsBlock :checked').each(function () {
+            $('input.seats:checked').each(function () {
                 allSeatsVals.push($(this).val());
             });
 
             
-            //$('#NumberDisplay').val(allNumberVals);
+            //display
             $('#seatsDisplay').val(allSeatsVals);
         } else {
             alert("Bạn chưa chọn ghế")
@@ -658,7 +661,7 @@
 
 
     function myFunction() {
-        alert($("input:checked").length);
+        alert($("input.seats:checked").length);
     }
     //END CHON GHE
 
