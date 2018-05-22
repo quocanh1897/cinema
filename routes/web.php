@@ -53,6 +53,63 @@ Route::post('changePersonalData',[
 
 // End Nhóm trang thông tin người dùng =============================================
 
+// Nhóm trang nhân viên
+
+// 1. Thông tin nhân viên
+Route::get('profilenhanvien',[
+    'as'=>'profilenhanvien',
+    'uses'=>'PageController@getProfileNhanvien'
+]);
+
+Route::post('changePassNhanvien',[
+    'as'=>'changePassNhanvien',
+    'uses'=>'PageController@postchangePassNhanvien'
+]);
+// 2. Thông tin khuyến mãi
+Route::get('dieuchinhkhuyenmai',[
+    'as'=>'dieuchinhkhuyenmai',
+    'uses'=>'PageController@getDieuchinhKhuyenmai'
+]);
+
+Route::post('themKhuyenmai',[
+    'as'=>'themKhuyenmai',
+    'uses'=>'PageController@postThemKhuyenmai'
+]);
+
+Route::post('suaKhuyenmai',[
+    'as'=>'suaKhuyenmai',
+    'uses'=>'PageController@postSuaKhuyenmai'
+]);
+
+Route::post('xoaKhuyenmai',[
+    'as'=>'xoaKhuyenmai',
+    'uses'=>'PageController@postXoaKhuyenmai'
+]);
+// 3. Thông tin giá vé
+Route::get('dieuchinhgiave',[
+    'as'=>'dieuchinhgiave',
+    'uses'=>'PageController@getDieuchinhGiave'
+]);
+
+Route::post('themLoaiphong',[
+    'as'=>'themLoaiphong',
+    'uses'=>'PageController@postThemLoaiphong'
+]);
+
+Route::post('themLoaighe',[
+    'as'=>'themLoaighe',
+    'uses'=>'PageController@postThemLoaighe'
+]);
+
+Route::post('suaLoaiphong',[
+    'as'=>'suaLoaiphong',
+    'uses'=>'PageController@postSuaLoaiphong'
+]);
+
+// 4. Thông tin dịch vụ
+
+// End Nhóm trang nhân viên
+
 // Trang thông báo lỗi
 
 Route::get('404',[

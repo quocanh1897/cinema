@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Hash;
 use App\User;
 use App\phim;
@@ -112,6 +113,208 @@ class PageController extends Controller
         }      
     }
     // End Nhóm trang thông tin người dùng =============================================
+
+    // Nhóm trang nhân viên
+
+    public function getProfileNhanvien()
+    {        
+        return view('page.profilenhanvien');
+    }
+
+    public function postchangePassNhanvien(Request $req)
+    {
+        $user_id = Auth::user()->id;                       
+        $obj_user = User::find($user_id);
+
+        $this->validate($req,
+            [
+                'password_old'=>'required',
+                'password'=>'required|min:6|max:20',
+                're_password'=>'required|same:password'
+            ],
+            [      
+                'password_old.required'=>'Vui lòng nhập mật khẩu hiện tại! ',
+                'password.required'=>'Vui lòng nhập mật khẩu mới! ',
+                're_password.required'=>'Vui lòng nhập lại mật khẩu mới! ',
+                're_password.same'=>'Mật khẩu mới không trùng khớp! Vui lòng thử lại ',
+                'password.max'=>'Mật khẩu tối đa 20 kí tự! ',
+                'password.min'=>'Mật khẩu cần ít nhất 6 kí tự! '
+            ]
+        );
+
+        if(Hash::check($req['password_old'], Auth::user()->password))
+        {
+            $obj_user->password = Hash::make($req['password']);
+            $obj_user->save(); 
+            return redirect()->back()->with('success','Đổi mật khẩu/thông tin thành công');
+        }
+        else
+        {
+            $obj_user->save();
+            return redirect()->back()->with('error','Mật khẩu hiện tại không đúng');
+        }
+    }
+
+    public function getDieuchinhKhuyenmai()
+    {
+        $khuyenmai = khuyen_mai::all();     
+        return view('page.dieuchinhkhuyenmai',compact('khuyenmai'));
+    }
+
+    public function postThemKhuyenmai(Request $req)
+    {
+        $this->validate($req,
+            [
+                'tenkm'=>'required',
+                'batdau'=>'required|date_format:Y-m-d|after:today',                
+                'ketthuc'=>'required|date_format:Y-m-d|after:tomorrow',
+                'hinhanh'=>'required|url' 
+            ],
+            [
+                'tenkm.required'=>'Vui lòng nhập tên khuyến mãi! ',                           
+                'batdau.required'=>'Vui lòng nhập ngày bắt đầu! ',
+                'batdau.data_format'=>"Định dạng sai",
+                'batdau.after'=>"Ngày bắt đầu phải sau hôm nay",
+                'ketthuc.required'=>'Vui lòng nhập ngày kết thúc! ',
+                'ketthuc.data_format'=>"Định dạng sai",
+                'ketthuc.after'=>"Ngày kết thúc phải sau ngày mai",
+                'hinhanh.required'=>'Vui lòng nhập đường dẫn tới một ảnh mô tả!',
+                'hinhanh.url'=>'Định dạng link hình ảnh không đúng'    
+            ]);
+        
+        $obj_user = new khuyen_mai();
+        $obj_user->tenkm = $req['tenkm'];
+        $obj_user->batdau = $req['batdau'];
+        $obj_user->ketthuc = $req['ketthuc'];    
+        $obj_user->hinhanh = $req['hinhanh'];       
+        $obj_user->mota = $req['mota'];
+        $obj_user->save();
+
+        return redirect()->back()->with('success','Thêm thành công');
+    }
+
+    public function postSuaKhuyenmai(Request $req)
+    {
+        $this->validate($req,
+            [
+                'mtenkm'=>'required',
+                'mbatdau'=>'required|date_format:Y-m-d|after:today',                
+                'mketthuc'=>'required|date_format:Y-m-d|after:tomorrow',
+                'mhinhanh'=>'required|url' 
+            ],
+            [
+                'mtenkm.required'=>'Vui lòng nhập tên khuyến mãi! ',                           
+                'mbatdau.required'=>'Vui lòng nhập ngày bắt đầu! ',
+                'mbatdau.data_format'=>"Định dạng sai",
+                'mbatdau.after'=>"Ngày bắt đầu phải sau hôm nay",
+                'mketthuc.required'=>'Vui lòng nhập ngày kết thúc! ',
+                'mketthuc.data_format'=>"Định dạng sai",
+                'mketthuc.after'=>"Ngày kết thúc phải sau ngày mai",
+                'mhinhanh.required'=>'Vui lòng nhập đường dẫn tới một ảnh mô tả!',
+                'mhinhanh.url'=>'Định dạng link hình ảnh không đúng'    
+            ]);
+
+        $obj_user = khuyen_mai::find($req['mmakm']);
+
+        $obj_user->tenkm = $req['mtenkm'];
+        $obj_user->batdau = $req['mbatdau'];
+        $obj_user->ketthuc = $req['mketthuc'];    
+        $obj_user->hinhanh = $req['mhinhanh'];       
+        $obj_user->mota = $req['mmota'];
+        $obj_user->save();
+
+        return redirect()->back()->with('success','Điều chỉnh thành công');
+    }
+
+    // TODO: put your code into it
+    public function postXoaKhuyenmai($idRap)
+    {
+        $rap = rap_chieu::where('marap',$idRap)->get();
+        return view('page.rap',compact('rap'));
+    }
+
+    public function getDieuchinhGiave()
+    {
+        $loaiphong = loai_phong::all();  
+        $loaighe = loai_ghe::all();   
+        return view('page.dieuchinhgiave',compact('loaiphong','loaighe'));
+    }
+
+    public function postThemLoaiphong(Request $req)
+    {
+        $this->validate($req,
+            [
+                'tenloai'=>'required',
+                'gia'=>'required|numeric|min:45000',                
+     
+            ],
+            [
+                'tenloai.required'=>'Vui lòng nhập tên loại phòng mới! ',                           
+                'gia.required'=>'Vui lòng nhập giá! ',
+                'gia.numeric'=>"Định dạng giá sai",
+                'gia.min'=>"Giá phòng không được thấp hơn giá phòng thường",
+                  
+            ]);
+        
+        $obj_user = new loai_phong();
+        $obj_user->tenloai = $req['tenloai'];
+        $obj_user->gia = $req['gia'];
+        $obj_user->save();
+
+        return redirect()->back()->with('success','Thêm thành công');
+    }
+
+    public function postThemLoaighe(Request $req)
+    {
+        $this->validate($req,
+            [
+                'tenloai'=>'required',
+                'gia'=>'required|numeric|min:45000',                
+     
+            ],
+            [
+                'tenloai.required'=>'Vui lòng nhập tên loại ghế mới! ',                           
+                'gia.required'=>'Vui lòng nhập giá! ',
+                'gia.numeric'=>"Định dạng giá sai",
+                'gia.min'=>"Giá phòng không được thấp hơn giá ghế thường",
+                  
+            ]);
+        
+        $obj_user = new loai_ghe();
+        $obj_user->tenloai = $req['tenloai'];
+        $obj_user->gia = $req['gia'];
+        $obj_user->save();
+
+        return redirect()->back()->with('success','Thêm thành công');
+    }
+
+    public function postSuaLoaiphong(Request $req)
+    {
+        $this->validate($req,
+            [
+                'mtenloai'=>'required',
+                'mgia'=>'required|numeric|min:45000',                
+     
+            ],
+            [
+                'mtenloai.required'=>'Vui lòng nhập tên loại phòng mới! ',                           
+                'mgia.required'=>'Vui lòng nhập giá! ',
+                'mgia.numeric'=>"Định dạng giá sai",
+                'mgia.min'=>"Giá phòng không được thấp hơn giá phòng thường",
+                  
+            ]);
+
+        $obj_user = loai_phong::find($req['mid']); // Problem: the 'loai_phong' table doesn't contain id column ???
+        $obj_user->tenloai = $req['mtenloai'];
+        $obj_user->gia = $req['mgia'];
+        
+        $obj_user->save();
+
+        return redirect()->back()->with('success','Điều chỉnh thành công');
+    }
+
+    // End Nhóm trang nhân viên
+
     // Trang thông báo lỗi
     public function get404()
     {
@@ -318,9 +521,10 @@ class PageController extends Controller
     {
         $dichvu = dich_vu::all();
         $phong = phong_chieu::where([
-            ['marap',$req['idphim']],
+            ['marap',$req['idrap']],
             ['tenloai',$req['loaiphong']]
         ])->get();
+        //dd($req['loaiphong']);
         $tatcaghe = ghe_ngoi::where('maphong',$phong[0]->maphong)->get();
         //dd($tatcaghe);
         $phimDaChon = phim::where('maphim',$req['idphim'])->get();
