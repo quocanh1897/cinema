@@ -90,14 +90,18 @@
 
                     	function add() {
                     		var x = document.getElementById("addKm");
-                    		x.style.display="block";
+                              var y = document.getElementById("bangchon1");
+                              x.style.display="block";
+                              y.style.display="none";
                     		$(":button.btn-info").prop("disabled",true);
                     		$(":button.btn-danger").prop("disabled",true);
                     	}
 
                     	function cancalAdd() {
                     		var x = document.getElementById("addKm");
-                    		x.style.display="none";
+                              var y = document.getElementById("bangchon1");
+                              x.style.display="none";
+                              y.style.display="block";
                     		$(":button.btn-info").prop("disabled",false);
                     		$(":button.btn-danger").prop("disabled",false);
                     	}
@@ -112,7 +116,9 @@
                     		}
                     		else {
                     			var x = document.getElementById("modifyKm");
+                                   var y = document.getElementById("bangchon1");
                     			x.style.display="block";
+                                   y.style.display="none";
                     			$(":button.btn-success").prop("disabled",true);
                     			$(":button.btn-danger").prop("disabled",true);
                     			$("#mhinhanh").attr("value",$("#bangKm tr.duyduy1 td:eq(0) img").attr("src"));
@@ -126,10 +132,34 @@
 
                     	function cancelModify() {
                     		var x = document.getElementById("modifyKm");
+                              var y = document.getElementById("bangchon1");
                     		x.style.display="none";
-                    		$(":button.btn-success").prop("disabled",);
+                              y.style.display="block";
+                    		$(":button.btn-success").prop("disabled",false);
                     		$(":button.btn-danger").prop("disabled",false);
                     	}
+
+                         /* TODO: find a way to put a valid argument into route call
+                         Hint: DB::table('users')->whereIn('id', $ids_to_delete)->delete();
+                         Notice that you have to add use Illuminate\Support\Facades\DB; to PageController.php file.
+                         Reference: https://laracasts.com/discuss/channels/eloquent/how-to-delete-multiple-records-using-laravel-eloquent */
+
+                         function remove() {
+                              var x = $("#bangKm tr.duyduy1").length;
+                              if (x < 1) {
+                                   alert('Chưa chọn mục cần xóa. Vui lòng thử lại!');
+                              } 
+                              else {
+                                   if (confirm('Xác nhận xóa (các) mục đã chọn?')) {
+                                        $("#bangKm tr.duyduy1").each(function (argument) {
+                                             
+                                        });
+                                   } 
+                                   else {
+                                        $("#bangKm tr.duyduy1").removeClass("duyduy1");
+                                   }                                  
+                              }
+                         }
                     </script>
 					
 					<!-- Form thêm khuyến mãi -->					
@@ -257,14 +287,14 @@
 					<div class="panel-body">
 						<ul class="nav nav-pills flex-column text-sm">
 							<li class="nav-item">
-								<a class="nav-link active"><i class="fa fa-user"></i>  Điều chỉnh khuyến mãi</a>
+								<a class="nav-link active"><i class="fa fa-list"></i>  Điều chỉnh khuyến mãi</a>
 							</li>
 
 							<li class="nav-item">
-								<a href="{{route('lich-su')}}" class="nav-link"><i class="fa fa-list"></i> Điều chỉnh giá vé</a>
+								<a href="{{route('dieuchinhgiave')}}" class="nav-link"><i class="fa fa-list"></i> Điều chỉnh giá vé</a>
 							</li>
 							<li class="nav-item">
-								<a href="{{route('phim-da-xem')}}" class="nav-link"><i class="fa fa-heart"></i> Điều chỉnh giá dịch vụ</a>
+								<a href="{{route('phim-da-xem')}}" class="nav-link"><i class="fa fa-list"></i> Điều chỉnh giá dịch vụ</a>
 							</li>
 						</ul>
 					</div>

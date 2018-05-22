@@ -171,14 +171,14 @@
 				<div class="panel-body">
 					<ul class="nav nav-pills flex-column text-sm">
 						<li class="nav-item">
-							<a href="{{route('dieuchinhkhuyenmai')}}" class="nav-link"><i class="fa fa-user"></i>  Điều chỉnh khuyến mãi</a>
+							<a href="{{route('dieuchinhkhuyenmai')}}" class="nav-link"><i class="fa fa-list"></i>  Điều chỉnh khuyến mãi</a>
 						</li>
 
 						<li class="nav-item">
 							<a href="{{route('lich-su')}}" class="nav-link"><i class="fa fa-list"></i> Điều chỉnh giá vé</a>
 						</li>
 						<li class="nav-item">
-							<a href="{{route('phim-da-xem')}}" class="nav-link"><i class="fa fa-heart"></i> Điều chỉnh giá dịch vụ</a>
+							<a href="{{route('phim-da-xem')}}" class="nav-link"><i class="fa fa-list"></i> Điều chỉnh giá dịch vụ</a>
 						</li>
 					</ul>
 				</div>

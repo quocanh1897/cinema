@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Hash;
 use App\User;
 use App\phim;
@@ -12,6 +13,8 @@ use App\suat_chieu;
 use App\khung_gio;
 use App\dien_vien;
 use App\the_loai;
+use App\loai_phong;
+use App\loai_ghe;
 use Auth;
 use Carbon;
 use Redirect;
@@ -227,7 +230,94 @@ class PageController extends Controller
         $obj_user->mota = $req['mmota'];
         $obj_user->save();
 
+        return redirect()->back()->with('success','Điều chỉnh thành công');
+    }
+
+    // TODO: put your code into it
+    public function postXoaKhuyenmai($idRap)
+    {
+        $rap = rap_chieu::where('marap',$idRap)->get();
+        return view('page.rap',compact('rap'));
+    }
+
+    public function getDieuchinhGiave()
+    {
+        $loaiphong = loai_phong::all();  
+        $loaighe = loai_ghe::all();   
+        return view('page.dieuchinhgiave',compact('loaiphong','loaighe'));
+    }
+
+    public function postThemLoaiphong(Request $req)
+    {
+        $this->validate($req,
+            [
+                'tenloai'=>'required',
+                'gia'=>'required|numeric|min:45000',                
+     
+            ],
+            [
+                'tenloai.required'=>'Vui lòng nhập tên loại phòng mới! ',                           
+                'gia.required'=>'Vui lòng nhập giá! ',
+                'gia.numeric'=>"Định dạng giá sai",
+                'gia.min'=>"Giá phòng không được thấp hơn giá phòng thường",
+                  
+            ]);
+        
+        $obj_user = new loai_phong();
+        $obj_user->tenloai = $req['tenloai'];
+        $obj_user->gia = $req['gia'];
+        $obj_user->save();
+
         return redirect()->back()->with('success','Thêm thành công');
+    }
+
+    public function postThemLoaighe(Request $req)
+    {
+        $this->validate($req,
+            [
+                'tenloai'=>'required',
+                'gia'=>'required|numeric|min:45000',                
+     
+            ],
+            [
+                'tenloai.required'=>'Vui lòng nhập tên loại ghế mới! ',                           
+                'gia.required'=>'Vui lòng nhập giá! ',
+                'gia.numeric'=>"Định dạng giá sai",
+                'gia.min'=>"Giá phòng không được thấp hơn giá ghế thường",
+                  
+            ]);
+        
+        $obj_user = new loai_ghe();
+        $obj_user->tenloai = $req['tenloai'];
+        $obj_user->gia = $req['gia'];
+        $obj_user->save();
+
+        return redirect()->back()->with('success','Thêm thành công');
+    }
+
+    public function postSuaLoaiphong(Request $req)
+    {
+        $this->validate($req,
+            [
+                'mtenloai'=>'required',
+                'mgia'=>'required|numeric|min:45000',                
+     
+            ],
+            [
+                'mtenloai.required'=>'Vui lòng nhập tên loại phòng mới! ',                           
+                'mgia.required'=>'Vui lòng nhập giá! ',
+                'mgia.numeric'=>"Định dạng giá sai",
+                'mgia.min'=>"Giá phòng không được thấp hơn giá phòng thường",
+                  
+            ]);
+
+        $obj_user = loai_phong::find($req['mid']); // Problem: the 'loai_phong' table doesn't contain id column ???
+        $obj_user->tenloai = $req['mtenloai'];
+        $obj_user->gia = $req['mgia'];
+        
+        $obj_user->save();
+
+        return redirect()->back()->with('success','Điều chỉnh thành công');
     }
 
     // End Nhóm trang nhân viên
