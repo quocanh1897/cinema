@@ -30,7 +30,7 @@ class PageController extends Controller
     public function getIndex()
     {
         $currentDate = Carbon\Carbon::now()->toDateString();
-        $km = khuyen_mai::all();
+        $km = khuyen_mai::where('ketthuc','>',$currentDate)->get();
         $pre_phim = phim::where('batdau','>',$currentDate)->get();
         $new_phim = phim::where('batdau','<',$currentDate)->get();
          
@@ -458,8 +458,8 @@ class PageController extends Controller
         $phim = phim::where('maphim',$idPhim)->get();
         $dienvien = dien_vien::where('maphim',$idPhim)->get();
         $theloai = the_loai::where('maphim',$idPhim)->get();
-         
-        return view('page.chitiet',compact('phim','dienvien','theloai'));
+        $khuyenmai = khuyen_mai::all();
+        return view('page.chitiet',compact('phim','dienvien','theloai','khuyenmai'));
     }
     // End nhóm trang thuộc menu Lịch chiếu ===============================================================
     // Nhóm trang thuộc menu Mua vé
@@ -549,4 +549,10 @@ class PageController extends Controller
     }
 
     // End nhóm trang thuộc menu Mua vé ============================================================
+
+    public function getKhuyenMai(){
+        $khuyenmai = khuyen_mai::all();
+        return view('page.khuyenmai',compact('khuyenmai'));
+    }
+
 }

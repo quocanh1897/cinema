@@ -73,35 +73,23 @@
 
           <!-- KHUYEN MAI -->
           <li class="nav-item dropdown menu-large">
-            <a href="404" data-toggle="dropdown" class="dropdown-toggle">KHUYẾN MÃI
+            <a href="" data-toggle="dropdown" class="dropdown-toggle">KHUYẾN MÃI
               <b class="caret"></b>
             </a>
             <ul class="dropdown-menu megamenu">
               <li>
                 <div class="row">
+                  @foreach($khuyenmai as $km)
                   <div class="col-lg-3">
-                    <a href="404">
-                      <img src="sources/img/template-easy-customize.png" alt="" class="img-fluid d-none d-lg-block">
-                    </a>
-
-                  </div>
-                  <div class="col-lg-3">
-                    <a href="404">
-                      <img src="sources/img/template-easy-customize.png" alt="" class="img-fluid d-none d-lg-block">
+                    <a href="{{$km->hinhanh}}">
+                      <img src="{{$km->hinhanh}} " style="width:300px;height:150px" class="img-fluid d-none d-lg-block">
                     </a>
                   </div>
-                  <div class="col-lg-3">
-                    <a href="404">
-                      <img src="sources/img/template-easy-customize.png" alt="" class="img-fluid d-none d-lg-block">
-                    </a>
-                  </div>
-                  <div class="col-lg-3">
-                    <a href="404">
-                      <img src="sources/img/template-easy-customize.png" alt="" class="img-fluid d-none d-lg-block">
-                    </a>
-                  </div>
+                  @endforeach
+                  
+                  
                   <div class="col-lg-3 col-md-1 nav-link">
-                    <a href="404" class="nav-link">XEM TẤT CẢ</a>
+                    <a href="{{route('khuyen-mai')}} " class="nav-link">XEM TẤT CẢ</a>
                   </div>
                 </div>
               </li>

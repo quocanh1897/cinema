@@ -32,11 +32,11 @@
                         @foreach($rap as $rap)
                         <div class="col-lg-3 col-md-4">
                             <div class="product">
-                                <div class="image">
+                                 
                                     <a href="{{route('rap',$rap->marap)}}" class="mytheatre">
                                         <img src="{{$rap->hinh_anh}} " style="height:200px; width:200px"alt="" class="img-fluid">
                                     </a>
-                                </div>
+                                
                                 <div class="text">
                                     <h4 class="h5">
                                         <a href="{{route('rap',$rap->marap)}}">{{$rap->tenrap}} </a>

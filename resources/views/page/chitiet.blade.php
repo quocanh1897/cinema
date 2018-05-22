@@ -3,17 +3,10 @@
 <div id="heading-breadcrumbs">
   <div class="container">
     <div class="row d-flex align-items-center flex-wrap">
-      <div class="col-md-7">
+       
         <h1 class="h2">{{$phim->first()->tenphim}} </h1>
-      </div>
-      <div class="col-md-5">
-        <ul class="breadcrumb d-flex justify-content-end">
-          <li class="breadcrumb-item">
-            <a href="#">Trang chủ</a>
-          </li>
-          <li class="breadcrumb-item active">Chi tiết phim</li>
-        </ul>
-      </div>
+       
+       
     </div>
   </div>
 </div>
@@ -110,26 +103,13 @@
               <h3 class="h4 panel-title">Khuyến mãi</h3>
             </div>
           </div>
+          @foreach($khuyenmai as $km)
           <div class="banner">
             <a href="index" class="text-center">
-              <img src="sources/img/template-easy-code.png" alt="" class="img-fluid">Khuyến mãi 1
+              <img src="{{$km->hinhanh}} " alt="" class="img-fluid">{{$km->tenkm}}
             </a>
           </div>
-          <div class="banner">
-            <a href="index" class="text-center">
-              <img src="sources/img/template-easy-code.png" alt="" class="img-fluid">Khuyến mãi 1
-            </a>
-          </div>
-          <div class="banner">
-            <a href="index" class="text-center">
-              <img src="sources/img/template-easy-code.png" alt="" class="img-fluid">Khuyến mãi 1
-            </a>
-          </div>
-          <div class="banner">
-            <a href="index" class="text-center">
-              <img src="sources/img/template-easy-code.png" alt="" class="img-fluid">Khuyến mãi 1
-            </a>
-          </div>
+          @endforeach
         </div>        
       </div>
     </div>
