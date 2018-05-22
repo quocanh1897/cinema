@@ -174,10 +174,10 @@ Route::post('chon-suat-chieu',[
     'uses'=>'PageController@postChonSuatChieu'
 ]);
 
-// Route::post('mua-ve/{phim}',[
-//     'as'=>'mua-ve',
-//     'uses'=>'PageController@postMuaVe'
-// ]);
+Route::post('chon-ghe',[
+    'as'=>'chon-ghe',
+    'uses'=>'PageController@postChonGhe'
+]);
 
 Auth::routes();
 

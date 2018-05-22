@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row d-flex align-items-center">
             <div class="col-md-6 d-md-block d-none">
-                <p>Chào mừng bạn đã đến với <strong>bkCinema</strong> - hệ thống rạp chiếu phim hiện đại nhất vũ trụ</p>
+                <p>Chào mừng bạn đã đến với <strong>bkCinema</strong>
             </div>
             <div class="col-md-6">
                 <div class="d-flex justify-content-md-end justify-content-between">
