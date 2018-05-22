@@ -32,6 +32,11 @@
 </div>
 @endif
 
+<script type="text/javascript">
+     $("header").hide().prop("disabled",true);
+     $("footer").hide().prop("disabled",true);
+</script>
+
 <div id="content">
 	<div class="container">
 		<div class="row bar">
@@ -44,7 +49,7 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-4">
-							<p class="text-center"><img src="sources/img/duy.jpg" alt="" class="rounded-circle img-fluid"></p>
+							<p class="text-center"><img src="" alt="" class="rounded-circle img-fluid"></p>
 							<p class="text-center"><a href="javascript:void(null)">Đổi ảnh đại diện</a></p>
 						</div>
 						<div class="col-sm-8">
@@ -65,6 +70,10 @@
 								<tr>
 									<th id="thduy">Họ và tên</th>
 									<th>{{Auth::user()->name}}</th>
+								</tr>
+								<tr>
+									<th id="thduy">Chức vụ</th>
+									<th>{{$nhanvien->idnv}}</th>
 								</tr>
 								<tr>
 									<th id="thduy">Email</th>
@@ -175,7 +184,7 @@
 						</li>
 
 						<li class="nav-item">
-							<a href="{{route('lich-su')}}" class="nav-link"><i class="fa fa-list"></i> Điều chỉnh giá vé</a>
+							<a href="{{route('dieuchinhgiave')}}" class="nav-link"><i class="fa fa-list"></i> Điều chỉnh giá vé</a>
 						</li>
 						<li class="nav-item">
 							<a href="{{route('phim-da-xem')}}" class="nav-link"><i class="fa fa-list"></i> Điều chỉnh giá dịch vụ</a>

@@ -25,7 +25,8 @@ use Redirect;
 use Session;
 
 class PageController extends Controller
-{ 
+{
+    
     // Trang chủ
     public function getIndex()
     {
@@ -118,8 +119,10 @@ class PageController extends Controller
     // Nhóm trang nhân viên
 
     public function getProfileNhanvien()
-    {        
-        return view('page.profilenhanvien');
+    {
+        $user_id = Auth::user()->id;
+        $nhanvien = nhan_vien::where('idnv',$user_id)->get();     
+        return view('page.profilenhanvien',compact('nhanvien'));
     }
 
     public function postchangePassNhanvien(Request $req)
@@ -158,8 +161,10 @@ class PageController extends Controller
 
     public function getDieuchinhKhuyenmai()
     {
-        $khuyenmai = khuyen_mai::all();     
-        return view('page.dieuchinhkhuyenmai',compact('khuyenmai'));
+        $khuyenmai = khuyen_mai::all();
+        $user_id = Auth::user()->id;
+        $isNv = nhan_vien::where('idnv',$user_id)->get();          
+        return view('page.dieuchinhkhuyenmai',compact('user_id','isNv','khuyenmai'));
     }
 
     public function postThemKhuyenmai(Request $req)
@@ -237,8 +242,10 @@ class PageController extends Controller
     public function getDieuchinhGiave()
     {
         $loaiphong = loai_phong::all();  
-        $loaighe = loai_ghe::all();   
-        return view('page.dieuchinhgiave',compact('loaiphong','loaighe'));
+        $loaighe = loai_ghe::all();
+        $user_id = Auth::user()->id;
+        $isNv = nhan_vien::where('idnv',$user_id)->get();          
+        return view('page.dieuchinhgiave',compact('loaiphong','loaighe','user_id','isNv'));
     }
 
     public function postThemLoaiphong(Request $req)
@@ -383,7 +390,7 @@ class PageController extends Controller
             'email.required'=>'Vui lòng điền email',
             'password.required'=>'Vui lòng nhập mật khẩu! ',  
         ]);
-        $boolx = false;
+        $boolx = true;
         $credentials = array('email'=>$req->email,'password'=>$req->password);
         if (Auth::attempt($credentials))
         {
@@ -394,7 +401,7 @@ class PageController extends Controller
             
             if($nhanvien == 1){
                 $boolx = true; 
-                return redirect('/')->with('success','Đăng nhập thành công')->with('boolx','true');
+                return redirect('profilenhanvien')->with('success','Đăng nhập thành công')->with('boolx','true');
             }
 
             return redirect('/')->with('success','Đăng nhập thành công')->with('boolx','false');
