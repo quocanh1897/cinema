@@ -18,6 +18,7 @@ use App\loai_phong;
 use App\loai_ghe;
 use App\phong_chieu;
 use App\ghe_ngoi;
+use App\nhan_vien;
 use Auth;
 use Carbon;
 use Redirect;
@@ -369,7 +370,7 @@ class PageController extends Controller
         $obj_user->sodt = $req['sodt'];
         $obj_user->cmnd = $req['cmnd'];
         $obj_user->save();
-        return redirect()->back()->with('success','Tạo tài khoản thành công, vui lòng đăng nhập lại');
+        return redirect()->route('trang-chu')->with('success','Tạo tài khoản thành công, vui lòng đăng nhập lại');
     }
     public function postSignin(Request $req)
     {
@@ -382,15 +383,25 @@ class PageController extends Controller
             'email.required'=>'Vui lòng điền email',
             'password.required'=>'Vui lòng nhập mật khẩu! ',  
         ]);
+        $boolx = false;
         $credentials = array('email'=>$req->email,'password'=>$req->password);
         if (Auth::attempt($credentials))
         {
             $data = $req->session()->all();
-            return redirect()->back()->with('success','Đăng nhập thành công');
+            $user = User::where('email',$req['email'])->get();
+            
+            $nhanvien = nhan_vien::where('idnv',$user[0]->id)->count();
+            
+            if($nhanvien == 1){
+                $boolx = true; 
+                return redirect('/')->with('success','Đăng nhập thành công')->with('boolx','true');
+            }
+
+            return redirect('/')->with('success','Đăng nhập thành công')->with('boolx','false');
         }
         else
         {
-            return redirect()->back()->with('error','Đăng nhập thất bại');
+            return redirect('/')->with('error','Đăng nhập thất bại')->with('boolx','false');
         }       
     }
     public function getDangxuat()

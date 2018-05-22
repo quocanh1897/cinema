@@ -12,9 +12,13 @@
                     @if(Auth::check())
 
                     <div class="login">
-                        <a >Xin chào {{Auth::user()->name}},   </a>
+                        <a >Xin chào {{Auth::user()->name}},  </a>
                         <a ></a>
-                        <a href="profile" class="profile-btn">
+                        @if(Session::get('boolx') == 'true')
+                            <a href="{{route('profilenhanvien')}}" class="profile-btn">
+                        @else
+                            <a href="{{route('profile')}}" class="profile-btn">
+                        @endif
                             <i class="fa fa-user"></i>
                             <span class="d-none d-md-inline-block">Tài khoản</span>
                         </a>
