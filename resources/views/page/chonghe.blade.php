@@ -166,11 +166,22 @@
                             <a href="index" class="btn btn-secondary mt-0">
                                 <i class="fa fa-chevron-left"></i> Hủy bỏ giao dịch</a>
                         </div>
+                        <form action="{{route('thanhtoan')}} " method="post">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <input type="hidden" name="idphim" value="{{$phimDaChon->first()->maphim}}">
+                        <input type="hidden" name="idrap" value="{{$rapDaChon->first()->marap}}">
+                        <input type="hidden" name="ngay" value="{{$ngay}}  ">
+                        <input type="hidden" name="gio" value="{{$gio}}  ">
+                        <input type="hidden" name="loaiphong" id="loaiphong" value="{{$loaiphong}} ">
+                        <input type="hidden" name="tongcong" id="tongcong" value="">
+                        <input type="hidden" name="gheso" id="gheso" value="">
+                        
                         <div class="right-col">
-                            <button type="submit" class="btn btn-template-outlined" id="db_btn">Đi đến thanh toán
+                            <button type="submit" class="btn btn-template-outlined" id="db_btn" disabled>Đi đến thanh toán
                                 <i class="fa fa-chevron-right"></i>
                             </button>
                         </div>
+                        </form>
                     </div>
 
                 </div>
@@ -337,12 +348,9 @@ td {
 
 
     function updateTextArea() {
-        console.log( $("input.seats:checked"));
-        
-        //console.log(selectedSeats);
         if ($("input.seats:checked").length) {
             $(".seatStructure *").prop("disabled", true);
-
+            $("#db_btn").prop("disabled", false);
             var allSeatsVals = [];
             
             $('input.seats:checked').each(function () {

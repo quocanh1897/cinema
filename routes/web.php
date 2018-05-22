@@ -236,6 +236,11 @@ Route::post('chon-ghe',[
     'uses'=>'PageController@postChonGhe'
 ]);
 
+Route::post('thanhtoan',[
+    'as'=>'thanhtoan',
+    'uses'=>'PageController@postThanhToan'
+]);
+
 
 Route::get('khuyen-mai',[
     'as'=>'khuyen-mai',

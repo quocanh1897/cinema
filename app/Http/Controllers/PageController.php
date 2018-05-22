@@ -19,6 +19,8 @@ use App\loai_ghe;
 use App\phong_chieu;
 use App\ghe_ngoi;
 use App\nhan_vien;
+use App\hoa_don;
+use App\ve;
 use Auth;
 use Carbon;
 use Redirect;
@@ -544,7 +546,67 @@ class PageController extends Controller
         $gio = $req['gio'];
         $giaghe = $req['giaghe'];
         $giadv = $req['giadv'];
-        return view('page.chonghe',compact('phimDaChon','rapDaChon','ngay','gio','dichvu','tatcaghe','giaghe','giadv') );
+        $loaiphong = $req['loaiphong'];
+        return view('page.chonghe',compact('phimDaChon','loaiphong','rapDaChon','ngay','gio','dichvu','tatcaghe','giaghe','giadv') );
+
+    }
+
+    public function postThanhToan(Request $req)
+    {
+        //dd($req);
+        $currentDate = Carbon\Carbon::now()->toDateString();
+        $dichvu = dich_vu::all();
+        $phong = phong_chieu::where([
+            ['marap',$req['idrap']],
+            ['tenloai',$req['loaiphong']]
+        ])->get();
+        
+        $gheso = $req['gheso'];
+        $phimDaChon = phim::where('maphim',$req['idphim'])->get();
+        $rapDaChon = rap_chieu::where('marap',$req['idrap'])->get();
+        $ngay = $req['ngay'];
+        $gio = $req['gio'];
+        $loaiphong = $req['loaiphong'];
+        $tongcong = $req['tongcong'];
+
+        //HOA DON
+        $user_id = Auth::user()->id;                       
+        $obj_user = User::find($user_id);
+        $hoadon = new hoa_don();
+         
+        $hoadon->tongtien = $tongcong;
+        $hoadon->ngayxuat = $currentDate;
+        $hoadon->idkh = $obj_user->id;
+        //idnv = null;
+        $hoadon->save();
+
+        //VE
+        
+        $cacghe = explode(",", $gheso);
+        //$ve->maghe = $ghe->maghe;
+        
+        foreach($cacghe as $ghe1){
+            $ve = new ve();
+            $makg = khung_gio::where('batdau',$gio)->get();
+            $ve->ngayxuat = $currentDate;
+            $temp = suat_chieu::where([
+                ['ngaychieu', $ngay],
+                ['makhunggio', $makg->first()->makhunggio],
+                ['maphim', $req['idphim']],
+                ['marap',$req['idrap']],
+            ])->get();
+            $ve->masuatchieu = $temp->first()->masuatchieu;
+            $ghe = ghe_ngoi::where([
+                ['maphong',$phong[0]->maphong],
+                ['soghe', $ghe1],
+            ])->get();
+                 
+            //$ve->mahoadon = $hoadon->mahoadon;
+            $ve->save();
+        }
+        
+
+        return view('page.thanhtoan',compact('phimDaChon','rapDaChon','ngay','gio','dichvu','gheso','tongcong','loaiphong','phong') );
 
     }
 

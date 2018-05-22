@@ -29,9 +29,13 @@
             <ul class="dropdown-menu megamenu">
               <li>
                 <div class="row">
-                  <div class="col-lg-6">
-                    <img src="sources/img/template-easy-customize.png" alt="" class="img-fluid d-none d-lg-block">
+                  @foreach($newest as $nw)
+                  <div class="col-lg-3">
+                    <a href="chi-tiet/{{$nw->maphim}} ">
+                    <img src="{{$nw->hinhanh}} " class="img-fluid d-none d-lg-block">
+                    </a>
                   </div>
+                  @endforeach
                   <div class="col-lg-3 col-md-6">
                     <h5>XEM THEO PHIM</h5>
                     <ul class="list-unstyled mb-3">
