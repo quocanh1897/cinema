@@ -394,7 +394,7 @@ class PageController extends Controller
             
             if($nhanvien == 1){
                 $boolx = true; 
-                return redirect('/')->with('success','Đăng nhập thành công')->with('boolx','true');
+                return redirect('profilenhanvien')->with('success','Đăng nhập thành công')->with('boolx','true');
             }
 
             return redirect('/')->with('success','Đăng nhập thành công')->with('boolx','false');
