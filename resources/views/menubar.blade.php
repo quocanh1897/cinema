@@ -20,7 +20,7 @@
               <b class="caret"></b>
             </a>
           </li>
-          @endif
+          
           <!-- END MUA VE -->
 
           <!-- LICH CHIEU -->
@@ -102,12 +102,13 @@
             </ul>
           </li>
           <!-- END KHUYEN MAI -->
-
+          
           <!-- GIOI THIEU  -->
           <li class="nav-item ">
             <a href="about">Giới thiệu</a>
           </li>
           <!-- END GIOI THIEU -->
+          @endif
         </ul>
       </div>
       <!-- <div id="search" class="collapse clearfix">
