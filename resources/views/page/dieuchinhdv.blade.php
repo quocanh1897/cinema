@@ -45,7 +45,7 @@
                 <div class="bo3">
                     <!-- THONG TIN CA NHAN -->
                     <div class="heading">
-                    	<h3 class="text-uppercase">Danh sách khuyến mãi</h3>
+                    	<h3 class="text-uppercase">Danh sách dịch vụ</h3>
                     	<div style=" position: absolute;right: 0; top: 0">
                     		<button type="button" class="btn btn-sm btn-success" onclick="add()">Thêm</button>
                     		<button type="button" class="btn btn-sm btn-info" onclick="modify()">Sửa</button>
@@ -167,7 +167,7 @@
                          }
                     </script>
 					
-					<!-- Form thêm khuyến mãi -->					
+					<!-- Form thêm dịch vụ -->					
                     <div style="display: none" id="addKm">
                     	<hr>
                     	<form action="{{route('themDv')}}" method="post" id="kmform">
@@ -175,7 +175,7 @@
                     		<div class="row">
                     			<div class="col-md-6">
                     				<div class="form-group">
-                    					<label for="tenkm">Tên khuyến mãi</label>
+                    					<label for="tenkm">Tên dịch vụ</label>
                     					<input name="tenkm" id="tenkm" type="text" class="form-control">
                     				</div>
                     			</div>
@@ -216,7 +216,7 @@
                     	</form>
                     </div>
 
-                    <!-- Form chỉnh sửa khuyến mãi -->                    
+                    <!-- Form chỉnh sửa dịch vụ -->                    
                     <div style="display: none" id="modifyKm">
                     	<hr>
                     	<form action="{{route('suaDv')}}" method="post" id="kmformsua">
@@ -225,7 +225,7 @@
                     		<div class="row">
                     			<div class="col-md-6">
                     				<div class="form-group">
-                    					<label for="mtenkm">Tên khuyến mãi</label>
+                    					<label for="mtenkm">Tên dịch vụ</label>
                     					<input name="tenkm" id="mtenkm" type="text" class="form-control">
                     				</div>
                     			</div>
@@ -292,7 +292,7 @@
 					<div class="panel-body">
 						<ul class="nav nav-pills flex-column text-sm">
 							<li class="nav-item">
-								<a class="nav-link active"><i class="fa fa-list"></i>  Điều chỉnh khuyến mãi</a>
+								<a class="nav-link active"><i class="fa fa-list"></i>  Điều chỉnh dịch vụ</a>
 							</li>
 
 							<li class="nav-item">
