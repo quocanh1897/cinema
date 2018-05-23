@@ -485,7 +485,7 @@ class PageController extends Controller
         $phim = phim::where('maphim',$idPhim)->get();
         $dienvien = dien_vien::where('maphim',$idPhim)->get();
         $theloai = the_loai::where('maphim',$idPhim)->get();
-        $khuyenmai = khuyen_mai::all();
+        $khuyenmai = khuyen_mai::all()->take(4);
         return view('page.chitiet',compact('phim','dienvien','theloai','khuyenmai'));
     }
     // End nhóm trang thuộc menu Lịch chiếu ===============================================================
