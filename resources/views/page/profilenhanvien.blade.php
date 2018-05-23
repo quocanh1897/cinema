@@ -186,7 +186,7 @@
 							<a href="{{route('lich-su')}}" class="nav-link"><i class="fa fa-list"></i> Điều chỉnh giá vé</a>
 						</li>
 						<li class="nav-item">
-							<a href="{{route('phim-da-xem')}}" class="nav-link"><i class="fa fa-list"></i> Điều chỉnh giá dịch vụ</a>
+							<a href="{{route('dieuchinhdv')}}" class="nav-link"><i class="fa fa-list"></i> Điều chỉnh giá dịch vụ</a>
 						</li>
 					</ul>
 				</div>

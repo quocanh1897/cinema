@@ -107,7 +107,25 @@ Route::post('suaLoaiphong',[
 ]);
 
 // 4. Thông tin dịch vụ
+Route::get('dieuchinhdv',[
+    'as'=>'dieuchinhdv',
+    'uses'=>'PageController@getDieuChinhDv'
+]);
 
+Route::post('themDv',[
+    'as'=>'themDv',
+    'uses'=>'PageController@postThemDv'
+]);
+
+Route::post('suaDv',[
+    'as'=>'suaDv',
+    'uses'=>'PageController@postSuaDv'
+]);
+
+Route::post('xoaDv',[
+    'as'=>'xoaDv',
+    'uses'=>'PageController@postXoaDv'
+]);
 // End Nhóm trang nhân viên
 
 // Trang thông báo lỗi

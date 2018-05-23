@@ -4,7 +4,7 @@
 		<div class="row d-flex align-items-center flex-wrap">
 			<div class="col-md-7">
 				
-				<h1 class="h2">Khuyến mãi</h1>
+				<h1 class="h2">Dịch vụ</h1>
 				
 			</div>
 
@@ -59,21 +59,21 @@
                     				<th>Hình ảnh</th>
                     				<th style="max-width: 170px">Tên</th>
                     				<th style="max-width: 300px">Mô tả</th>
-                    				<th>Bắt đầu</th>
-                    				<th>Kết thúc</th>
+                    				<th>Giá</th>
+                    				
                     				<th>Nháy đúp</th>
                     			</tr>
                     		</thead>
                     		<tbody id="bangKm">
-                    			@foreach($khuyenmai as $khuyenmai)
+                    			@foreach($dichvu as $dichvu)
                     			<tr class="active">
-                    				<td><img src="{{$khuyenmai->hinhanh}}" alt="Poster phim"></td>
-                    				<td style="max-width: 170px"><b>{{$khuyenmai->tenkm}}</b></td>
-                    				<td style="max-width: 280px">{{$khuyenmai->mota}}</td>
-                    				<td>{{$khuyenmai->batdau}}</td>
-                    				<td>{{$khuyenmai->ketthuc}}</td> 
+                    				<td><img src="{{$dichvu->hinhanh}}" alt="Poster phim"></td>
+                    				<td style="max-width: 170px"><b>{{$dichvu->tendv}}</b></td>
+                    				<td style="max-width: 280px">{{$dichvu->loaidv}}</td>
+                    				<td>{{$dichvu->gia}}</td>
+                    				 
                     				<td><a href="javascript:void(null);" onclick="myFunc1()"><b>Chọn</b></a></td>
-                    				<td hidden>{{$khuyenmai->makm}}</td>                  			
+                    				<td hidden>{{$dichvu->makm}}</td>                  			
                     			</tr>
                     			@endforeach
                     		</tbody>
@@ -170,7 +170,7 @@
 					<!-- Form thêm khuyến mãi -->					
                     <div style="display: none" id="addKm">
                     	<hr>
-                    	<form action="{{route('themKhuyenmai')}}" method="post" id="kmform">
+                    	<form action="{{route('themDv')}}" method="post" id="kmform">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}"> 
                     		<div class="row">
                     			<div class="col-md-6">
@@ -219,7 +219,7 @@
                     <!-- Form chỉnh sửa khuyến mãi -->                    
                     <div style="display: none" id="modifyKm">
                     	<hr>
-                    	<form action="{{route('suaKhuyenmai')}}" method="post" id="kmformsua">
+                    	<form action="{{route('suaDv')}}" method="post" id="kmformsua">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
 							<input type="hidden" name="mmakm"> 
                     		<div class="row">
@@ -299,7 +299,7 @@
 								<a href="{{route('dieuchinhgiave')}}" class="nav-link"><i class="fa fa-list"></i> Điều chỉnh giá vé</a>
 							</li>
 							<li class="nav-item">
-								<a href="{{route('dieuchinhdv')}}" class="nav-link"><i class="fa fa-list"></i> Điều chỉnh giá dịch vụ</a>
+								<a href="{{route('phim-da-xem')}}" class="nav-link"><i class="fa fa-list"></i> Điều chỉnh giá dịch vụ</a>
 							</li>
 						</ul>
 					</div>

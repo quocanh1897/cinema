@@ -183,6 +183,11 @@ class PageController extends Controller
         return view('page.dieuchinhkhuyenmai',compact('khuyenmai'));
     }
 
+    public function getDieuChinhDv()
+    {
+        $dichvu = dich_vu::all();     
+        return view('page.dieuchinhdv',compact('dichvu'));
+    }
     public function postThemKhuyenmai(Request $req)
     {
         $this->validate($req,
@@ -248,7 +253,6 @@ class PageController extends Controller
         return redirect()->back()->with('success','Điều chỉnh thành công');
     }
 
-    // TODO: put your code into it
     public function postXoaKhuyenmai($idRap)
     {
         $rap = rap_chieu::where('marap',$idRap)->get();
@@ -334,6 +338,8 @@ class PageController extends Controller
 
         return redirect()->back()->with('success','Điều chỉnh thành công');
     }
+
+    
 
     // End Nhóm trang nhân viên
 
