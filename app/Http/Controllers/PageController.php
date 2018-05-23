@@ -412,7 +412,7 @@ class PageController extends Controller
             $user = User::where('email',$req['email'])->get();
             
             $nhanvien = nhan_vien::where('idnv',$user[0]->id)->count();
-            
+            Session::put('id',$user[0]->id);
             if($nhanvien == 1){
                 $boolx = true; 
                 return redirect('profilenhanvien')->with('success','Đăng nhập thành công')->with('boolx','true');
@@ -609,7 +609,7 @@ class PageController extends Controller
             //VE
             
             $cacghe = explode(",", $gheso);
-            //$ve->maghe = $ghe->maghe;
+            
             
             foreach($cacghe as $ghe1){
                 $ve = new ve();
@@ -621,6 +621,7 @@ class PageController extends Controller
                     ['maphim', $req['idphim']],
                     ['marap',$req['idrap']],
                 ])->get();
+                //dd($ngay);
                 $ve->masuatchieu = $temp->first()->masuatchieu;
                 $ghe = ghe_ngoi::where([
                     ['maphong',$phong[0]->maphong],

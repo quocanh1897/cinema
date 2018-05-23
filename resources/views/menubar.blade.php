@@ -2,8 +2,8 @@
 <header class="nav-holder ">
   <div id="navbar" role="navigation" class="navbar navbar-expand-lg">
     <div class="container">
-      <a href="index" class="navbar-brand home">
-        <img src="sources/img/db-logo.png" alt="Universal logo" class="d-none d-md-inline-block">
+      <a @if($muave == 1) href="index" @endif class="navbar-brand home">
+        <img  src="sources/img/db-logo.png" alt="Universal logo" class="d-none d-md-inline-block">
         <img src="sources/img/db-logo-small.png" alt="Universal logo" class="d-inline-block d-md-none">
         <span class="sr-only">Welcome to BK Cinema</span>
       </a>
@@ -14,7 +14,7 @@
       <div id="navigation" class="navbar-collapse collapse">
         <ul class="nav navbar-nav ml-auto">
           <!-- MUA VE -->
-          @if($muave == 1)
+          @if($muave != "0")
           <li class="nav-item">
             <a href="{{route('mua-ve-menu')}}">Mua vé
               <b class="caret"></b>

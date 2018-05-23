@@ -1,5 +1,6 @@
 <!--FOOTER -->
 <footer class="main-footer">
+  
   <!-- Buttonn back-to-top -->
   <div id="goTop">
     <img src="sources/img/icon-backtop.png" width="50" height="50" alt="zkiwi demo" />
@@ -7,7 +8,9 @@
 
   <!-- Footer 1 -->
   <div class="container">
+    @if($footerx != 1)
     <div class="row">
+        
       <div class="col-lg-4">
         <h4 class="h6">|| Giới thiệu</h4>
 
@@ -32,7 +35,7 @@
 
     </div>
   </div>
-
+  @endif 
   <!-- Footer 2 -->
   <div class="copyrights"> 
     <div class="row">
@@ -42,6 +45,7 @@
       </div>
 
     </div>
-  </div>     
+  </div>   
+   
 </footer>
 <!-- END FOOTER

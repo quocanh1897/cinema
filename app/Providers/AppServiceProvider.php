@@ -27,16 +27,18 @@ class AppServiceProvider extends ServiceProvider
             //NHAN VIEN KHONG DUOC MUA VE
             $la_nv = null;
             if(Auth::user()){
-                $user_id = Auth::user()->id;                       
-                $obj_user = User::find($user_id);
-                $la_nv = nhan_vien::where('idnv',$obj_user->id);
+                $user_id = Auth::user()->id;     
+                                
+                $obj_user = User::find($user_id); 
+                $la_nv = nhan_vien::where('idnv',$user_id)->count();
+                //dd($la_nv); 
             }
             
             $muave = 1;
             if($la_nv){
                 $muave = 0;
             }
-
+           // dd($muave);
             $view->with('khuyenmai',$khuyenmai)
                  ->with('muave',$muave)
                  ->with('newest',$newest);
@@ -47,7 +49,7 @@ class AppServiceProvider extends ServiceProvider
             if(Auth::user()){
                 $user_id = Auth::user()->id;                       
                 $obj_user = User::find($user_id);
-                $la_nv = nhan_vien::where('idnv',$obj_user->id);
+                $la_nv = nhan_vien::where('idnv',$obj_user->id)->count();
             }
             
             $routepf = "profile";
@@ -58,6 +60,24 @@ class AppServiceProvider extends ServiceProvider
             $view->with('routepf',$routepf);
                  
         });
+
+        view()->composer('footer', function($view){
+            $la_nv = null;
+            if(Auth::user()){
+                $user_id = Auth::user()->id;                       
+                $obj_user = User::find($user_id);
+                $la_nv = nhan_vien::where('idnv',$obj_user->id)->count();
+            }
+            
+            $footerx = 0;
+            if($la_nv){
+                $footerx = 1;
+            }
+             
+            $view->with('footerx',$footerx);
+                 
+        });
+
 
     }
 
