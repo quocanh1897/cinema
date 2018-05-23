@@ -14,11 +14,9 @@
                     <div class="login">
                         <a >Xin chào {{Auth::user()->name}},  </a>
                         <a ></a>
-                        @if(Session::get('boolx') == 'true')
-                            <a href="{{route('profilenhanvien')}}" class="profile-btn">
-                        @else
-                            <a href="{{route('profile')}}" class="profile-btn">
-                        @endif
+                         
+                            <a href="{{$routepf}}" class="profile-btn">
+                       
                             <i class="fa fa-user"></i>
                             <span class="d-none d-md-inline-block">Tài khoản</span>
                         </a>

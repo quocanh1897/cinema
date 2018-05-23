@@ -14,11 +14,13 @@
       <div id="navigation" class="navbar-collapse collapse">
         <ul class="nav navbar-nav ml-auto">
           <!-- MUA VE -->
+          @if($muave == 1)
           <li class="nav-item">
             <a href="{{route('mua-ve-menu')}}">Mua vé
               <b class="caret"></b>
             </a>
           </li>
+          @endif
           <!-- END MUA VE -->
 
           <!-- LICH CHIEU -->
