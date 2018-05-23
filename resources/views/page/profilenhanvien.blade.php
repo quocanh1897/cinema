@@ -49,7 +49,7 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-4">
-							<p class="text-center"><img src="" alt="" class="rounded-circle img-fluid"></p>
+							<p class="text-center"><img src="http://lh5.googleusercontent.com/-SJWvFVdVHOc/V9cAgV8W_TI/AAAAAAAA5Bg/kaDMqDifvGsuUuhYYxUIejwftUAXGhU1gCLcB/s1600/ohgai.net-0089120916.jpg" alt="" class="rounded-circle img-fluid"></p>
 							<p class="text-center"><a href="javascript:void(null)">Đổi ảnh đại diện</a></p>
 						</div>
 						<div class="col-sm-8">
@@ -71,10 +71,7 @@
 									<th id="thduy">Họ và tên</th>
 									<th>{{Auth::user()->name}}</th>
 								</tr>
-								<tr>
-									<th id="thduy">Chức vụ</th>
-									<th>{{$nhanvien->idnv}}</th>
-								</tr>
+								
 								<tr>
 									<th id="thduy">Email</th>
 									<th>{{Auth::user()->email}}</th>
