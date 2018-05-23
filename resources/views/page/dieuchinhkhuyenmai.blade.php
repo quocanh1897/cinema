@@ -196,15 +196,15 @@
                     		</div>
                     		<div class="row">
                     			<div class="col-md-6">
-                    				<div class="form-group">
-                    					<label for="mota">Mô tả</label><br>
-                    					<textarea rows=3 cols=47 name="mota" form="kmform" id="mota" placeholder="Nhập mô tả chi tiết..."></textarea>                                      
-                    				</div>
-                    			</div>
+                                        <div class="form-group">
+                                             <label for="mota">Mô tả khuyến mãi</label>
+                                             <input name="mota" id="mota" type="text" class="form-control">
+                                        </div>
+                                   </div>
                     			<div class="col-md-6">
                     				<div class="form-group">
                     					<label for="hinhanh">Hình ảnh minh họa</label><br>
-                    					<input type="url" name="hinhanh" id"hinhanh"><br>
+                    					<input type="url" name="hinhanh" id="hinhanh"><br>
                     				</div>
                     			</div>
                     		</div>
@@ -248,7 +248,7 @@
                     			<div class="col-md-6">
                     				<div class="form-group">
                     					<label for="mmota">Mô tả</label><br>
-                    					<textarea rows="3" cols="47" name="mota" form="kmform" id="mmota" placeholder="Nhập mô tả chi tiết..."></textarea>                                      
+                    					<textarea rows="3" cols="47" name="mmota" form="kmform" id="mmota" placeholder="Nhập mô tả chi tiết..."></textarea>                                      
                     				</div>
                     			</div>
                     			<div class="col-md-6">

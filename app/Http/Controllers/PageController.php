@@ -174,7 +174,8 @@ class PageController extends Controller
                 'tenkm'=>'required',
                 'batdau'=>'required|date_format:Y-m-d|after:today',                
                 'ketthuc'=>'required|date_format:Y-m-d|after:tomorrow',
-                'hinhanh'=>'required|url' 
+                'hinhanh'=>'required|url',
+                'mota'=>'required'
             ],
             [
                 'tenkm.required'=>'Vui lòng nhập tên khuyến mãi! ',                           
@@ -185,7 +186,8 @@ class PageController extends Controller
                 'ketthuc.data_format'=>"Định dạng sai",
                 'ketthuc.after'=>"Ngày kết thúc phải sau ngày mai",
                 'hinhanh.required'=>'Vui lòng nhập đường dẫn tới một ảnh mô tả!',
-                'hinhanh.url'=>'Định dạng link hình ảnh không đúng'    
+                'hinhanh.url'=>'Định dạng link hình ảnh không đúng',
+                'mota.required'=>'Vui lòng nhập mô tả khuyến mãi'    
             ]);
         
         $obj_user = new khuyen_mai();
@@ -206,7 +208,8 @@ class PageController extends Controller
                 'mtenkm'=>'required',
                 'mbatdau'=>'required|date_format:Y-m-d|after:today',                
                 'mketthuc'=>'required|date_format:Y-m-d|after:tomorrow',
-                'mhinhanh'=>'required|url' 
+                'mhinhanh'=>'required|url',
+                'mmota'=>'required' 
             ],
             [
                 'mtenkm.required'=>'Vui lòng nhập tên khuyến mãi! ',                           
@@ -217,11 +220,11 @@ class PageController extends Controller
                 'mketthuc.data_format'=>"Định dạng sai",
                 'mketthuc.after'=>"Ngày kết thúc phải sau ngày mai",
                 'mhinhanh.required'=>'Vui lòng nhập đường dẫn tới một ảnh mô tả!',
-                'mhinhanh.url'=>'Định dạng link hình ảnh không đúng'    
+                'mhinhanh.url'=>'Định dạng link hình ảnh không đúng', 
+                'mmota.required'=>'Vui lòng nhập mô tả' 
             ]);
 
-        $obj_user = khuyen_mai::find($req['mmakm']);
-
+        $obj_user = khuyen_mai::where('tenkm',$req['mtenkm'])->get();
         $obj_user->tenkm = $req['mtenkm'];
         $obj_user->batdau = $req['mbatdau'];
         $obj_user->ketthuc = $req['mketthuc'];    
