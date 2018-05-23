@@ -73,7 +73,7 @@
                                 <h3>
                                     <a >Nguyễn Quốc Anh</a>
                                 </h3>
-                                <p class="role">Thành viên</p>
+                                <p class="role">Team Leader</p>
                                 <ul class="social list-inline">
                                     <li class="list-inline-item">
                                         <a href="https://www.facebook.com/quocanh7198" target="_blank" class="external facebook">
@@ -88,7 +88,7 @@
                                     </li>
                                 </ul>
                                 <div class="text">
-                                    <p>Back-end Developer</p>
+                                    <p>Fullstack Developer</p>
                                 </div>
                             </div>
                         </div>

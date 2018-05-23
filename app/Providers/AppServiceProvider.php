@@ -3,7 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-
+use App\khuyen_mai;
+use Carbon;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -13,7 +14,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        view()->composer('menubar', function($view){
+            $currentDate = Carbon\Carbon::now()->toDateString();
+            $khuyenmai = khuyen_mai::where('ketthuc','>',$currentDate)->take(4)->get();
+            $view->with('khuyenmai',$khuyenmai);
+        });
+
     }
 
     /**

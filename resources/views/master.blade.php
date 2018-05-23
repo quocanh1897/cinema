@@ -35,17 +35,6 @@
   <link rel="apple-touch-icon" sizes="144x144" href="sources/img/apple-touch-icon-144x144.png">
   <link rel="apple-touch-icon" sizes="152x152" href="sources/img/apple-touch-icon-152x152.png">
   
-  <!-- FOR SEAT SELECTION WIDGET -->
-  <!-- for-mobile-apps -->
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	
-	<!-- //for-mobile-apps -->
-	<link href="sources/css/style.css" rel="stylesheet" type="text/css" media="all" />
-	<script src="sources/js/jquery-1.11.0.min.js"></script>
-  <script src="sources/js/jquery.seat-charts.js"></script>
-  <!-- END SEAT SELECTION -->
 
   <!-- Tweaks for older IEs-->
   <!--[if lt IE 9]>

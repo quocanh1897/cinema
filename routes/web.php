@@ -236,6 +236,12 @@ Route::post('chon-ghe',[
     'uses'=>'PageController@postChonGhe'
 ]);
 
+
+Route::get('khuyen-mai',[
+    'as'=>'khuyen-mai',
+    'uses'=>'PageController@getKhuyenMai'
+]);
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
