@@ -32,6 +32,11 @@
 </div>
 @endif
 
+<script type="text/javascript">
+	$('header').hide().prop("disabled",true);
+	$('footer').hide().prop("disabled",true);
+</script>
+
 <div id="content">
 	<div class="container">
 		<div class="row bar">
