@@ -32,12 +32,6 @@
 </div>
 @endif
 
-<script type="text/javascript">
-     $("header").hide().prop("disabled",true);
-     $("footer").hide().prop("disabled",true);
-</script>
-
-
 <div id="content">
 	<div class="container">
 		<div class="row bar">
@@ -69,7 +63,7 @@
                     			@foreach($khuyenmai as $khuyenmai)
                     			<tr class="active">
                     				<td><img src="{{$khuyenmai->hinhanh}}" alt="Poster phim"></td>
-                    				<td style="max-width: 170px">{{$khuyenmai->tenkm}}</td>
+                    				<td style="max-width: 170px"><b>{{$khuyenmai->tenkm}}</b></td>
                     				<td style="max-width: 280px">{{$khuyenmai->mota}}</td>
                     				<td>{{$khuyenmai->batdau}}</td>
                     				<td>{{$khuyenmai->ketthuc}}</td> 

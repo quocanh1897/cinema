@@ -32,11 +32,6 @@
 </div>
 @endif
 
-<script type="text/javascript">
-     $("header").hide().prop("disabled",true);
-     $("footer").hide().prop("disabled",true);
-</script>
-
 <div id="content">
 	<div class="container">
 		<div class="row bar">
@@ -49,7 +44,11 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-4">
+<<<<<<< HEAD
 							<p class="text-center"><img src="http://lh5.googleusercontent.com/-SJWvFVdVHOc/V9cAgV8W_TI/AAAAAAAA5Bg/kaDMqDifvGsuUuhYYxUIejwftUAXGhU1gCLcB/s1600/ohgai.net-0089120916.jpg" alt="" class="rounded-circle img-fluid"></p>
+=======
+							<p class="text-center"><img src="sources/img/duy.jpg" alt="" class="rounded-circle img-fluid"></p>
+>>>>>>> parent of 9f41a55... chinh sua de nhan vien khong vao trang cua khach hang
 							<p class="text-center"><a href="javascript:void(null)">Đổi ảnh đại diện</a></p>
 						</div>
 						<div class="col-sm-8">
@@ -71,7 +70,10 @@
 									<th id="thduy">Họ và tên</th>
 									<th>{{Auth::user()->name}}</th>
 								</tr>
+<<<<<<< HEAD
 								
+=======
+>>>>>>> parent of 9f41a55... chinh sua de nhan vien khong vao trang cua khach hang
 								<tr>
 									<th id="thduy">Email</th>
 									<th>{{Auth::user()->email}}</th>
@@ -181,7 +183,7 @@
 						</li>
 
 						<li class="nav-item">
-							<a href="{{route('dieuchinhgiave')}}" class="nav-link"><i class="fa fa-list"></i> Điều chỉnh giá vé</a>
+							<a href="{{route('lich-su')}}" class="nav-link"><i class="fa fa-list"></i> Điều chỉnh giá vé</a>
 						</li>
 						<li class="nav-item">
 							<a href="{{route('phim-da-xem')}}" class="nav-link"><i class="fa fa-list"></i> Điều chỉnh giá dịch vụ</a>
