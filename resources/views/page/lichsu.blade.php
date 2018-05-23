@@ -13,7 +13,7 @@
         <div class="container">
           <div class="row bar mb-0">
             <div id="customer-orders" class="col-md-9">
-              <p class="text-muted lead">Bạn đã thực hiện 5 giao dịch.</p>
+              <p class="text-muted lead">Bạn đã thực hiện {{count($hoadon)}}  giao dịch.</p>
               <div class="box mt-0 mb-lg-0">
                 <div class="table-responsive">
                   <table class="table table-hover">
@@ -24,62 +24,25 @@
                         <th>Vé</th>
                         <th>Dịch vụ</th>                        
                         <th>Tổng tiền</th>
-                        <th>Tình trạng</th>
                         <th>Chi tiết</th>
                       </tr>
                     </thead>
                     <tbody>
+                      @foreach($hoadon as $hd)
                       <tr>
-                        <th># 1735</th>
-                        <td>22/06/2013</td>
-                        <td>2</td>
+                        <th>#{{$hd->mahoadon}}  </th>
+                        <td>{{$hd->ngayxuat}} </td>
+                        <td>#</td>
                         
-                        <td>1</td>
-                        <td><span class="badge badge-success">Đã xuất</span></td>
-                        <td>170,000</td>
-                        <td><a href="{{route('chi-tiet-lich-su')}}" class="btn btn-template-outlined btn-sm">View</a></td>
+                        <td>#</td>
+                        <td>{{$hd->tongtien}} </td>
+                        <form action="{{route('chi-tiet-lich-su')}}" method="POST" >
+                          <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                          <input type="hidden" name="idhoadon" value="{{$hd->mahoadon}}">
+                        <td><button  type="submit" class="btn btn-template-outlined btn-sm">Xem</button></td>
+                        </form>
                       </tr>
-                      <tr>
-                        <th># 1735</th>
-                        <td>22/06/2013</td>
-                        <td>1</td>
-                        
-                        <td>1</td>
-                        <!-- <td><span class="badge badge-info">Being prepared</span></td> -->
-                        <td><span class="badge badge-success">Đã xuất</span></td>
-                        <td>120,000</td>
-                        <td><a href="{{route('chi-tiet-lich-su')}}" class="btn btn-template-outlined btn-sm">View</a></td>
-                      </tr>
-                      <tr>
-                        <th># 1735</th>
-                        <td>22/06/2013</td>
-                        <td>3</td>
-                        <td>2</td>
-                        <td><span class="badge badge-success">Đã xuất</span></td>
-                        <td>250,000</td>
-                        <td><a href="{{route('chi-tiet-lich-su')}}" class="btn btn-template-outlined btn-sm">View</a></td>
-                      </tr>
-                      <tr>
-                        <th># 1735</th>
-                        <td>22/06/2013</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td><span class="badge badge-danger">Chưa xuất</span></td>
-                        <td>120,000</td>
-                        
-                        <td><a href="{{route('chi-tiet-lich-su')}}" class="btn btn-template-outlined btn-sm">View</a></td>
-                      </tr>
-                      <tr>
-                        <th># 1735</th>
-                        <td>22/06/2013</td>
-                        <td>1</td>
-                        <td>1</td>
-                        
-                        <td><span class="badge badge-danger">Chưa xuất</span></td>
-                        <td>120,000</td>
-                        <!-- <td><span class="badge badge-warning">On hold</span></td> -->
-                        <td><a href="{{route('chi-tiet-lich-su')}}" class="btn btn-template-outlined btn-sm">View</a></td>
-                      </tr>
+                      @endforeach
                     </tbody>
                   </table>
                 </div>

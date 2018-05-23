@@ -36,9 +36,9 @@ Route::get('lich-su',[
     'uses'=>'PageController@getLichSu'
 ]);
 
-Route::get('chi-tiet-lich-su',[
+Route::post('chi-tiet-lich-su',[
     'as'=>'chi-tiet-lich-su',
-    'uses'=>'PageController@getChiTietLichSu'
+    'uses'=>'PageController@postChiTietLichSu'
 ]);
 
 Route::get('phim-da-xem',[

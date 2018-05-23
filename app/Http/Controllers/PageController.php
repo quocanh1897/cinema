@@ -45,12 +45,31 @@ class PageController extends Controller
         return view('page.profile');
     }
     public function getLichSu()
-    {
-        return view('page.lichsu');
+    {     
+        $user_id = Auth::user()->id;                       
+        $hoadon = hoa_don::where('idkh',$user_id)->get();
+        
+        return view('page.lichsu',compact('hoadon'));
     }
-    public function getChiTietLichSu()
+    public function postChiTietLichSu(Request $req)
     {
-        return view('page.chitietlichsu');
+        $hoadon = hoa_don::where('mahoadon',$req['idhoadon'])->get();
+        $ve = ve::where('mahoadon',$req['idhoadon'])->get();
+        
+        $suatchieu = suat_chieu::where([
+            ['masuatchieu',$ve->first()->masuatchieu],
+        ]);
+        $soghe = [];
+        foreach($ve as $v){
+            $temp = ghe_ngoi::where('maghe',$v->maghe);
+            $soghe[] = ($temp->first()->soghe);
+        }
+         
+        $phim = phim::where('maphim',$suatchieu->first()->maphim);
+        $rap = rap_chieu::where('marap',$suatchieu->first()->marap);
+        $khunggio = khung_gio::where('makhunggio',$suatchieu->first()->makhunggio);
+        //dd($suatchieu->first()->);
+        return view('page.chitietlichsu',compact('ve','hoadon','phim','rap','soghe','khunggio','suatchieu'));
     }
     public function getPhimDaXem()
     {
@@ -569,44 +588,65 @@ class PageController extends Controller
         $loaiphong = $req['loaiphong'];
         $tongcong = $req['tongcong'];
 
-        //HOA DON
-        $user_id = Auth::user()->id;                       
-        $obj_user = User::find($user_id);
-        $hoadon = new hoa_don();
-         
-        $hoadon->tongtien = $tongcong;
-        $hoadon->ngayxuat = $currentDate;
-        $hoadon->idkh = $obj_user->id;
-        //idnv = null;
-        $hoadon->save();
+        if(Auth::user()){
+                //HOA DON
+            $user_id = Auth::user()->id;                       
+            $obj_user = User::find($user_id);
+            $hoadon = new hoa_don();
+            
+            $hoadon->tongtien = $tongcong;
+            $hoadon->ngayxuat = $currentDate;
+            $hoadon->idkh = $obj_user->id;
+            $hoadon->idnv = 8;
+            $hoadon->save();
 
-        //VE
-        
-        $cacghe = explode(",", $gheso);
-        //$ve->maghe = $ghe->maghe;
-        
-        foreach($cacghe as $ghe1){
-            $ve = new ve();
-            $makg = khung_gio::where('batdau',$gio)->get();
-            $ve->ngayxuat = $currentDate;
-            $temp = suat_chieu::where([
-                ['ngaychieu', $ngay],
-                ['makhunggio', $makg->first()->makhunggio],
-                ['maphim', $req['idphim']],
-                ['marap',$req['idrap']],
+            $hoadonx = hoa_don::where([
+                ['tongtien', $tongcong],
+                ['ngayxuat', $currentDate],
+                ['idkh', $obj_user->id],
+                ['idnv', 8],
             ])->get();
-            $ve->masuatchieu = $temp->first()->masuatchieu;
-            $ghe = ghe_ngoi::where([
-                ['maphong',$phong[0]->maphong],
-                ['soghe', $ghe1],
-            ])->get();
-                 
-            //$ve->mahoadon = $hoadon->mahoadon;
-            $ve->save();
+            //VE
+            
+            $cacghe = explode(",", $gheso);
+            //$ve->maghe = $ghe->maghe;
+            
+            foreach($cacghe as $ghe1){
+                $ve = new ve();
+                $makg = khung_gio::where('batdau',$gio)->get();
+                $ve->ngayxuat = $currentDate;
+                $temp = suat_chieu::where([
+                    ['ngaychieu', $ngay],
+                    ['makhunggio', $makg->first()->makhunggio],
+                    ['maphim', $req['idphim']],
+                    ['marap',$req['idrap']],
+                ])->get();
+                $ve->masuatchieu = $temp->first()->masuatchieu;
+                $ghe = ghe_ngoi::where([
+                    ['maphong',$phong[0]->maphong],
+                    ['soghe', $ghe1],
+                ])->get();
+                $ve->maghe = $ghe->first()->maghe;
+                $ve->mahoadon = $hoadonx->first()->mahoadon;
+                $ve->save();
+
+                //CAP NHAT TRONG GHE_NGOI
+                DB::table('ghe_ngoi')->where('maghe', $ghe->first()->maghe)->update(['tinhtrang'=>1]);
+                
+            }
+
+            
+
+
+            return view('page.thanhtoan',compact('phimDaChon','rapDaChon','ngay','gio','dichvu','gheso','tongcong','loaiphong','phong') );
+
+        }else{
+            return redirect('/')->with('error','Bạn cần đăng nhập để mua vé');
         }
         
+        
+        
 
-        return view('page.thanhtoan',compact('phimDaChon','rapDaChon','ngay','gio','dichvu','gheso','tongcong','loaiphong','phong') );
 
     }
 
