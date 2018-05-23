@@ -73,6 +73,7 @@
 									<th id="thduy">Họ và tên</th>
 									<th>{{Auth::user()->name}}</th>
 								</tr>
+
 								<tr>
 									<th id="thduy">Email</th>
 									<th>{{Auth::user()->email}}</th>
